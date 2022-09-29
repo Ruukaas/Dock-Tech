@@ -1,0 +1,42 @@
+body {
+    background: #D3D2EB;
+
+}
+
+textarea{
+    border-radius: 25%;
+}
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+#container .item {
+    margin: 5px;
+}
+
+#comment-box, #post,#cancel {
+    border: none;
+    border-radius: 5px;
+}
+#post:hover{
+    background-color: deeppink;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#question-generator {
+    border: none;
+    background-color: #101A3F;
+    color: #FFFFFF;
+    padding: 15px;
+    width: 30%;
+}
+
+#question-generator:hover{
+    cursor: pointer;
+    border: solid #FFFFFF;
+}
