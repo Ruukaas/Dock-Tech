@@ -22,6 +22,12 @@ body {
     align-self: center;
     color: #FFFFFF;
     cursor: pointer;
+    background-color: blue;
+ }
+
+ .item i {
+    padding: 50px;
+    background-color: blueviolet;
  }
 
 
