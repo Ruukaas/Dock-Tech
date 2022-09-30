@@ -3,9 +3,6 @@ body {
 
 }
 
-textarea{
-    border-radius: 25%;
-}
 #container {
     display: flex;
     flex-direction: column;
@@ -40,3 +37,34 @@ ul {
     cursor: pointer;
     border: solid #FFFFFF;
 }
+
+.invisible {
+    display: none;
+}
+
+#title-text-wrapper{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+}
+
+#comment-box {
+    width: 600px;
+    height: 100px;
+    margin-top: 10px;
+}
+
+#title-box{
+    width: 600px;
+}
+
+#title-text,#comment-text{
+    border-radius: 40px;
+    align-content: center;
+    width: 180px;
+    padding: 6px;
+    color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #101A3F;
+}
+

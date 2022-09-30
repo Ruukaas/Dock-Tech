@@ -1,13 +1,13 @@
-var post= document.getElementById("post");
-post.addEventListener("click", function(){
-    var commentBoxValue= document.getElementById("comment-box").value;
+// var post= document.getElementById("post");
+// post.addEventListener("click", function(){
+//     var commentBoxValue= document.getElementById("comment-box").value;
  
-    var li = document.createElement("li");
-    var text = document.createTextNode(commentBoxValue);
-    li.appendChild(text);
-    document.getElementById("unordered").appendChild(li);
+//     var li = document.createElement("li");
+//     var text = document.createTextNode(commentBoxValue);
+//     li.appendChild(text);
+//     document.getElementById("unordered").appendChild(li);
  
-});
+// });
 
 
 window.addEventListener("load", function(){
@@ -24,9 +24,18 @@ function createComment(){
     
     const div1 = document.createElement('div');
     div1.classList.add('item');
+    div1.setAttribute("id", "title-text-wrapper");
+
+    const titleText = document.createElement('p');
+    titleText.setAttribute("id", "title-text");
+    titleText.textContent = "Insira um titulo";
 
     const titleBox = document.createElement('textarea');
-    titleBox.setAttribute("id", "titleBox");
+    titleBox.setAttribute("id", "title-box");
+
+    const commentText = document.createElement('p');
+    commentText.setAttribute("id", "comment-text");
+    commentText.textContent = "Digite seu comentario";
 
     const commentBox = document.createElement('textarea');
     commentBox.setAttribute("id", "comment-box");
@@ -43,7 +52,9 @@ function createComment(){
     cancelButton.textContent = 'Cancelar';
 
     button.remove();
+    div1.appendChild(titleText);
     div1.appendChild(titleBox);
+    div1.appendChild(commentText);
     div1.appendChild(commentBox);
     container.appendChild(div1);
 
