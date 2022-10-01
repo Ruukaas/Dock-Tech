@@ -1,8 +1,3 @@
-body {
-    background: #D3D2EB;
-
-}
-
 #container {
     display: flex;
     flex-direction: column;
@@ -36,10 +31,6 @@ ul {
 #question-generator:hover{
     cursor: pointer;
     border: solid #FFFFFF;
-}
-
-.invisible {
-    display: none;
 }
 
 #title-text-wrapper{

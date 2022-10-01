@@ -1,12 +1,11 @@
 window.addEventListener("load", function () {
     const questionButton = document.querySelector('#question-generator');
     questionButton.addEventListener('click', createComment);
-    questionButton.addEventListener('click', () => questionButton.classList.add("invisible"))
+    questionButton.addEventListener('click', () => questionButton.classList.add("invisible"));
 });
 
 function createComment() {
 
-    const body = document.querySelector('body');
     const container = document.querySelector('#container');
     container.removeEventListener('click', createComment);
     const button = document.querySelector('#question-generator');
