@@ -47,9 +47,14 @@
     font-size: 18px;
     font-weight: 900;
 }
+#loading-image {
+    height: 65px;
+    width: 65px;
+}
 input#login-mail{
     border-radius: 7px;
     border:2px solid #f05a05;
+    height: 25px;
     width: 200px;
     text-align: center;
     font-family: monospace;
@@ -60,6 +65,7 @@ input#login-password{
     border-radius: 7px;
     border:2px solid #f05a05;
     width: 200px;
+    height: 25px;
     text-align: center;
     font-family: monospace;
     font-weight: 800;
