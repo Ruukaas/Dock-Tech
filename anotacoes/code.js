@@ -2,15 +2,15 @@ const body = document.querySelector('body');
 
 window.addEventListener("load", function () {
     const addButton = document.querySelector('#addButton');
-    const container = document.querySelector('#container');
+    const containerAnotacao = document.querySelector('#containerAnotacao');
     addButton.addEventListener('click', createAnnotation);
-    addButton.addEventListener('click', () => container.remove());
+    addButton.addEventListener('click', () => containerAnotacao.remove());
 });
 
 
 function createAnnotation(){
     const div1 = document.createElement('div');
-    div1.classList.add('item');
+    div1.classList.add('itemAnotacao');
 
     const videoTimer = document.createElement('p');
     const timerValue = document.createTextNode("TESTE");
@@ -34,15 +34,15 @@ function createAnnotation(){
     cancelButton.addEventListener("click", () => {
         div1.remove();
         div2.remove();
-        body.appendChild(container);
+        body.appendChild(containerAnotacao);
     });
 
-    const container = document.querySelector('#append');
+    const containerAnotacao = document.querySelector('#append');
     div1.appendChild(videoTimer);
     div1.appendChild(annotationBox);
-    container.appendChild(div1);
+    containerAnotacao.appendChild(div1);
 
     div2.appendChild(saveButton);
     div2.appendChild(cancelButton);
-    container.appendChild(div2);
+    containerAnotacao.appendChild(div2);
 };

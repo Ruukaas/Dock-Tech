@@ -1,10 +1,10 @@
-#container {
+#containerComentario {
     display: flex;
     flex-direction: column;
     justify-content: stretch;
 }
 
-#container .item {
+#containerComentario .itemComentario {
     margin: 5px;
 }
 

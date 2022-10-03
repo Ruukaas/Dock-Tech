@@ -6,13 +6,13 @@ window.addEventListener("load", function () {
 
 function createComment() {
 
-    const container = document.querySelector('#container');
-    container.removeEventListener('click', createComment);
+    const containerComentario = document.querySelector('#containerComentario');
+    containerComentario.removeEventListener('click', createComment);
     const button = document.querySelector('#question-generator');
 
 
     const div1 = document.createElement('div');
-    div1.classList.add('item');
+    div1.classList.add('itemComentario');
     div1.setAttribute("id", "title-text-wrapper");
 
     const titleText = document.createElement('p');
@@ -30,7 +30,7 @@ function createComment() {
     commentBox.setAttribute("id", "comment-box");
 
     const div2 = document.createElement('div');
-    div2.classList.add('item');
+    div2.classList.add('itemComentario');
 
     const postButton = document.createElement('button');
     postButton.setAttribute("id", "post");
@@ -39,7 +39,7 @@ function createComment() {
     postButton.addEventListener("click", function () {
         if (!(commentBox.value == null || titleBox.value == null)) {
             const commentDiv = document.createElement("div");
-            commentDiv.classList.add('item');
+            commentDiv.classList.add('itemComentario');
 
             const commentBoxValue = commentBox.value;
             const titleBoxValue = titleBox.value;
@@ -60,7 +60,7 @@ function createComment() {
             commentDiv.appendChild(title);
             commentDiv.appendChild(comment);
 
-            document.getElementById("container").appendChild(commentDiv);
+            document.getElementById("containerComentario").appendChild(commentDiv);
         }
 
 
@@ -82,10 +82,10 @@ function createComment() {
     div1.appendChild(titleBox);
     div1.appendChild(commentText);
     div1.appendChild(commentBox);
-    container.appendChild(div1);
+    containerComentario.appendChild(div1);
 
     div2.appendChild(postButton);
     div2.appendChild(cancelButton);
-    container.appendChild(div2);
+    containerComentario.appendChild(div2);
 
 }
