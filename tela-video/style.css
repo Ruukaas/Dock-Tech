@@ -1,0 +1,52 @@
+body {
+  background-color: #101A3F;
+}
+
+.icon-bar {
+    width: 100%;
+    background-color: #D3D2EB;
+    display: flex;
+    justify-content: space-between;
+    margin:0px;
+}
+
+.icon-bar img {
+  width:52px;
+  height: 52px;
+}
+
+.principal-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top:20px;
+  width:95%;
+}
+
+.first-line-wrapper {
+  display:flex;
+  justify-content: space-between;
+}
+
+#video-external {
+  border-radius: 7px;
+}
+
+.trilha {
+  display:flex;
+  flex-direction: column;
+  width:428px;
+  height:506px;
+  background-color:#D3D2EB;
+  color: #101A3F;
+  border-radius: 7px;
+}
+
+#title-trilha {
+  text-align: center;
+}
+
+.invisible {
+  display:none;
+}
+
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela video</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="abas.css">
+</head>
+<body>
+    <div class="bar">
+        <div class="icon-bar">
+            <img src="icons/icons8-casa-30.png" alt="Ícone de casa" id="icon-home">
+            <img src="icons/icons8-usuário-de-gênero-neutro-50.png" alt="Ícone de perfil" id="icon-profile">
+        </div>
+    </div>
+    <div class="principal-wrapper">
+        <div class="first-line-wrapper">
+            <div class="video-player">
+                <iframe id="video-external" width="913" height="507" src="https://www.youtube.com/embed/fzR82oXbjnY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <video id="video-input" src="../../dogo.mp4" controls="true" width="913" height="507" class="invisible"></video>
+            </div>
+            <div class="trilha"> <!-- Trilha em inglês? -->
+                <h3 id="title-trilha">Trilha de aulas</h3>
+                <div class="modulo">
+                    
+                </div>
+                
+            </div>
+
+        </div>
+        <div class="second-line-wrapper">
+            <div id="container-abas">
+                <div class="item">
+                    <p>Forum do Video</p>
+                </div>
+                <div class="item">
+                    <p>Exercicios</p>
+                </div>
+                <div id="abaAnotacao" class="item">
+                    <p>Anotacoes</p>
+                </div>
+                <div class="item">
+                    <p>Shell</p>
+                </div>
+            </div>
+            <div id="append"></div>
+            <script src="./code.js"></script>
+        </div>
+    </div>
+</body>
+</html>

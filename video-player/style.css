@@ -1,0 +1,7 @@
+.video-frame {
+    display:none;
+}
+
+.active {
+    display:block;
+}

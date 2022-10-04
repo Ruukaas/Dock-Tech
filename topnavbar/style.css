@@ -2,7 +2,9 @@
     width: 100%;
     background-color: #101A3F;
     overflow: auto;
-  }
+    display: flex;
+    justify-content: space-between;
+}
   
   .icon-bar a {
     float: left; /* Links flutuantes lado a lado */
