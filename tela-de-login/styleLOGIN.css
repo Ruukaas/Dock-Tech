@@ -1,0 +1,111 @@
+/*Flex-box formulário*/
+.flex-form{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    max-width: 25%;
+    margin: auto;    
+    margin-top: 50px;
+    border-radius: 7px;
+    align-items: center;
+    min-width: 300px;
+}
+.item-form{
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.flex-pai{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+}
+/*Cosméticos*/
+.green-logo{
+    color: #147e17;
+}
+.orange-logo{
+    color: #f05a05;
+}
+.green-senha{
+    color: #53983A;
+    font-weight: 600;
+}
+.azul-senha{
+    color: #101a3f;
+    font-weight: 600;
+}
+.esqueci-senha{
+    font-size: 14px;
+}
+#enter{
+    width: 200px;
+    padding: 5px;
+    color: #f05a05;
+    background-color: #101a3f;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 900;
+}
+#loading-image {
+    height: 65px;
+    width: 65px;
+}
+input#login-mail{
+    border-radius: 7px;
+    border:2px solid #f05a05;
+    height: 25px;
+    width: 200px;
+    text-align: center;
+    font-family: monospace;
+    font-weight: 800;
+    background-color: #CBD0E5;
+}
+input#login-password{
+    border-radius: 7px;
+    border:2px solid #f05a05;
+    width: 200px;
+    height: 25px;
+    text-align: center;
+    font-family: monospace;
+    font-weight: 800;
+    background-color: #CBD0E5;
+}
+/*Background*/
+body{
+    background-image: url(../assets/global-images/fundo6.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #d3d2eb;
+}
+/*Recursividade*/
+@media (min-height:650px){
+    .flex-form{
+        margin-top: 100px;
+    }
+}
+@media (max-width:1000px){
+    #logo-img{
+        width:150px;
+    }
+    nav{
+        font-size: 14px!important;
+    }    
+}
+@media (max-width:800px){
+    body{
+        background-image: none;
+        background-color: #d3d2eb;
+    }
+}
+@media (max-width:500px){
+    .item-flex{
+        padding: 10px;
+    }
+    .flex-form{
+        min-width: 250px;
+    }
+    #logo-img{
+        width: 125px;
+    }
+}
