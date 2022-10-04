@@ -7,7 +7,7 @@
   .icon-bar a {
     float: left; /* Links flutuantes lado a lado */
     text-align: center; /* Texto centralizado */
-    width: 20%; /* Largura igual (5 ícones com 20% de largura cada) */
+    width: 20%; /* Largura igual (ícones com 20% de largura cada) */
     padding: 12px 0;
     transition: all 0.3s ease; /* Adicionar transição */
     color: white;
