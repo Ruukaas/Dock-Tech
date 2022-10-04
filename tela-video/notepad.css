@@ -1,58 +1,9 @@
-#container-tabs{
-    background-color: #D3D2EB;
-}
-
-#container-tabs {
-    display: flex;
-    background-color: #101A3F;
-}
-
-
-.item {
-    position: relative;
-    padding: 1px;
-    height: 30px;
-    width: 150px;
-    color: #FFFFFF;
-    background-color: #101A3F;
-    border-radius: 10px 10px 0px 0px;
-    border: #D3D2EB solid 1px;
-}
-
-.item p{
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-}
-
-.item:hover{
-    background-color:#D3D2EB;
-    cursor: pointer;
-}
-
-#active{
-    position: relative;
-    padding: 1px;
-    height: 30px;
-    width: 150px;
-    color: #FFFFFF;
-    background-color: #D3D2EB;
-    border-radius: 10px 10px 0px 0px;
-    border: #D3D2EB solid 1px;
-}
-
-/* Estilo Aba Anotacao */
-
-#containerAnotacao{
+#container-notepad{
     font-family: Verdana,Tahoma, sans-serif;
     width: 600px;
     height: 50px;
     margin: 20px;
     border-radius: 3px;
-    color: #D3D2EB;
     background-color: #101A3F;
     display: flex;
     justify-content: space-between;  
@@ -60,7 +11,7 @@
  }
 
 
- .itemAnotacao{
+ .item-notepad{
     padding: 5px;
     align-self: center;
     color: #FFFFFF;
@@ -68,7 +19,7 @@
     flex-direction: row;
  }
 
- .itemAnotacao i {
+ .item-notepad i {
     padding: 5px;
     cursor: pointer;
  }
@@ -131,4 +82,5 @@
    background-color: red;
    border: solid 2px black;
  }
+
 

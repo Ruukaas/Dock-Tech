@@ -1,18 +1,16 @@
-#container-tabs{
-    background-color: #D3D2EB;
-}
 
 #container-tabs {
     display: flex;
     background-color: #101A3F;
+    justify-content: space-around;
+    width:1280px;
 }
 
-
 .item {
-    position: relative;
     padding: 1px;
     height: 30px;
-    width: 150px;
+    min-width: 150px;
+    width: inherit;
     color: #FFFFFF;
     background-color: #101A3F;
     border-radius: 10px 10px 0px 0px;
@@ -21,7 +19,6 @@
 
 .item p{
     margin: 0;
-    position: absolute;
     top: 50%;
     left: 50%;
     margin-right: -50%;
@@ -31,6 +28,7 @@
 .item:hover{
     background-color:#D3D2EB;
     cursor: pointer;
+    color:#101A3F
 }
 
 #active{

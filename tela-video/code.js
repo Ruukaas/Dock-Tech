@@ -1,72 +1,135 @@
-window.addEventListener("load", function(){
-    const abaAnotacao = document.querySelector("#abaAnotacao");
-    abaAnotacao.addEventListener("click", mudarAnotacao);
-});
+const trilha = {
+    module1: {
+        title: "Introdução a banco de dados",
+        lesson1: {
+            lessonTitle: "O que é Banco de Dados?",
+            videoType: "external",
+            link: "https://www.youtube.com/embed/Ofktsne-utM"
+        },
+        lesson2: {
+            lessonTitle: "Instalando o MySQL",
+            videoType: "external",
+            link: "https://www.youtube.com/embed/5JbAOWJbgIA"
+        }
+    },
+    module2: {
+        title: "MySQL",
+        lesson1: {
+            lessonTitle: "Criando o primeiro banco de Dados",
+            videoType: "external",
+            link: "https://www.youtube.com/embed/m9YPlX0fcJk"
+        },
+        lesson2: {
+            lessonTitle: "dogo do fim da aula",
+            videoType: "internal",
+            link: "../dogo.mp4"
+        }
 
-function mudarAnotacao(){
+    }
+}
 
-    const appendDiv = document.querySelector('#append');
-    const abaAnotacao = document.querySelector('#abaAnotacao');
-    abaAnotacao.setAttribute('id','active');
+
+const createModule = (text) => {
+    let li = document.createElement("li")
+    li.classList.add("module")
+    li.textContent = text
+    return li
+
+}
+
+//Lesson para não colocar class e confundir com o do HTML
+const createLessonsModule = () => {
+    let ol = document.createElement("ol")
+    ol.classList.add("sub-module")
+    return ol;
+}
+
+const changeVideoTitle = title => {
+    document.getElementById("video-player-title").textContent = title;
+}
+
+const createLesson = (lesson) => {
+    let li = document.createElement("li")
+    li.classList.add("lesson")
+    li.textContent = lesson.lessonTitle
+    let videoPlayer
+    if (isExternal(lesson))  videoPlayer = document.getElementById("video-external") 
+    else if(isInternal(lesson)) videoPlayer = document.getElementById("video-input")
     
-    const containerAnotacao = document.createElement('div');
-    containerAnotacao.setAttribute("id", "containerAnotacao");
 
-    const div1 = document.createElement('div'); 
-    div1.classList.add("itemAnotacao");
+    li.addEventListener("click", () => {
+        videoPlayer.src = lesson.link
+        changeCurrentVideo(lesson)
+    })
 
-    const div2 = document.createElement('div');
-    div2.classList.add("itemAnotacao");
-
-    const textElement = document.createElement('p');
-    const value = document.createTextNode("Criar uma nova anotacao em 10:32");
-    textElement.appendChild(value);
-
-    const addButton = document.createElement("i");
-    addButton.innerHTML = '<i class="fa-solid fa-circle-plus"></i>';
-
-    div1.appendChild(textElement);
-    containerAnotacao.appendChild(div1);
-
-    div2.appendChild(addButton);
-    containerAnotacao.appendChild(div2);
-
-    appendDiv.appendChild(containerAnotacao);
-
-    addButton.addEventListener("click", anotacaoTransicao, {once:true});
-    addButton.addEventListener('click', () => containerAnotacao.remove());
-
+    return li;
 }
 
-function anotacaoTransicao() {
-    const div1 = document.createElement('div');
-    div1.classList.add('itemAnotacao');
+const dynamicTrilha = (trilhaJSON) => {
+    const trilhaEL = document.getElementById("trilha")
+    let summaryEL = document.createElement("ol")
+    summaryEL.classList.add("summary")
 
-    const videoTimer = document.createElement('p');
-    const timerValue = document.createTextNode("TESTE");
-    videoTimer.appendChild(timerValue);
-    videoTimer.setAttribute("id", "videoTimer");
 
-    const annotationBox = document.createElement('textarea');
-    annotationBox.setAttribute("id", "annotationBox");
+    Object.keys(trilhaJSON).forEach((valor) => {
+        let module = createModule(trilhaJSON[valor].title)
+        let subModule = createLessonsModule();
+        let contentModuleArray = Object.values(trilhaJSON[valor])
+        contentModuleArray.shift() //Tirando o title do módulo
 
-    const div2 = document.createElement('div2');
-    div2.setAttribute("id", "div2");
+        console.log(contentModuleArray)
 
-    const saveButton = document.createElement('button');
-    saveButton.textContent = 'Salvar Anotacao';
-    saveButton.setAttribute("id", "saveButton");
+        contentModuleArray.forEach((value) => {
 
-    const cancelButton = document.createElement('button');
-    cancelButton.textContent = 'Cancelar';
-    cancelButton.setAttribute("id", "cancelButton");
+            let lesson = createLesson(value)
+            subModule.appendChild(lesson)
 
-    const containerAnotacao = document.querySelector('#append');
-    div1.appendChild(videoTimer);
-    div1.appendChild(annotationBox);
-    containerAnotacao.appendChild(div1);
+        })
+        module.appendChild(subModule)
 
-    div2.appendChild(saveButton);
-    div2.appendChild(cancelButton);
-    containerAnotacao.appendChild(div2);
+        summaryEL.appendChild(module)
+    })
+
+    trilhaEL.appendChild(summaryEL)
 }
+
+const changeCurrentVideo = lesson => {
+
+    let videoExternalEL = document.getElementById("video-external")
+    let videoInputEL = document.getElementById("video-input")
+
+    switch(lesson.videoType) {
+        case "external":
+            if(videoExternalEL.classList.contains("invisible")) {
+                videoInputEL.classList.add("invisible")
+                videoExternalEL.classList.remove("invisible")
+            }
+        break
+        case "internal":
+            if(videoInputEL.classList.contains("invisible")) {
+                videoExternalEL.classList.add("invisible")
+                videoInputEL.classList.remove("invisible")
+            }
+        break
+    }
+
+    changeVideoTitle(lesson.lessonTitle)
+
+    
+    
+}
+
+const isExternal = lesson => {
+    if (lesson.videoType == "external") {
+        return true
+    } else return false;
+}
+
+const isInternal = lesson => {
+    if (lesson.videoType == "internal") {
+        return true;
+    } else return false;
+}
+
+
+dynamicTrilha(trilha)

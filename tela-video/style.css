@@ -3,50 +3,84 @@ body {
 }
 
 .icon-bar {
-    width: 100%;
-    background-color: #D3D2EB;
-    display: flex;
-    justify-content: space-between;
-    margin:0px;
+  width: 100%;
+  background-color: #D3D2EB;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px;
 }
 
-.icon-bar img {
-  width:52px;
+#icon-profile {
+  width: 52px;
   height: 52px;
 }
 
 .principal-wrapper {
   display: flex;
   flex-direction: column;
-  margin-top:20px;
-  width:95%;
+  margin-top: 20px;
+  width: 95%;
+  margin-left: 50px;
 }
 
 .first-line-wrapper {
-  display:flex;
+  display: flex;
   justify-content: space-between;
+  margin-bottom: 15px;
 }
 
-#video-external {
+#video-external,
+#video-input {
   border-radius: 7px;
+
 }
 
-.trilha {
-  display:flex;
+#trilha {
+  display: flex;
   flex-direction: column;
-  width:428px;
-  height:506px;
-  background-color:#D3D2EB;
+  width: 428px;
+  background-color: #D3D2EB;
   color: #101A3F;
   border-radius: 7px;
 }
 
+
+
 #title-trilha {
   text-align: center;
+  border-bottom: 1px solid black;
+  display: inline-block;
+  font-size: 30px;
+
 }
 
 .invisible {
-  display:none;
+  display: none;
 }
 
+#video-player-title {
+  color: #D3D2EB;
+}
+
+#video-player {
+  display: flex;
+  flex-direction: column;
+}
+
+ol {
+  counter-reset: item
+}
+
+li {
+  display: block
+}
+
+li:before {
+  content: counters(item, ".") " ";
+  counter-increment: item
+}
+
+.lesson:hover {
+  cursor: pointer;
+}
 
