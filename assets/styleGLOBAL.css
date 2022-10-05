@@ -7,6 +7,7 @@
 body{
     font-family: 'Roboto Flex', sans-serif;
 }
+
 /*flex-box do nav*/
 .container-flex{
     display: flex;
@@ -16,6 +17,7 @@ body{
     align-items: center;
     padding: 5px 10px;
 }
+
 nav{
     background-color: #101a3f;
     margin-top: 0;
@@ -50,3 +52,4 @@ footer{
         font-size: 12px!important;
     }   
 }
+

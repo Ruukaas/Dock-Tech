@@ -2,17 +2,8 @@ body {
   background-color: #101A3F;
 }
 
-.icon-bar {
-  width: 100%;
-  background-color: #D3D2EB;
-  display: flex;
-  justify-content: space-between;
-  margin: 0px;
-}
-
-#icon-profile {
-  width: 52px;
-  height: 52px;
+.invisible {
+  display: none;
 }
 
 .principal-wrapper {
@@ -35,6 +26,11 @@ body {
 
 }
 
+#video-player-title {
+  color: #D3D2EB;
+}
+
+
 #trilha {
   display: flex;
   flex-direction: column;
@@ -44,29 +40,21 @@ body {
   border-radius: 7px;
 }
 
-
-
 #title-trilha {
   text-align: center;
   border-bottom: 1px solid black;
   display: inline-block;
   font-size: 30px;
-
 }
 
-.invisible {
-  display: none;
+
+
+lesson:hover {
+  cursor: pointer;
 }
 
-#video-player-title {
-  color: #D3D2EB;
-}
 
-#video-player {
-  display: flex;
-  flex-direction: column;
-}
-
+/* Display sumário com sub sumário */
 ol {
   counter-reset: item
 }
@@ -80,7 +68,4 @@ li:before {
   counter-increment: item
 }
 
-.lesson:hover {
-  cursor: pointer;
-}
 

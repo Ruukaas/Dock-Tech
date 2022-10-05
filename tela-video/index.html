@@ -7,28 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela video</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="abas.css">
     <link rel="stylesheet" href="./notepad.css">
     <link rel="stylesheet" href="comentarios.css">
     <link rel="stylesheet" href="tabs.css">
+    <link rel="stylesheet" href="nav-icon-bar.css">
     <script src="code.js" defer="defer"></script>
+    
 </head>
 
 <body>
-    <div class="icon-bar">
-        <img src="icons/icon-nav-dockTech.jfif" alt="Ícone de casa" id="icon-home">
-        <img src="icons/icons8-usuário-de-gênero-neutro-50.png" alt="Ícone de perfil" id="icon-profile">
-    </div>
-
+    
+    <nav class="icon-bar">
+        <img src="../assets/global-images/icons/icon-nav-dockTech.png" alt="Ícone do DockTech com o nome" id="icon-home">
+        <img src="../assets/global-images/icons/icons8-usuário-de-gênero-neutro-50.png" alt="Ícone de perfil" id="icon-profile">
+    </nav>
+    
     <div class="principal-wrapper">
-        <h2 id="video-player-title"></h2>
+        <h2 id="video-player-title">Bleach Thousando Bloodo Waru</h2>
         <div class="first-line-wrapper">
-            <div class="video-player">
-                <iframe id="video-external" width="1280" height="720" src="https://www.youtube.com/embed/fzR82oXbjnY"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-                <iframe id="video-input" src="" controls="true" width="1280" height="720" class="invisible"></iframe>
+            <div class="videoPlayer">
+                <div id="video-external"></div>
+                <div id="video-internal"></div>
             </div>
             <div id="trilha">
                 <!-- Trilha em inglês? -->
@@ -40,35 +39,14 @@
             <div id="container-tabs">
                 <div class="item">
                     <p>Forum do Video</p>
-                    <!-- <div id="containerComentario">
-                        <div class="itemComentario">
-                            <button id="question-generator">Faca uma pergunta</button>
-                        </div>
-                    </div>
-                    </div>
-                
-                    <ul id="unordered">
-                            
-                    </ul>
-                
-                    <script src="comentarios.js"></script> -->
+
                 </div>
                 <div class="item">
                     <p>Exercicios</p>
                 </div>
                 <div id="abaAnotacao" class="item">
                     <p>Anotacoes</p>
-                    <!-- <div id="container-notepad">
-                        <div class="item-notepad">
-                            <p>Criar uma nova anotacao em 10:32</p>
-                        </div>
-                        <div id="addButton" class="item-notepad">
-                            <i class="fa-solid fa-circle-plus"></i>
-                        </div>
-                    </div>
-                    <div id="append">
-                    </div>
-                    <script src="./notepad.js"></script> -->
+
                 </div>
                 <div class="item">
                     <p>Shell</p>
@@ -76,8 +54,10 @@
             </div>
             <div id="append"></div>
         </div>
+        <footer>
+            <div>SQUAD 18 &copy; Todos os direitos reservados - 2022</div>
+        </footer>
     </div>
-
 
 </body>
 
