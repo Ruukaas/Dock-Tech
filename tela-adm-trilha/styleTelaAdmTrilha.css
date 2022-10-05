@@ -1,0 +1,38 @@
+/******NAV******/
+.container-flex{
+    background-color: #d3d2eb;
+}
+/*Cosméticos*/
+body{
+    background-color: #101a3f;
+}
+ul{
+    list-style: none;
+    background-color: #d3d2eb;
+    padding: 10px;
+    font-size: 18px;
+    color: #101a3f;
+}
+footer{
+    color: #d3d2eb !important;
+}
+/*Flex-Box*/
+#containerTrilha{
+    max-width: 50%;
+    color:#d3d2eb;
+    margin: auto;
+    margin-top: 30px;
+}
+.itemTrilha{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+/*Botão*/
+#addButton {
+    cursor: pointer;
+}
+
+#addButton:hover {
+    color: salmon;
+}
