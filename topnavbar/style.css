@@ -1,23 +1,23 @@
 .icon-bar {
-    width: 100%;
-    background-color: #101A3F;
-    overflow: auto;
-  }
-  
-  .icon-bar a {
-    float: left; /* Links flutuantes lado a lado */
-    text-align: center; /* Texto centralizado */
-    width: 20%; /* Largura igual (ícones com 20% de largura cada) */
-    padding: 12px 0;
-    transition: all 0.3s ease; /* Adicionar transição */
-    color: white;
-    font-size: 36px;
-  }
-  
-  .icon-bar a:hover {
-    background-color: #0a1029;
-  }
-  
-  .active {
-    background-color: #043eaa; /* Adicionar uma cor para "ativa" */
-  }
+  width: 100%;
+  background-color: #101A3F;
+  overflow: auto;
+}
+
+.icon-bar a {
+  float: left; /* Links flutuantes lado a lado */
+  text-align: center; /* Texto centralizado */
+  width: 15%; /* Largura igual (ícones com 20% de largura cada) */
+  padding: 5px 0;
+  transition: all 0.3s ease; /* Adicionar transição */
+  color: white;
+  font-size: 36px;
+}
+
+.icon-bar a:hover {
+  background-color: #0a1029;
+}
+
+.active {
+  background-color: #043eaa; /* Adicionar uma cor para "ativa" */
+}
