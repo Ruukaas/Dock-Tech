@@ -13,6 +13,8 @@
 // Um atributo videoType: String
 // Um atributo link: String
 
+//TODO - Ao trocar de aba, página, clicar em um link que vai levar para outra página, chamar a função saveCurrentStats
+//TODO - Criar a função de nextVideo, criar variável currentLesson, adaptar o dynamic trilha para o arrayLessons, organizar as chamadas de salvar status, criar progresso da trilha inteira
 const trilha = {
     title: "Banco de Dados",
     residenceStage: ["Grow Up"],
@@ -20,6 +22,11 @@ const trilha = {
         {
             title: "Introdução a banco de dados",
             lessons: [
+                {
+                    lessonTitle: "dogo do fim da aula",
+                    videoType: "internal",
+                    link: "../dogo.mp4"
+                },
                 {
                     lessonTitle: "O que é Banco de Dados?",
                     videoType: "external",
@@ -50,43 +57,69 @@ const trilha = {
 }
 
 let player //Objeto do videoPlayer
-let secondsVideoPlayer
-let currentTypeVideo
+let currentSecondsVideoPlayer //O tempo salvo do video no momento
+let currentTypeVideo //O tipo do vídeo do momento
+let progressTrilha // Porcentagem da trilha que foi concluída
+let isCurrentVideoFinished //boolean que vai indicar se o vídeo do momento foi concluído
+let percentageCompletedCurrentVideo //Porcentagem do vídeo atual
+let percentageCompletedTrilha //Porcentagem da trilha
+let currentVideoPlayerTimeComplete //Temp em segundos do vídeo completo 
+let arrayLessons = [] //Array com todas as lessons que vai ser usado para passar para a próxima
+
+
+trilha.modules.forEach (valor => {
+    valor.lessons.forEach(valor => {
+        arrayLessons.push(valor)
+    })
+})
 
 //API Script
-var tag = document.createElement('script');
-
+let tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
+let firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-console.log(trilha.modules[0].lessons[0].link.slice(30) === 'Ofktsne-utM')
-
-//Modificar depois para começar no vídeo que parou
+//Primeira função a ser chamada na página
 //Função chamada quando o script da API do youtube é carregada
 function onYouTubeIframeAPIReady() {
-    player = new YT.Player('video-external', {
-        height: '720',
-        width: '1280',
-        //Primeiro vídeo da trilha
-        videoId: trilha.modules[0].lessons[0].link.slice(30),
-        events: {
-            'onStateChange': saveCurrentTimeExternal
-        }
-    })
+    let firstLessonLink = trilha.modules[0].lessons[0].link
+    let firstLessonVideoType = trilha.modules[0].lessons[0].videoType
+    let firstLessonTitle = trilha.modules[0].lessons[0].lessonTitle
 
-    currentTypeVideo = trilha.modules[0].lessons[0].videoType
-    player.getTypeVideo
-
+    reBuildIframe(firstLessonLink,firstLessonVideoType)
+    changeCurrentTypeVideo(firstLessonVideoType)
+    changeVideoTitle(firstLessonTitle)
+    
 }
 
 //DOM
+const dynamicTrilha = (trilhaJSON) => {
+    const trilhaEL = document.getElementById("trilha")
+    let summaryEL = document.createElement("ol")
+    summaryEL.classList.add("summary")
+
+    trilhaJSON.modules.forEach((valor) => {
+        let module = createModule(valor.title)
+        let subModule = createLessonsModule();
+        let contentModuleArray = valor.lessons
+
+        contentModuleArray.forEach((value) => {
+            let lesson = createLesson(value)
+            subModule.appendChild(lesson)
+        })
+
+        module.appendChild(subModule)
+        summaryEL.appendChild(module)
+    })
+
+    trilhaEL.appendChild(summaryEL)
+}
+
 const createModule = (text) => {
     let li = document.createElement("li")
     li.classList.add("module")
     li.textContent = text
     return li
-
 }
 
 //Lesson para não colocar class e confundir com o do HTML
@@ -96,108 +129,125 @@ const createLessonsModule = () => {
     return ol;
 }
 
-const changeVideoTitle = title => {
-    document.getElementById("video-player-title").textContent = title;
+const createLesson = (lesson) => {
+    let li = document.createElement("li")
+    li.classList.add("lesson")
+    li.textContent = lesson.lessonTitle
+    li.addEventListener("click", () => {
+        saveCurrentStats()
+        deletePreviousVideo()
+        changeCurrentTypeVideo(lesson.videoType)
+        reBuildIframe(lesson.link, lesson.videoType)
+        changeVideoTitle(lesson.lessonTitle)
+    })
+
+    return li;
+}
+
+const saveCurrentStats = () => {
+    switch (currentTypeVideo) {
+        case "external":
+            changeCurrentSecondsVideoPlayer(Math.ceil(player.getCurrentTime()))
+            console.log("extStas" + currentSecondsVideoPlayer)
+            
+            break
+        case "internal":
+            console.log(player.currentTime)
+            changeCurrentSecondsVideoPlayer(Math.ceil(player.currentTime))
+            console.log("intStats" + currentSecondsVideoPlayer)
+            break;
+    }
+}
+
+const deletePreviousVideo = () => {
+    switch (currentTypeVideo) {
+        case "external":
+            player.destroy()
+            break
+        case "internal":
+            player.remove()
+            break
+    }
+    player = null
 }
 
 const changeCurrentTypeVideo = (videoType) => {
     currentTypeVideo = videoType
 }
 
-const createLesson = (lesson) => {
-    let li = document.createElement("li")
-    li.classList.add("lesson")
-    li.textContent = lesson.lessonTitle
-    li.addEventListener("click", () => {
-        reBuildIframe(lesson.link, lesson.videoType)
-        changeCurrentTypeVideo(lesson.videoType)
-        changeVideoTitle(lesson.lessonTitle)
-        windowAndVideoPlayerListenerSaveCurrentTime(lesson.videoType)
-    })
-
-    return li;
-}
-
 const reBuildIframe = (link, videoType) => {
-    if(currentTypeVideo = "external") {
-        player.destroy()
-    } else if(currentTypeVideo = "internal") {
-        player.remove()
-    }
     switch (videoType) {
         case "external":
-            player = new YT.player("video-external", {
-                height: "720",
-                width: "1280",
-                videoId: link.slice(30), //A partir do 30 fica apenas o ID do link
-                events: {
-                    'onStateChange': saveCurrentTimeExternal
-                }
-            })
+            buildExternalVideo(link.slice(30)) //A partir do 30 só fica o ID do link
             break
         case "internal":
-            
-            player = document.createElement("iframe")
-            player.setAttribute("id", "video-input")
-            player.setAttribute("src", link)
-            player.setAttribute("width", 1280)
-            player.setAttribute("height", 720)
-            player.setAttribute("controls", "true")
-            document.getElementById("video-internal").appendChild(player)
-
-
+            buildInternalVideo(link)
+            break
     }
+}
 
+const changeVideoTitle = title => {
+    document.getElementById("video-player-title").textContent = title;
 }
 
 
-const dynamicTrilha = (trilhaJSON) => {
-    const trilhaEL = document.getElementById("trilha")
-    let summaryEL = document.createElement("ol")
-    summaryEL.classList.add("summary")
-
-    console.log(trilhaJSON.modules)
-    trilhaJSON.modules.forEach((valor) => {
-        let module = createModule(valor.title)
-        let subModule = createLessonsModule();
-        let contentModuleArray = valor.lessons
-
-        contentModuleArray.forEach((value) => {
-
-            let lesson = createLesson(value)
-            subModule.appendChild(lesson)
-
-        })
-        module.appendChild(subModule)
-
-        summaryEL.appendChild(module)
+const buildExternalVideo = videoID => {
+    player = new YT.Player('video-external', {
+        height: '720',
+        width: '1280',
+        //Primeiro vídeo da trilha
+        videoId: videoID,
+        events: {
+            'onReady': onPlayerReady,
+            'onStateChange': saveCurrentStats
+        }
     })
-
-    trilhaEL.appendChild(summaryEL)
 }
-let videoExternalEL = document.getElementById("video-external")
-let videoInputEL = document.getElementById("video-input")
 
-const changeCurrentVideo = lesson => {
-    switch (lesson.videoType) {
-        case "external":
-            if (videoExternalEL.classList.contains("invisible")) {
-                videoInputEL.classList.add("invisible")
-                videoExternalEL.classList.remove("invisible")
-            }
-            break
-        case "internal":
-            if (videoInputEL.classList.contains("invisible")) {
-                videoExternalEL.classList.add("invisible")
-                videoInputEL.classList.remove("invisible")
-                reBuildIframe(lesson.link, lesson.videoType)
-            }
-            break
+const onPlayerReady = () => {
+    player.playVideo()
+}
+
+const onPlayerStateChange = () => {
+    saveCurrentStats()
+    if(player.data == YT.PlayerState.ENDED) {
+        changePercentageCurrentVideo()
+        nextVideo()
     }
+    if(player.data == YT.PlayerState.PLAYING) {
+        changecurrentVideoPlayerTimeComplete()
+        changePercentageCurrentVideo()
+    }
+}
 
-    changeVideoTitle(lesson.lessonTitle)
+const nextVideo = () => {
+
+}
 
 
+const buildInternalVideo = link => {
+    player = document.createElement("video")
+    player.setAttribute("src", link)
+    player.setAttribute("width", 1280)
+    player.setAttribute("height", 720)
+    player.setAttribute("controls", "true")
+    player.setAttribute("autoplay","autoplay")
+
+    player.addEventListener("play", () => {
+        saveCurrentStats()
+        changecurrentVideoPlayerTimeComplete()
+        changePercentageCurrentVideo()
+     })
+    player.addEventListener("pause", saveCurrentStats )
+    player.addEventListener("ended", () => {
+        currentSecondsVideoPlayer = currentVideoPlayerTimeComplete
+        changePercentageCurrentVideo()
+        nextVideo()
+    } )
+    
+    document.getElementById("video-internal").appendChild(player)
+
+    
 }
 
 // const isExternal = lesson => {
@@ -212,29 +262,38 @@ const changeCurrentVideo = lesson => {
 //     } else return false;
 // }
 
-
 dynamicTrilha(trilha)
 
-const saveCurrentTimeExternal = () => {
-    secondsVideoPlayer = player.getCurrentTime()
-    console.log("ext" + secondsVideoPlayer)
+window.addEventListener("beforeunload", saveCurrentStats)
+
+//Progress bar
+
+//percent/100 * all = part | percent = part *100/all ?
+const percentageCalc = (part = currentSecondsVideoPlayer, all = currentVideoPlayerTimeComplete) => {
+    let percent = ((part * 100)/all).toFixed(2)
+    return percent
 }
 
-const saveCurrentTimeInternal = () => {
-    secondsVideoPlayer = player.currentTime
-    console.log("int" + secondsVideoPlayer)
+const changePercentageCurrentVideo = () => {
+    percentageCompletedCurrentVideo = percentageCalc()
+    console.log("pct|" + percentageCompletedCurrentVideo )
 }
 
-const windowAndVideoPlayerListenerSaveCurrentTime = (videoType) => {
-    switch (videoType) {
+const changeCurrentSecondsVideoPlayer = sec => {
+    currentSecondsVideoPlayer = sec
+}
+
+const changecurrentVideoPlayerTimeComplete = () => {
+    switch(currentTypeVideo) {
         case "external":
-            window.removeEventListener("beforeunload", saveCurrentTimeInternal)
-            window.addEventListener("beforeunload", saveCurrentTimeExternal)
-            
-            break
+            currentVideoPlayerTimeComplete = player.getDuration()
+            console.log("extComplete|" + currentVideoPlayerTimeComplete)
+            break;
         case "internal":
-            window.removeEventListener("beforeunload", saveCurrentTimeExternal)
-            window.addEventListener("beforeunload", saveCurrentTimeInternal)
-            break
+            currentVideoPlayerTimeComplete = player.duration
+            console.log("intComplete|" +  currentVideoPlayerTimeComplete)
+            break;
     }
 }
+
+
