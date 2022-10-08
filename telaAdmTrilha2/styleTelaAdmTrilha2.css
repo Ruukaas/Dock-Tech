@@ -1,0 +1,47 @@
+.containerTrilha{
+	margin: 0 auto;
+	display: flex;
+}
+
+.itemTrilha {
+        flex: 1;
+        margin: 5px;
+        font-size: 1.5em;
+    }
+
+.itemLista {
+    color: #101a3f;
+    padding: 10px;
+    border-bottom: solid 2px black;
+}
+
+
+
+body{
+        background-color: #101a3f;
+    }
+h1{
+    text-decoration: underline;
+    font-size:larger;
+}
+
+.letraCinza {
+    color: #d3d2eb;
+}
+
+#listaFases{
+    width: 1800px;
+    height: 180px;
+    margin: 20px;
+    background-color:  #d3d2eb;
+}
+
+#textInput{
+    margin: 20px;
+    width: 500px;
+}
+
+.iconDiv{
+    float: right;
+    width: 1200px;
+}
