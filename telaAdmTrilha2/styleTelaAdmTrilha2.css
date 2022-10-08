@@ -25,10 +25,6 @@ h1{
     font-size:larger;
 }
 
-.letraCinza {
-    color: #d3d2eb;
-}
-
 #listaFases{
     width: 1800px;
     height: 180px;
@@ -39,9 +35,15 @@ h1{
 #textInput{
     margin: 20px;
     width: 500px;
+    color: #101a3f;
 }
 
 .iconDiv{
     float: right;
-    width: 1200px;
+    width: 1250px;
 }
+
+#nextButton{
+    cursor: pointer;
+}
+

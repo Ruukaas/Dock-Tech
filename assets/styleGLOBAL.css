@@ -65,3 +65,15 @@ footer{
 .column-reverse {
 	flex-direction: column-reverse;
 }
+
+/*mouse*/
+
+.mousePointer {
+    cursor: pointer;
+}
+
+/*fontes*/
+
+.fonteCinza {
+    color: #d3d2eb;
+}
