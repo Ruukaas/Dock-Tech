@@ -68,4 +68,19 @@ li:before {
   counter-increment: item
 }
 
+.lesson {
+  display:flex;
+  justify-content: space-between;
+  margin-right: 10px;
+  
+}
+
+.module {
+  font-size: 23px;
+
+}
+
+.lesson {
+  font-size: 20px;
+}
 

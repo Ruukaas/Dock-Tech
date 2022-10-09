@@ -1,11 +1,10 @@
 /*Fontes*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,500&display=swap');
-*{
-    padding: 0;
-    margin: 0;
-}
+
 body{
     font-family: 'Roboto Flex', sans-serif;
+    padding: 0;
+    margin: 0;
 }
 
 /*flex-box do nav*/
@@ -38,7 +37,7 @@ a:hover{
 }
 /*Footer*/
 footer{
-    color: #101a3f;
+    color: #ffffff;
     bottom: 0;
     left:0;
     width: 100%;
