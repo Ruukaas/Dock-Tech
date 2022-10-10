@@ -61,7 +61,6 @@ footer{
     width: 400px;
     height: 100px;
     position: absolute;
-    /* new */
     left: 50%;
     transform: translateX(-50%);
   }
@@ -71,7 +70,6 @@ footer{
     width: 100px;
     height: 100px;
     margin-left: auto;
-    /* new */
   }
 
 .modal {
@@ -90,11 +88,11 @@ footer{
   /* Modal Content/Box */
   .modal-content {
     background-color: #101a3f;;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 10% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 50%;
-    height: 25%; /* Could be more or less, depending on screen size */
+    width: 35%;
+    height: 30%; /* Could be more or less, depending on screen size */
   }
   
   /* The Close Button */
@@ -122,8 +120,7 @@ footer{
 }
 
 .modalDelete:hover{
-    background-color:red;
+    background-color: #FF6347
 }
   
-
   
