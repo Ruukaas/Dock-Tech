@@ -4,13 +4,18 @@ add.addEventListener("click", next);
 function next(){
   window.location.href = "../telaAdmTrilha2/telaAdmTrilha2.html";
 }
+
+const body = document.getElementsByTagName("body");
 // Get the modal
 const modal = document.getElementById("myModal");
-console.log("teste");
+
 // Get the button that opens the modal
 const deleteButton = document.getElementById("deleteButton");
 
 const confirmDelete = document.getElementById("modalDelete");
+
+let liSelecionada;
+
 
 const cancelDelete = document.getElementById("modalCancel");
 
@@ -20,7 +25,7 @@ const span = document.getElementById("close");
 // When the user clicks on the button, open the modal
 deleteButton.onclick = function() {
   modal.style.display = "flex";
-  console.log("teste2");
+  liSelecionada.style.display = "none";
 }
 
 // When the user clicks on <span> (x), close the modal
@@ -30,6 +35,9 @@ span.onclick = function() {
 
 document.getElementById("modalDelete").onclick = function() {
   modal.style.display = "none";
+  liSelecionada = deleteButton.parentNode.getElementsByClassName(".itemTrilha");
+  console.log(liSelecionada);
+  liSelecionada.parentNode.removeChild(liSelecionada);
 }
 
 document.getElementById("modalCancel").onclick = function() {
