@@ -1,8 +1,5 @@
 document.getElementsByClassName("fa-solid fa-circle-arrow-right fa-3x")[0].addEventListener("click", () => {
-    let title = getTitleTrilha()
-    let residenceStage = getResidenceStage()
-    currentTrilha = new trilha(title, residenceStage)
-    console.log(currentTrilha)
+    currentTrilha = createTrilha();
 })
 
 let currentTrilha
@@ -29,6 +26,12 @@ const getResidenceStage = (checkBoxArrayEl = selectMarkedCheckbox()) => {
 const getTitleTrilha = () => {
     let input = document.getElementById("textInput")
     return input.value
+}
+
+const createTrilha = (trilhaTitle = getTitleTrilha(), trilhaStages = getResidenceStage(selectMarkedCheckbox())) =>{
+    let currentTrilha = new trilha(trilhaTitle,trilhaStages);
+    return currentTrilha;
+
 }
 
 class trilha {

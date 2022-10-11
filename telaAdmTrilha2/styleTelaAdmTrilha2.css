@@ -15,8 +15,6 @@
     border-bottom: solid 2px black;
 }
 
-
-
 body{
         background-color: #101a3f;
     }
@@ -27,12 +25,17 @@ h1{
 
 #listaFases{
     width: 1800px;
-    height: 180px;
-    margin: 20px;
+    height: 210px;
+    margin: 30px;
     background-color:  #d3d2eb;
 }
 
+#secaoTitulo{
+     margin-top: 60px;
+}
+
 #textInput{
+    margin-top: 20px;
     margin: 20px;
     width: 500px;
     color: #101a3f;

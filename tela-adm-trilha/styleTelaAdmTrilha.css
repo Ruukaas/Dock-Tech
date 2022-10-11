@@ -11,20 +11,22 @@
 body{
     background-color: #101a3f;
 }
-ul{
+
+#lista-de-trilhas{
     list-style: none;
     background-color: #d3d2eb;
     padding: 10px;
     font-size: 18px;
     color: #101a3f;
 }
+
 footer{
     color: #d3d2eb !important;
 }
 /*Flex-Box*/
 #containerTrilha{
+    color: #d3d2eb;
     max-width: 50%;
-    color:#d3d2eb;
     margin: auto;
     margin-top: 30px;
 }
@@ -32,6 +34,7 @@ footer{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 5px;
 }
 /*Botão*/
 #addButton {
@@ -109,7 +112,7 @@ footer{
   #modalDelete, #modalCancel{
     background-color: #d3d2eb;
     color: #101a3f;
-    padding: 10px;
+    padding: 15px;
     cursor: pointer;
     border-radius: 5px;
     margin-top: 15px;
