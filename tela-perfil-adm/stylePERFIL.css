@@ -1,0 +1,275 @@
+.green-logo {
+  color: #147e17
+}
+
+.blue-logo {
+  color: #101A3F;
+}
+
+/* Parte principal do perfil */
+.profile-container {
+  display: flex;
+  resize: both;
+  background-color: white;
+  margin: auto;
+  margin-top: 25px;
+  width: 80vw;
+  height: 85vh;
+  border-radius: 7px;
+
+  min-width: 320px;
+  max-width: 1320px;
+}
+
+.profile-content {
+  display: flex;
+  resize: both;
+  background-color: #101A3F;
+  position: relative;
+  margin: 25px;
+  width: 170px;
+  height: 280px;
+  border-radius: 7px;
+  margin-right: auto;
+  margin-bottom: auto;
+
+}
+
+.profile-options {
+  display: flex;
+  background-color: #D3D2EB;
+  color: #101A3F;
+  font-weight: 400;
+  align-items: center;
+  resize: both;
+  position: relative;
+  height: 100px;
+  width: 150px;
+  top: 80%;
+  left: 50%;
+  border-radius: 7px;
+  transform: translate(-50%, -50%);
+  margin-right: auto;
+  margin-bottom: auto;
+}
+
+.options-config {
+  display: flex;
+  color: #101A3F;
+  position: absolute;
+  top: 30%;
+  left: 15%;
+  cursor: pointer;
+
+}
+
+.options-exit {
+  display: flex;
+  color: #101A3F;
+  position: absolute;
+  font-size: small;
+  top: 50%;
+  left: 40%;
+  right: 40%;
+  cursor: pointer;
+
+}
+
+
+.profile-name {
+  display: flex;
+  color: white;
+  font-weight: 400;
+  position: absolute;
+  top: 45%;
+  left: 20%;
+
+}
+
+.profile-status {
+  display: flex;
+  color: white;
+  position: absolute;
+  font-size: small;
+  top: 53%;
+  left: 35%;
+  right: 40%;
+
+}
+
+#profile-image {
+  display: flex;
+  resize: both;
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  left: 20%;
+  margin-top: 10px;
+  max-height: 250px;
+  max-width: 250px;
+  background-size: cover;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Abas dos squads, usuários, etc.*/
+
+.sub-container {
+  position: relative;
+  margin-right: 30px;
+  margin-top: 15px;
+  min-width: 320px;
+  max-width: 1320px;
+}
+
+.open-button {
+  background-color: #D3D2EB;
+  color: #101A3F;
+  position: relative;
+  margin-top: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  height: 55px;
+  border: none;
+  border-radius: 7px;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+}
+
+.active,
+.content {
+  border-radius: 0px !important;
+}
+
+.active,
+.open-button:hover {
+  background-color: #101A3F;
+  text-decoration: underline;
+  color: #fff;
+}
+
+.open-button:after {
+  color: #555;
+  width: 100px;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  width: 120vh;
+  border-radius: 7px;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #101A3F;
+}
+
+#divSquads {
+  background-color: #D3D2EB;
+  margin-bottom: 10px;
+  border-radius: 7px;
+  min-width: 620px;
+  max-width: 1320px;
+}
+
+#divUsuarios {
+  background-color: #D3D2EB;
+  margin-bottom: 10px;
+  border-radius: 7px;
+  min-width: 620px;
+  max-width: 1320px;
+}
+
+#divEmpresas {
+  background-color: #D3D2EB;
+  margin-bottom: 10px;
+  border-radius: 7px;
+  min-width: 620px;
+  max-width: 1320px;
+}
+
+#divTrilhas {
+  background-color: #D3D2EB;
+  margin-bottom: 10px;
+  border-radius: 7px;
+  min-width: 620px;
+  max-width: 1320px;
+}
+
+#divNotific {
+  background-color: #D3D2EB;
+  margin-bottom: 10px;
+  border-radius: 7px;
+  min-width: 620px;
+  max-width: 1320px;
+}
+
+
+.edit-squads {
+  background-color: #D3D2EB;
+  position: relative;
+  color: #101A3F;
+  font-weight: 600;
+  border: 0;
+  width: 300px;
+  height: 20px;
+  bottom: 5px;
+  border-radius: 3px;
+  margin-left: 500px;
+  cursor: pointer;
+}
+
+/* Scrollbar */
+
+div::-webkit-scrollbar {
+  width: 10px;
+}
+
+div::-webkit-scrollbar-track {
+  background: #D3D2EB;
+  border-radius: 7px;
+}
+
+div::-webkit-scrollbar-thumb {
+  background: #101A3F;
+  border-radius: 7px;
+}
+
+div::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* coloração e ajustes */
+.squads {
+  padding-left: 15px;
+  color: #101A3F;
+  font-weight: 600;
+}
+
+.kickoff {
+  color: #70D66A;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.riseup {
+  color: #EC6B26;
+  font-weight: 600;
+}
+
+.growup {
+  color: #328B38;
+  font-weight: 600;
+}
+
+.date {
+  padding-left: 30px;
+  font-size: 16px;
+  font-weight: 0;
+  color: black;
+}

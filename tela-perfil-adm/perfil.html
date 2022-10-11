@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Perfil</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/styleGLOBAL.css">
+    <link rel="stylesheet" href="stylePERFIL.css">
+    <link rel="icon" type="image/png" href="../assets/global-images/icone.png" />
+    <script src="js/divs.js" defer></script>
+    <script src="js/modalContent.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="item-nav">
+                <img src="../assets/global-images/logo.png" class="logo"><a class="text-logo"><span class="blue-logo">Dock</span><span
+                        class="green-logo">Tech</span></a>
+                <div class="nav-wrapper">
+                    <img src="../assets/global-images/notification.png" class="notification">
+                    <img src="../assets/global-images/user.png" class="user">
+                </div> 
+            </div>
+            <div class="asset-nav">
+
+            </div>
+        </nav>
+    </header>
+
+    <main class="profile-container">
+        <div class="profile-content">
+            <div class="profile-image">
+                <img id="profile-image" src="./page-images/adm.png" alt="Avatar">
+            </div>
+            <div class="profile-name">
+                <p>Jailma Santos</p>
+            </div>
+            <div class="profile-status">
+                <p>Admin</p>
+            </div>
+            <div class="profile-options">
+                <div class="options-config">
+                    <p>Configurações</p>
+                </div>
+                <div class="options-exit">
+                    <p>Sair</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="sub-container">
+            <button type="button" class="open-button">Squads</button>
+            <div class="content">
+                <div id="divSquads" style="overflow-y: scroll; height:200px;"></div>
+                <button type="button" class="edit-squads">Criar ou editar membros do squad</button>
+            </div>
+            <button type="button" class="open-button">Usuários</button>
+            <div class="content">
+                <div id="divUsuarios" style="overflow-y: scroll; height:200px;">
+                </div>
+            </div>
+            <button type="button" class="open-button">Instituições/Empresas</button>
+            <div class="content">
+                <div id="divEmpresas" style="overflow-y: scroll; height:200px;">
+                </div>
+            </div>
+            <button type="button" class="open-button">Trilhas</button>
+            <div class="content">
+                <div id="divTrilhas" style="overflow-y: scroll; height:200px;">
+                </div>
+            </div>
+            <button type="button" class="open-button">Notificações</button>
+            <div class="content">
+                <div id="divNotific" style="overflow-y: scroll; height:200px;">
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div><span style="font-weight: 600;">SQUAD 18</span> &copy; Todos os direitos reservados - 2022</div>
+    </footer>
+</body>
+
+</html>
