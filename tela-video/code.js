@@ -23,11 +23,6 @@ const trilha = {
             title: "Introdução a banco de dados",
             lessons: [
                 {
-                    lessonTitle: "dogo do fim da aula",
-                    videoType: "internal",
-                    link: "../dogo.mp4"
-                },
-                {
                     lessonTitle: "O que é Banco de Dados?",
                     videoType: "external",
                     link: "https://www.youtube.com/embed/Ofktsne-utM"
@@ -51,6 +46,25 @@ const trilha = {
                     lessonTitle: "dogo do fim da aula",
                     videoType: "internal",
                     link: "../dogo.mp4"
+                }
+            ]
+        }, {
+            title:"Trailers",
+            lessons: [
+                {
+                    lessonTitle: "Oficial Trailer 1 - Bleach",
+                    videoType:"external",
+                    link: "https://www.youtube.com/embed/1sygUhb8Q2Y"
+                }, 
+                {
+                    lessonTitle: "Oficial Trailer 2 - Bleach",
+                    videoType:"external",
+                    link: "https://www.youtube.com/embed/fzR82oXbjnY"
+                },
+                {
+                    lessonTitle:"Oficial Trailer 3 - Bleach",
+                    videoType:"external",
+                    link: "https://www.youtube.com/embed/78WIYzX_m98"
                 }
             ]
         }]
