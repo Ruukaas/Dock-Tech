@@ -23,11 +23,6 @@ const trilha = {
             title: "Introdução a banco de dados",
             lessons: [
                 {
-                    lessonTitle: "dogo do fim da aula",
-                    videoType: "internal",
-                    link: "../dogo.mp4"
-                },
-                {
                     lessonTitle: "O que é Banco de Dados?",
                     videoType: "external",
                     link: "https://www.youtube.com/embed/Ofktsne-utM"
