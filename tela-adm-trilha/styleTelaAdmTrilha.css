@@ -85,31 +85,40 @@ footer{
     border-radius: 3px;
     flex-direction: column;
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  .itemFlex{
+    z-index: 10;
+}
+#fade{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 5;
+  display: none;
+}
+ 
+.itemFlex{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     margin-top: 20px;
-  }
+    z-index: 11;
+}
 
   
-  /* The Close Button */
+/* The Close Button */
   
-  .close:hover,
-  .close:focus {
-  
-    cursor: pointer;
-  }
+#close:hover, #close:focus {
+      cursor: pointer;
+}
 
   /* Botoes Modal 
 
 
 */
-  #modalDelete, #modalCancel{
+#modalDelete, #modalCancel{
     background-color: #d3d2eb;
     color: #101a3f;
     padding: 15px;
@@ -117,11 +126,12 @@ footer{
     border-radius: 5px;
     margin-top: 15px;
     font-weight: 700;
-  }
-  #modalDelete:hover{
+    z-index: 11;
+}
+#modalDelete:hover{
     background-color: salmon;
-  }
-  #modalCancel:hover{
+}
+#modalCancel:hover{
     background-color: salmon;
-  }
+}
   
