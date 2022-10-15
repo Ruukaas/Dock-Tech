@@ -154,6 +154,9 @@ footer{
   h2{
     text-align: center;
   }
+  #close{
+    display: none;
+  }
 }
 @media (max-width:500px){
   #containerTrilha{
