@@ -134,4 +134,31 @@ footer{
 #modalCancel:hover{
     background-color: salmon;
 }
-  
+@media (max-width:1000px){
+  h2{
+    font-size: 16px;
+  }
+}
+@media(max-width:750px){
+  .itemFlex{
+    flex-wrap: wrap-reverse;
+  }
+  #myModal{
+    padding: 5px;
+  }
+}
+@media (max-width:600px){
+  #modalDelete, #modalCancel{
+    font-size: 12px;
+  }
+  h2{
+    text-align: center;
+  }
+}
+@media (max-width:500px){
+  #containerTrilha{
+    min-width: 250px !important;
+    max-width: 250px;
+    width: 250px;
+  }
+}
