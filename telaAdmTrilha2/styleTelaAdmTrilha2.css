@@ -1,8 +1,31 @@
-.containerTrilha{
-	margin: 0 auto;
-	display: flex;
+*{
+    padding: 0;
+    margin: 0;
 }
-
+/*flex-box*/
+#principal-wrapper{
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    margin: 25px auto;
+}
+.containerTrilha{
+	display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 100%;
+}
+/**/
+ul{
+    list-style: none;
+    padding-left: 0;
+}
+#listaFases{
+    max-width: 100%;
+    height: 200px;    
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
 .itemTrilha {
         flex: 1;
         margin: 5px;
@@ -12,7 +35,8 @@
 .itemLista {
     color: #101a3f;
     padding: 10px;
-    border-bottom: solid 2px black;
+    margin-bottom: 5px;
+    background-color:  #d3d2eb;
 }
 
 body{
@@ -23,12 +47,7 @@ h1{
     font-size:larger;
 }
 
-#listaFases{
-    width: 1800px;
-    height: 210px;
-    margin: 30px;
-    background-color:  #d3d2eb;
-}
+
 
 #secaoTitulo{
      margin-top: 60px;
