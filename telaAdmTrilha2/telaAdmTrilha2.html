@@ -27,43 +27,43 @@
         </nav>
     </header>
     <div id="principal-wrapper">
-        <div class="itemTrilha fonteCinza">
+        <div class="containerTrilha">
             <h1>Trilhas</h1>
         </div>
 
-        <div id="secao1" class="containerTrilha row fonteCinza">
-            <h2 class="itemTrilha">Selecione a(s) fases da residencia</h2>
+        <div id="secao1" class="containerTrilha">
+            <h2 class="itemTrilha">Selecione a(s) fase(s) da residência</h2>
             <p class="itemTrilha"> Passo 1</p>
         </div>
 
-        <ul id="listaFases">
+        <ul id="listaFases" class="containerTrilha">
             <li>
-                <div class="containerTrilha row itemLista">
-                    <p class="itemTrilha">Kick Off</p>
-                    <input class="itemTrilha mousePointer ainn" type="checkbox" name="KickOff">
+                <div class="itemLista">
+                    <input class="mousePointer" type="checkbox" name="KickOff">
+                    <label for="KickOff">Kick Off</label>                    
                 </div>
             </li>
             <li>
-                <div class="containerTrilha row itemLista">
-                    <p class="itemTrilha">Rise Up</p>
-                    <input class="itemTrilha mousePointer" type="checkbox" name="KickOff">
+                <div class="itemLista">
+                    <input class="mousePointer" type="checkbox" name="RiseUp">
+                    <label for="RiseUp" >Rise Up</label>                    
                 </div>
             </li>
             <li>
-                <div class="containerTrilha row itemLista">
-                    <p class="itemTrilha">Grow Up</p>
-                    <input class="itemTrilha mousePointer" type="checkbox" name="KickOff">
+                <div class="itemLista">
+                    <input class="mousePointer" type="checkbox" name="GrowUp">
+                    <label for="GrowUp">Grow Up</label>
                 </div>
             </li>
         </ul>
-        <div id="secao2" class="containerTrilha row fonteCinza">
-            <h2 class="itemTrilha">Insira um nome para a trilha</h2>
+        <div id="secao2" class="containerTrilha">
+            <h2 class="itemTrilha">Dê um nome para a sua trilha</h2>
             <p class="itemTrilha">Passo 2</p>
         </div>
-        <div class="containerTrilha row fonteCinza">
-            <div class="containerTrilha row fonteCinza">
-                <input class="mousePointer" id="textInput" type="text">
-            </div>
+        <div class="containerTrilha">
+            
+                <input class="mousePointer" id="textInput" type="text" placeholder="ex: Aprendendo a programar com JavaScript">
+            
         </div>
         <div class="containerTrilha row fonteCinza iconDiv mousePointer flex-end">
             <i id="nextButton" class="fa-solid fa-circle-arrow-right fa-3x"></i>
