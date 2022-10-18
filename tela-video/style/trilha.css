@@ -1,0 +1,52 @@
+#trilha {
+    display: flex;
+    flex-direction: column;
+    width: 428px;
+    background-color: #D3D2EB;
+    color: #101A3F;
+    border-radius: 7px;
+}
+
+#title-trilha {
+    text-align: center;
+    border-bottom: 1px solid black;
+    display: inline-block;
+    font-size: 30px;
+}
+
+.lesson {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10px;
+    font-size: 20px;
+
+}
+
+
+lesson:hover {
+    cursor: pointer;
+}
+
+
+/* Display sumário com sub sumário */
+ol {
+    counter-reset: item;
+}
+
+li {
+    display: block;
+
+}
+
+li:before {
+    content: counters(item, ".") " ";
+    counter-increment: item;
+}
+
+.module {
+    font-size: 23px;
+}
+
+.lesson {
+    font-size: 18px;
+}

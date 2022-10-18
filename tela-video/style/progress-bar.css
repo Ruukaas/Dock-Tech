@@ -1,0 +1,12 @@
+#progress-bar {
+    width:428px;
+    color:black;
+    border:1px solid white;
+  }
+
+  
+  #text-progress {
+    padding: 4px;
+    color:white;
+    display:flex;
+  }
