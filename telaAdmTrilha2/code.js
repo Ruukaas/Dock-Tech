@@ -241,8 +241,6 @@ class modulo {
     }
 }
 
-
-
 class lesson {
     constructor(lessonTitle, videoType, link) {
         this.lessonTitle = lessonTitle
