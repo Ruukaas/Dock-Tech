@@ -7,3 +7,6 @@
 #video-player-title {
   color: #D3D2EB;
 }
+video{
+  width: 100%;
+}

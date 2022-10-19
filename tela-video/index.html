@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -17,17 +17,18 @@
     <script type="module"  src="./js/tabs.js" defer="defer"></script>
 </head>
 <body>
-    <nav class="icon-bar">
-        <img src="../assets/global-images/icons/icon-nav-dockTech.png" alt="Ícone do DockTech com o nome" id="icon-home">
-        <img src="../assets/global-images/icons/icons8-usuário-de-gênero-neutro-50.png" alt="Ícone de perfil" id="icon-profile">
+    <nav>
+        <img src="../assets/global-images/icons/icon-nav-dockTech.png" alt="Ícone do DockTech com o nome" class="item-flex">
     </nav>
     
     <div class="principal-wrapper">
         <h2 id="video-player-title"></h2>
         <div class="first-line-wrapper">
             <div class="videoPlayer">
-                <div id="video-external"></div>
-                <div id="video-internal"></div>
+                <!-- <div id="video-external"></div> -->
+                <video id="video-external"></video>
+                <!-- <div id="video-internal"></div> -->
+                <video id="video-internal"></video>
             </div>
             <div id="trilha">
                 <!-- Trilha em inglês? -->
@@ -38,13 +39,13 @@
         <div class="second-line-wrapper">
             <div id="container-tabs">
                 <div class="item" id="comments">
-                    <p>Forum do Video</p>
+                    <p>Fórum do Vídeo</p>
                 </div>
                 <div class="item" id="exercises">
-                    <p>Exercicios</p>
+                    <p>Exercícios</p>
                 </div>
                 <div class="item" id="notes">
-                    <p>Anotacoes</p>
+                    <p>Anotações</p>
 
                 </div>
                 <div class="item" id="shell">

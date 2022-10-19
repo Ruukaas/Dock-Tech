@@ -1,29 +1,33 @@
 #trilha {
     display: flex;
     flex-direction: column;
-    width: 428px;
     background-color: #D3D2EB;
     color: #101A3F;
     border-radius: 7px;
 }
-
+#trilha{
+    max-width: 30%;
+    min-width: 300px;
+    
+    margin-left: 10px;
+  }
 #title-trilha {
     text-align: center;
     border-bottom: 1px solid black;
     display: inline-block;
-    font-size: 30px;
+    font-size: 1.8rem;
 }
 
 .lesson {
     display: flex;
     justify-content: space-between;
     margin-right: 10px;
-    font-size: 20px;
+    font-size: 1.3rem;
 
 }
 
 
-lesson:hover {
+.lesson:hover {
     cursor: pointer;
 }
 
@@ -44,14 +48,32 @@ li:before {
 }
 
 .module {
-    font-size: 25px;
+    font-size: 1.5rem;
 }
 
 .lesson li {
-    font-size: 20px;
+    font-size: 1.3rem;
     max-width: 312px;
 }
 
 input[type=checkbox] {
     max-height:18px;
+}
+
+@media (max-width:1000px){
+    .first-line-wrapper{
+        flex-direction: column;
+    }    
+    #trilha{
+        max-width: 100%;
+    }
+    body{
+        font-size: 12px;
+    }
+    .second-line-wrapper{
+        flex-direction: column-reverse;
+        margin-top: 15px;
+        justify-content: center;
+        align-items: center;
+    }
 }

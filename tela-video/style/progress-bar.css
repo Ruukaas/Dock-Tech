@@ -1,7 +1,9 @@
 #progress-bar {
-    width:428px;
+    max-width:30%;
+    min-width: 200px;
     color:black;
     border:1px solid white;
+    margin-bottom: 15px;
   }
 
   

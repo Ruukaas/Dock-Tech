@@ -1,5 +1,6 @@
 body {
   background-color: #101A3F;
+  font-size: 16px;
 }
 
 .invisible {
@@ -10,14 +11,15 @@ body {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
-  width: 95%;
-  margin-left: 50px;
+  width: 80%;
+  margin:auto;
 }
 
 .first-line-wrapper {
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
+  align-items: center;
 }
 
 .second-line-wrapper {
@@ -25,3 +27,6 @@ body {
   justify-content: space-between;
 }
 
+nav{
+  background-color: #D3D2EB !important;
+}

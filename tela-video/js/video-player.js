@@ -31,12 +31,37 @@ export const deletePreviousVideo = () => {
 export const changeVideoTitle = title => {
     document.getElementById("video-player-title").textContent = title;
 }
+// //verificar tamanho da tela e redimensiona o vídeo
+// var altura1;
+// window.addEventListener('resize', function () {
+//     var largura = window.innerWidth;
+
+//     if (largura >=2180){
+//         altura1 = '1280px';
+//     }else if(largura>=1600){
+//         altura1 = '896px';
+//     }else if(largura>=1000){
+//         altura1 = '560px';
+//     }else if(largura>=720){
+//         altura1 = '400px';
+//     }else {
+//         altura1 = '300px';
+//     }
+        
+//  });
+
+
+
+
+
+
+
 
 //External
 export const buildExternalVideo = videoID => {
     player = new YT.Player('video-external', {
-        height: '720',
-        width: '1280',
+        //height: '720px',
+        //width: '1280px',
         //Primeiro vídeo da trilha
         videoId: videoID,
         events: {
