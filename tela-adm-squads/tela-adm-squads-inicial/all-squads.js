@@ -1,5 +1,5 @@
 //Arquivo simulando a lista de trilhas cadastradas no sistema
-export let allTrilhas = [
+export let allSquads = [
     {
         title: "Squad 1 - Rise Up!"
     },

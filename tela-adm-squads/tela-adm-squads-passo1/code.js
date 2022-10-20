@@ -1,9 +1,9 @@
 //Dynamic List
-import {setContainerEl, dynamicList} from "./list-squads.js"
-import {allTrilhas} from "./all-squads.js"
+import {setContainerEl, dynamicList} from "./list-alunos.js"
+import {allAlunos} from "./all-alunos.js"
 
 setContainerEl("containerTrilha")
-dynamicList(allTrilhas,"Trilhas","fonteCinza","lista-de-trilhas","itemTrilha")
+dynamicList(allAlunos,"Squads","title","checkbox-style","next-button-style","lista-de-trilhas","itemTrilha")
 
 
 //botton add going to telaTrilha2

@@ -37,39 +37,51 @@ const createImage = (src, alt, ...classes) => {
     return imgEl
 }
 
+const createCheckBox = (...classes) => {
+    let checkBoxEl = document.createElement("input")
+    checkBoxEl.setAttribute("type", "checkbox");
+    checkBoxEl.classList.add(...classes)
+    return checkBoxEl
+}
+
 //Primeiro argumento : Arquivo com os elementos que estarão na lista - Array
 //Segundo argumento: Título da Lista - String
 //Terceiro argumento - Classe(Apenas uma) que será adicionada no elemento do título da lista - String
-//Quarto argumento - ID do elemento que será criado dinamicamente para que os itens da lista sejam acrescentados nele - String
-//Quinto argumento em diante - Classe ou classes que serão adicionadas em CADA item da lista
+//Quarto argumento - Classe que sera adicionada ao checkbox das listagem de alunos
+//Quinto argumento - ID do elemento que será criado dinamicamente para que os itens da lista sejam acrescentados nele - String
+//Sexto argumento em diante - Classe ou classes que serão adicionadas em CADA item da lista
 //Olhar exemplo de uso no code.js da tela-adm-trilha
-export const dynamicList = (file, title, titleClasse, idContainerList, ...itemListClasses) => {
+export const dynamicList = (file, title, titleClasse, checkboxClasse,nextButtonStyle,idContainerList, ...itemListClasses) => {
     let titleEl = createTitle(title,titleClasse)
     let listContainerEl = createDivWithID(idContainerList)
 
-    let addButtonEl = createImage("../assets/global-images/add-light.png","Botão com o sinal de mais")
-    addButtonEl.setAttribute("id", "addButton")
+    let containerP = createDivWithClasses("container-p")
+
+    let pElement1 = createParagraph("Selecione os alunos que farao parte da residencia")
+    let pElement2 = createParagraph("Passo 1 de 3")
+
+    let nextButtonEl = createImage("../assets/global-images/next.png","Botao com o simbolo de seta apontada para direita",nextButtonStyle)
 
     file.forEach(valor => {
         let itemListEl = createDivWithClasses(...itemListClasses)
         let titleItemListEl = createParagraph(valor.title)
         
-        let actionsButtonContainer = createDivWithClasses("action-container")
-        let editButtonEl = createImage("../assets/global-images/edit.png","Ícone de lápis de escrever","action-button","edit-button")
-        let deleteButtonEl = createImage("../assets/global-images/remove.png", "Ícone de lata de lixo","action-button","delete-button")
-      
-        actionsButtonContainer.appendChild(editButtonEl)
-        actionsButtonContainer.appendChild(deleteButtonEl)
+        let checkboxContainer = createDivWithClasses("checkbox-container")
+        let checkboxEl = createCheckBox(checkboxClasse)
+
+        checkboxContainer.appendChild(checkboxEl)
 
         itemListEl.appendChild(titleItemListEl)
-        itemListEl.appendChild(actionsButtonContainer)
+        itemListEl.appendChild(checkboxContainer)
 
         listContainerEl.appendChild(itemListEl)
     })
 
+
     containerEl.appendChild(titleEl)
+    containerP.appendChild(pElement1)
+    containerP.appendChild(pElement2)
+    containerEl.appendChild(containerP)
     containerEl.appendChild(listContainerEl)
-    containerEl.appendChild(addButtonEl)
+    containerEl.appendChild(nextButtonEl)
 }
-
-

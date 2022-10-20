@@ -1,16 +1,16 @@
 //Dynamic List
-import {setContainerEl, dynamicList} from "../assets/code/list-item.js"
-import {allTrilhas} from "./allTrilhas-adm.js"
+import {setContainerEl, dynamicList} from "./list-squads.js"
+import {allSquads} from "./all-squads.js"
 
 setContainerEl("containerTrilha")
-dynamicList(allTrilhas,"Trilhas","fonteCinza","lista-de-trilhas","itemTrilha")
+dynamicList(allSquads,"Squads","title","lista-de-trilhas","itemTrilha")
 
 
 //botton add going to telaTrilha2
 let add = document.getElementById("addButton");
 add.addEventListener("click", next);
 function next(){
-  window.location.href = "../telaAdmTrilha2/telaAdmTrilha2.html";
+  window.location.href = "../tela-adm-squads-passo1/tela-adm-squads-passo1.html";
 }
 
 const body = document.getElementsByTagName("body");

@@ -14,6 +14,26 @@ nav{
     max-width:42px;
     max-height:42px;
   }
+
+  .checkbox-style {
+    width: 25px;
+    height: 25px;
+  }
+
+  .next-button-style {
+    width: 64x;
+    height: 64px;
+    float: right;
+    padding: 20px;
+  }
+
+  .container-p {
+    display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 20px;
+  }
+  
   
   /* finish luca */
   
@@ -34,6 +54,12 @@ nav{
   nav{
     background-color: #d3d2eb;
     }
+
+ .title{
+    color: #d3d2eb;
+    margin-bottom: 20px;
+    text-decoration: underline;
+ }
   
   #lista-de-trilhas{
       list-style: none;
