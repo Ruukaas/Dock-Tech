@@ -5,11 +5,19 @@ nav{
 /******NAV******/
 /* luca */
 
-.action-button {
-    max-width: 18px;
-    max-height: 18px;
+  .action-button {
+      max-width: 18px;
+      max-height: 18px;
+    }
+
+  .delete-button {
+    cursor: pointer;
   }
-  
+
+  .edit-button{
+    cursor: pointer;
+  }
+
   #addButton {
     max-width:42px;
     max-height:42px;
@@ -20,18 +28,30 @@ nav{
     height: 25px;
   }
 
-  .next-button-style {
+  .exit-button{
+    width: 50x;
+    height: 50px;
+    float: right;
+    color: #d3d2eb;
+    background-color:#101a3f;
+    cursor: pointer;
+  }
+
+  .next-button {
     width: 64x;
     height: 64px;
     float: right;
     padding: 20px;
+    cursor: pointer;
   }
 
   .container-p {
-    display: flex;
+      display: flex;
       flex-direction: row;
       justify-content: space-between;
       padding: 20px;
+      font-weight: bolder;
+      font-size: larger;
   }
   
   

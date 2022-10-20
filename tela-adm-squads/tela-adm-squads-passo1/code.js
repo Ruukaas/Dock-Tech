@@ -3,12 +3,17 @@ import {setContainerEl, dynamicList} from "./list-alunos.js"
 import {allAlunos} from "./all-alunos.js"
 
 setContainerEl("containerTrilha")
-dynamicList(allAlunos,"Squads","title","checkbox-style","next-button-style","lista-de-trilhas","itemTrilha")
+dynamicList(allAlunos,"Squads","title","checkbox-style","next-button","lista-de-trilhas","itemTrilha")
 
+const exitButton = document.querySelector(".exit-button");
+
+exitButton.onclick = function(){
+  window.location.href = "../tela-adm-squads-inicial/tela-adm-squads.html";
+}
 
 //botton add going to telaTrilha2
-let add = document.getElementById("addButton");
-add.addEventListener("click", next);
+let nextButton = document.querySelector(".next-button");
+nextButton.addEventListener("click", next);
 function next(){
   window.location.href = "../telaAdmTrilha2/telaAdmTrilha2.html";
 }
@@ -25,42 +30,41 @@ const confirmDelete = document.getElementById("modalDelete");
 
 let liSelecionada;
 
-
 const cancelDelete = document.getElementById("modalCancel");
 
 // Get the <span> element that closes the modal
 const span = document.getElementById("close");
 
 // When the user clicks on the button, open the modal
-deleteButton.onclick = function() {
-  modal.style.display = "flex";  
-  fade.style.display = "flex";
-  liSelecionada.style.display = "none";
-}
+// deleteButton.onclick = function() {
+//   modal.style.display = "flex";  
+//   fade.style.display = "flex";
+//   liSelecionada.style.display = "none";
+// }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-  fade.style.display = "none";
-}
+// // When the user clicks on <span> (x), close the modal
+// span.onclick = function() {
+//   modal.style.display = "none";
+//   fade.style.display = "none";
+// }
 
-document.getElementById("modalDelete").onclick = function() {
-  modal.style.display = "none";
-  fade.style.display = "none";
-  liSelecionada = deleteButton.parentNode.getElementsByClassName(".itemTrilha");
-  console.log(liSelecionada);
-  liSelecionada.parentNode.removeChild(liSelecionada);
-}
+// document.getElementById("modalDelete").onclick = function() {
+//   modal.style.display = "none";
+//   fade.style.display = "none";
+//   liSelecionada = deleteButton.parentNode.getElementsByClassName(".itemTrilha");
+//   console.log(liSelecionada);
+//   liSelecionada.parentNode.removeChild(liSelecionada);
+// }
 
-document.getElementById("modalCancel").onclick = function() {
-  modal.style.display = "none";
-  fade.style.display = "none";
-}
+// document.getElementById("modalCancel").onclick = function() {
+//   modal.style.display = "none";
+//   fade.style.display = "none";
+// }
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-    fade.style.display = "none";
-  }
-}
+// // When the user clicks anywhere outside of the modal, close it
+// window.onclick = function(event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//     fade.style.display = "none";
+//   }
+// }

@@ -55,12 +55,17 @@ export const dynamicList = (file, title, titleClasse, checkboxClasse,nextButtonS
     let titleEl = createTitle(title,titleClasse)
     let listContainerEl = createDivWithID(idContainerList)
 
+    let containerTitle = createDivWithClasses("container-p")
     let containerP = createDivWithClasses("container-p")
+
+    let exitButton = createImage("../assets/global-images/icons8-x-50.png","Botao para sair","exit-button")
 
     let pElement1 = createParagraph("Selecione os alunos que farao parte da residencia")
     let pElement2 = createParagraph("Passo 1 de 3")
 
     let nextButtonEl = createImage("../assets/global-images/next.png","Botao com o simbolo de seta apontada para direita",nextButtonStyle)
+
+    
 
     file.forEach(valor => {
         let itemListEl = createDivWithClasses(...itemListClasses)
@@ -77,10 +82,13 @@ export const dynamicList = (file, title, titleClasse, checkboxClasse,nextButtonS
         listContainerEl.appendChild(itemListEl)
     })
 
+    containerTitle.appendChild(titleEl)
+    containerTitle.appendChild(exitButton)
 
-    containerEl.appendChild(titleEl)
     containerP.appendChild(pElement1)
     containerP.appendChild(pElement2)
+
+    containerEl.appendChild(containerTitle)
     containerEl.appendChild(containerP)
     containerEl.appendChild(listContainerEl)
     containerEl.appendChild(nextButtonEl)

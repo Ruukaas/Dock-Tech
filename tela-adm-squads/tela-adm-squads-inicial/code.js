@@ -19,7 +19,7 @@ const modal = document.getElementById("myModal");
 const fade = document.getElementById("fade");
 
 // Get the button that opens the modal
-const deleteButton = document.getElementById("deleteButton");
+const deleteButton = document.querySelector(".delete-button");
 
 const confirmDelete = document.getElementById("modalDelete");
 
