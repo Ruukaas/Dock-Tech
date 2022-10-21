@@ -13,20 +13,12 @@ function next(){
   window.location.href = "../tela-adm-squads-passo1/tela-adm-squads-passo1.html";
 }
 
-const body = document.getElementsByTagName("body");
 // Get the modal and fade
-const modal = document.getElementById("myModal");
-const fade = document.getElementById("fade");
+const modal = document.querySelector(".myModal");
+const fade = document.querySelector(".fade");
 
 // Get the button that opens the modal
 const deleteButton = document.querySelector(".delete-button");
-
-const confirmDelete = document.getElementById("modalDelete");
-
-let liSelecionada;
-
-
-const cancelDelete = document.getElementById("modalCancel");
 
 // Get the <span> element that closes the modal
 const span = document.getElementById("close");
@@ -35,7 +27,6 @@ const span = document.getElementById("close");
 deleteButton.onclick = function() {
   modal.style.display = "flex";  
   fade.style.display = "flex";
-  liSelecionada.style.display = "none";
 }
 
 // When the user clicks on <span> (x), close the modal
@@ -44,14 +35,7 @@ span.onclick = function() {
   fade.style.display = "none";
 }
 
-document.getElementById("modalDelete").onclick = function() {
-  modal.style.display = "none";
-  fade.style.display = "none";
-  liSelecionada = deleteButton.parentNode.getElementsByClassName(".itemTrilha");
-  console.log(liSelecionada);
-  liSelecionada.parentNode.removeChild(liSelecionada);
-}
-
+// Fechar modal ao selecionar botao X
 document.getElementById("modalCancel").onclick = function() {
   modal.style.display = "none";
   fade.style.display = "none";
@@ -63,4 +47,10 @@ window.onclick = function(event) {
     modal.style.display = "none";
     fade.style.display = "none";
   }
+}
+
+// Fechar modal ao selecionar opcao de excluir trilha
+document.getElementById("modalDelete").onclick = function() {
+  modal.style.display = "none";
+  fade.style.display = "none";
 }

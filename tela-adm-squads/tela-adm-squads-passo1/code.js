@@ -18,19 +18,12 @@ function next(){
   window.location.href = "../telaAdmTrilha2/telaAdmTrilha2.html";
 }
 
-const body = document.getElementsByTagName("body");
 // Get the modal and fade
 const modal = document.getElementById("myModal");
 const fade = document.getElementById("fade");
 
 // Get the button that opens the modal
 const deleteButton = document.getElementById("deleteButton");
-
-const confirmDelete = document.getElementById("modalDelete");
-
-let liSelecionada;
-
-const cancelDelete = document.getElementById("modalCancel");
 
 // Get the <span> element that closes the modal
 const span = document.getElementById("close");
@@ -48,13 +41,10 @@ const span = document.getElementById("close");
 //   fade.style.display = "none";
 // }
 
-// document.getElementById("modalDelete").onclick = function() {
-//   modal.style.display = "none";
-//   fade.style.display = "none";
-//   liSelecionada = deleteButton.parentNode.getElementsByClassName(".itemTrilha");
-//   console.log(liSelecionada);
-//   liSelecionada.parentNode.removeChild(liSelecionada);
-// }
+document.getElementById("modalDelete").onclick = function() {
+  modal.style.display = "none";
+  fade.style.display = "none";
+}
 
 // document.getElementById("modalCancel").onclick = function() {
 //   modal.style.display = "none";

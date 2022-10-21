@@ -144,7 +144,7 @@ nav{
       margin-left: auto;
   }
   
-  #myModal {
+  .myModal {
       display: none; /* Hidden by default */
       color: #d3d2eb;
       border: 1px solid #d3d2eb;
@@ -155,8 +155,9 @@ nav{
       flex-direction: column;
       overflow: auto; /* Enable scroll if needed */
       z-index: 10;
+      align-self: center;
   }
-  #fade{
+  .fade{
     position: fixed;
     left: 0;
     top: 0;
