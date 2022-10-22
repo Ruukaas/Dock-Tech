@@ -1,0 +1,67 @@
+.title{
+    text-align:left;
+}
+
+input{
+    width: 300px;
+}
+
+.containerLista{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    font-weight: bolder;
+    font-size: larger;
+    width: 400px;
+}
+
+.containerInput{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    font-weight: bolder;
+    font-size: larger;
+    width: 500px;
+}
+
+.inputDiv{
+    margin: 20px;
+}
+
+#buttonDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px;
+}
+#lista{
+    list-style: none;
+    background-color: #d3d2eb;
+    font-size: 18px;
+    color: #101a3f;
+    width: 350px;   
+}
+
+.itemLista{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px;
+    border-bottom: 1px solid black;
+}
+
+#containerPrincipal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+#ok-button{
+    width: 64x;
+    height: 64x;
+    padding: 20px;
+    cursor: pointer;
+}
