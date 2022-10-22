@@ -40,12 +40,19 @@ nav{
   .next-button {
     width: 64x;
     height: 64px;
-    float: right;
     padding: 20px;
     cursor: pointer;
   }
 
-  .container-p {
+  .next-button-right{
+    width: 64x;
+    height: 64px;
+    padding: 20px;
+    cursor: pointer;
+    float: right;
+  }
+
+  .container-x {
       display: flex;
       flex-direction: row;
       justify-content: space-between;

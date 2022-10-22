@@ -55,10 +55,10 @@ export const dynamicList = (file, title, titleClasse, checkboxClasse,nextButtonS
     let titleEl = createTitle(title,titleClasse)
     let listContainerEl = createDivWithID(idContainerList)
 
-    let containerTitle = createDivWithClasses("container-p")
-    let containerP = createDivWithClasses("container-p")
+    let containerTitle = createDivWithClasses("container-x")
+    let containerP = createDivWithClasses("container-x")
 
-    let exitButton = createImage("../assets/global-images/icons8-x-50.png","Botao para sair","exit-button")
+    let exitButton = createImage("../assets/global-images/icons8-xbox-x-50.png","Botao para sair","exit-button")
 
     let pElement1 = createParagraph("Selecione os alunos que farao parte da residencia")
     let pElement2 = createParagraph("Passo 1 de 3")
