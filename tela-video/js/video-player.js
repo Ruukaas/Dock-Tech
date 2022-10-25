@@ -1,6 +1,6 @@
-import { currentTypeVideo, changecurrentVideoPlayerTimeComplete, pushLessonConcludedArray, currentPositionOrder, saveCurrentStats, currentVideoPlayerTimeComplete, changeCurrentSecondsVideoPlayer} from "./control.js"
+import { currentTypeVideo, changecurrentVideoPlayerTimeComplete, pushLessonConcludedArray, currentPositionOrder, saveCurrentStats, currentVideoPlayerTimeComplete, changeCurrentSecondsVideoPlayer } from "./control.js"
 import { changeProgressBar } from "./progress-bar.js"
-import {changeCheckBox} from "./trilha.js"
+import { changeCheckBox } from "./trilha.js"
 
 
 export let player //Objeto do videoPlayer
@@ -31,37 +31,35 @@ export const deletePreviousVideo = () => {
 export const changeVideoTitle = title => {
     document.getElementById("video-player-title").textContent = title;
 }
-// //verificar tamanho da tela e redimensiona o vídeo
-// var altura1;
-// window.addEventListener('resize', function () {
-//     var largura = window.innerWidth;
-
-//     if (largura >=2180){
-//         altura1 = '1280px';
-//     }else if(largura>=1600){
-//         altura1 = '896px';
-//     }else if(largura>=1000){
-//         altura1 = '560px';
-//     }else if(largura>=720){
-//         altura1 = '400px';
-//     }else {
-//         altura1 = '300px';
-//     }
+// verificar tamanho da tela e redimensiona o vídeo
+export const responsiveVideo = () => {
+    let larguraDoVideo;
+    window.addEventListener('resize', function () {
+        var larguraDaPagina = window.innerWidth;       
+        if (larguraDaPagina >= 1000) {
+            larguraDoVideo = '560px';
+        } else if (larguraDaPagina >= 720) {
+            larguraDoVideo = '400px';
+        } else {
+            larguraDoVideo = '300px';
+        }
+        switch (currentTypeVideo){
+            case "external":
+                player.getIframe().setAttribute("width", larguraDoVideo);
+                break;
+            case "internal":
+                player.setAttribute("width", larguraDoVideo);
+                break;
+        }
         
-//  });
-
-
-
-
-
-
-
+    });
+}
 
 //External
 export const buildExternalVideo = videoID => {
     player = new YT.Player('video-external', {
         //height: '720px',
-        //width: '1280px',
+        width: '560px',
         //Primeiro vídeo da trilha
         videoId: videoID,
         events: {
@@ -72,7 +70,7 @@ export const buildExternalVideo = videoID => {
 }
 
 export const onPlayerStateChange = (objectEvent) => {
-    if(objectEvent.data == YT.PlayerState.ENDED) {
+    if (objectEvent.data == YT.PlayerState.ENDED) {
         onPlayerEnded()
     }
     saveCurrentStats()
@@ -97,20 +95,20 @@ export const buildInternalVideo = link => {
 
     player = document.createElement("video")
     player.setAttribute("src", link)
-    player.setAttribute("width", 1280)
-    player.setAttribute("height", 720)
+    player.setAttribute("width", 560)
+    // player.setAttribute("height", 720)
     player.setAttribute("controls", "true")
-    player.setAttribute("autoplay","autoplay")
+    player.setAttribute("autoplay", "autoplay")
 
     player.addEventListener("play", () => {
-        if(!isCurrentTimeSaved) {
+        if (!isCurrentTimeSaved) {
             changecurrentVideoPlayerTimeComplete()
             !!isCurrentTimeSaved
         }
         saveCurrentStats()
     })
-    player.addEventListener("pause", saveCurrentStats )
+    player.addEventListener("pause", saveCurrentStats)
     player.addEventListener("ended", onPlayerEnded)
-    
+
     document.getElementById("video-internal").appendChild(player)
 }

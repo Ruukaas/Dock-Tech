@@ -7,7 +7,9 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 import {trilha} from "./currentTrilha.js"
 import {dynamicTrilha} from "./trilha.js"
 import {saveCurrentStats} from "./control.js"
+import {responsiveVideo} from "./video-player.js"
 
 dynamicTrilha(trilha)
 
 window.addEventListener("beforeunload", saveCurrentStats)
+responsiveVideo();
