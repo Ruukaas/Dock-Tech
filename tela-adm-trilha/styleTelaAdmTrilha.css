@@ -1,6 +1,11 @@
 /******NAV******/
 /* luca */
 
+main {
+  display: flex;
+  flex-direction: column;
+}
+
 .action-button {
   max-width: 18px;
   max-height: 18px;
@@ -136,6 +141,14 @@ footer{
     align-items: center;
     margin-top: 20px;
     z-index: 11;
+}
+
+.itemTrilha p {
+  max-width: 380px;
+}
+
+.action-container {
+  min-width: 37px;
 }
 
   

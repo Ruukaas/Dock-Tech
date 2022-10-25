@@ -6,13 +6,12 @@ setContainerEl("containerTrilha")
 dynamicList(allTrilhas, "Trilhas", "fonteCinza", "lista-de-trilhas", "itemTrilha")
 
 //elements
-let addEl = document.getElementById("addButton");
-
-
-//botton add going to telaTrilha2
+const addEl = document.getElementById("addButton");
 const modalEl = document.getElementById("myModal");
 const fadeEl = document.getElementById("fade");
 const closeModalEl = document.getElementById("close");
+const cancelModalEl =  document.getElementById("modalCancel");
+const confirmModalEl = document.getElementById("modalConfirm");
 
 const next = () => {
   window.location.href = "../telaAdmTrilha2/telaAdmTrilha2.html";
@@ -31,19 +30,16 @@ const closeModal = () => {
 }
 
 const confirmActionModal = () => {
-  document.getElementById("modalConfirm").onclick = function () {
     modalEl.style.display = "none";
     fadeEl.style.display = "none";
     //TODO deleter do banco primeiro depois apagar o modal
-  }
+  
 }
 
 const declineActionModal = () => {
-  document.getElementById("modalCancel").onclick = function () {
     modalEl.style.display = "none";
     fadeEl.style.display = "none";
   }
-}
 
 const openModalAddEvent = (buttonHTMLCollection, functionListener) => {
   let buttonsArray = Array.prototype.slice.call(buttonHTMLCollection)
@@ -56,3 +52,8 @@ openModalAddEvent(document.getElementsByClassName("delete-button"),openModal)
 
 
 addEl.addEventListener("click", next);
+closeModalEl.addEventListener("click", closeModal)
+cancelModalEl.addEventListener("click", declineActionModal)
+confirmModalEl.addEventListener("click",confirmActionModal)
+
+// const createModal; 
