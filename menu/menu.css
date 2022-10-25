@@ -34,43 +34,73 @@
   }
 
   header{
+    cursor: pointer;
     margin:10px;
     border: solid 2px;
     grid-area: head;
     background-color: aqua;
   } 
 
+  header:hover{
+    border: 5px solid;
+  }
+
   nav{
+    cursor: pointer;
     margin:10px;
     border: solid 2px;
     grid-area: nav;
     background-color: bisque;
   }
 
+  nav:hover{
+    border: 5px solid;
+  }
+
   main{
+    cursor: pointer;
     margin:10px;
     border: solid 2px;
     grid-area: main;
     background-color: blueviolet;
   }
 
+  main:hover{
+    border: 5px solid;
+  }
+
   footer{
+    cursor: pointer;
     margin:10px;
     border: solid 2px;
     grid-area: footer;
     background-color: aquamarine;
   }
 
+  footer:hover{
+    border: 5px solid;
+  }
+
   .sec1{
+    cursor: pointer;
     margin:10px;
     border: solid 2px;
     grid-area: sec1;
     background-color:blanchedalmond;
   }
 
+  .sec1:hover{
+    border: 5px solid;
+  }
+
   .sec2{
+    cursor: pointer;
     margin:10px;
     border: solid 2px;
     grid-area: sec2;
     background-color: blue;
+  }
+
+  .sec2:hover{
+    border: 5px solid;
   }
