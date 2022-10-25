@@ -55,10 +55,13 @@ nav{
   .container-x {
       display: flex;
       flex-direction: row;
+      flex-wrap: wrap;
       justify-content: space-between;
+      align-items: center;
       padding: 20px;
       font-weight: bolder;
       font-size: larger;
+    
   }
   
   
@@ -248,4 +251,35 @@ nav{
   .title-mlw{
     color: #101a3f;
   }
-  
+
+  /* RESPONSIVIDADE TELA ADM PASSO 1 */
+
+    @media (max-width: 500px){
+      .container-x:nth-child(2) p:nth-child(1){
+        text-align: center;
+      }
+      .container-x:nth-child(2) p:nth-child(2){
+        display: none;
+      }
+
+    }
+
+  /* RESPONSIVIDADE TELA ADM PASSO 2 */
+    
+
+  /* RESPONSIVIDADE TELA ADM PASSO 3 */
+
+  /* @media (max-width: 500px){
+    h1 .title:nth-child(1){
+      text-align: center;
+      margin-left: 60px;
+    }
+
+    .container-x:nth-child(2){
+      width: 450px;
+      margin-right: 150px;
+    }
+    .container-x:nth-child(2) p:nth-child(1){
+      width: 300px;
+    }
+  } */

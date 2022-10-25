@@ -57,6 +57,7 @@ input{
     padding: 20px;
     font-weight: bolder;
     font-size: larger;
+    flex-wrap: wrap;
 }
 
 #ok-button{
