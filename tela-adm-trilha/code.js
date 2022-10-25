@@ -31,12 +31,16 @@ const cancelDelete = document.getElementById("modalCancel");
 // Get the <span> element that closes the modal
 const span = document.getElementById("close");
 
-// When the user clicks on the button, open the modal
-deleteButton.onclick = function() {
+// // When the user clicks on the button, open the modal
+// deleteButton.onclick = function() {
+
+// }
+
+const openModal = () => {
   modal.style.display = "flex";  
   fade.style.display = "flex";
-  liSelecionada.style.display = "none";
 }
+
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
@@ -64,3 +68,13 @@ window.onclick = function(event) {
     fade.style.display = "none";
   }
 }
+
+const openModalAddEvent = (buttonHTMLCollection,functionListener) => {
+  let buttonsArray = Array.prototype.slice.call(buttonHTMLCollection)
+  buttonsArray.forEach(elemento => {
+    elemento.addEventListener("click", functionListener)
+  })
+}
+
+openModalAddEvent(document.getElementsByClassName("delete-button"))
+

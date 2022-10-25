@@ -102,6 +102,10 @@ footer{
     flex-direction: column;
     overflow: auto; /* Enable scroll if needed */
     z-index: 10;
+    position:fixed;
+    bottom: 40%;
+    left:35%;
+    background-color: orangered;
 }
 #fade{
   position: fixed;
