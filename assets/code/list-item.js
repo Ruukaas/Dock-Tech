@@ -8,7 +8,7 @@ const createTitle = (name,...classes) => {
     let h1El = document.createElement("h1")
     h1El.classList.add(...classes)
     h1El.textContent = name
-    return h1El
+    return h1El 
 }
 
 const createDivWithID = id => {

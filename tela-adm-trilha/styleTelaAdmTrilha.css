@@ -28,11 +28,10 @@ body{
 }
 
 #lista-de-trilhas{
-    list-style: none;
-    background-color: #d3d2eb;
-    padding: 10px;
-    font-size: 18px;
-    color: #101a3f;
+  list-style: none;
+  background-color: #d3d2eb;
+  font-size: 18px;
+  color: #101a3f;
 }
 
 footer{
@@ -45,12 +44,13 @@ footer{
     margin: auto;
     margin-top: 30px;
 }
+
 .itemTrilha{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 5px;
-    border-bottom: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid black;
 }
 /*Botão*/
 #addButton {
@@ -180,4 +180,10 @@ footer{
     max-width: 250px;
     width: 250px;
   }
+}
+
+/* Tela ADM-3 */
+
+.title-mlw{
+  color: #101a3f;
 }
