@@ -93,8 +93,8 @@ footer{
 
 #myModal {
     display: none; /* Hidden by default */
-    color: #d3d2eb;
-    border: 1px solid #d3d2eb;
+    color: #101a3f;
+    border: 2px solid #101a3f;
     margin: 70px auto;
     max-width: 50%;
     height: 200px;
@@ -105,8 +105,19 @@ footer{
     position:fixed;
     bottom: 40%;
     left:35%;
-    background-color: orangered;
+    background-color: #d3d2eb;
 }
+
+#title-container {
+  text-align: center;
+  justify-content: center;
+  margin-left: 19px; 
+}
+
+#title-modal {
+  padding:10px;
+}
+
 #fade{
   position: fixed;
   left: 0;
@@ -138,9 +149,9 @@ footer{
 
 
 */
-#modalDelete, #modalCancel{
-    background-color: #d3d2eb;
-    color: #101a3f;
+#modalConfirm, #modalCancel{
+    background-color: #101a3f;
+    color: #d3d2eb;
     padding: 15px;
     cursor: pointer;
     border-radius: 5px;
@@ -148,7 +159,7 @@ footer{
     font-weight: 700;
     z-index: 11;
 }
-#modalDelete:hover{
+#modalConfirm:hover{
     background-color: salmon;
 }
 #modalCancel:hover{
