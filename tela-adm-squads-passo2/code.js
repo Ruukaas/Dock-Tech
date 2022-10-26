@@ -24,8 +24,3 @@ nextButtonRight.addEventListener("click", next);
 function next(){
   window.location.href = "../tela-adm-squads-passo3/tela-adm-squads-passo3.html";
 }
-
-document.getElementById("modalDelete").onclick = function() {
-  modal.style.display = "none";
-  fade.style.display = "none";
-}
