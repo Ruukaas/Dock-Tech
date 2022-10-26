@@ -154,39 +154,53 @@ nav{
       margin-left: auto;
   }
   
-  .myModal {
-      display: none; /* Hidden by default */
-      color: #d3d2eb;
-      border: 1px solid #d3d2eb;
-      margin: 70px auto;
-      max-width: 50%;
-      height: 200px;
-      border-radius: 3px;
-      flex-direction: column;
-      overflow: auto; /* Enable scroll if needed */
-      z-index: 10;
-      align-self: center;
-  }
-  .fade{
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 5;
-    display: none;
-  }
-   
-  .itemFlex{
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      align-items: center;
-      margin-top: 20px;
-      z-index: 11;
-  }
+  #myModal {
+    display: none; /* Hidden by default */
+    color: #101a3f;
+    border: 2px solid #101a3f;
+    margin: 70px auto;
+    max-width: 50%;
+    height: 200px;
+    border-radius: 3px;
+    flex-direction: column;
+    overflow: auto; /* Enable scroll if needed */
+    z-index: 10;
+    position:fixed;
+    bottom: 40%;
+    left:35%;
+    background-color: #d3d2eb;
+}
+
+#title-container {
+  text-align: center;
+  justify-content: center;
+  margin-left: 19px; 
+}
+
+#title-modal {
+  padding:10px;
+}
+
+.fade{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 5;
+  display: none;
+}
   
+.itemFlex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    z-index: 11;
+}
+
     
   /* The Close Button */
     
@@ -198,9 +212,9 @@ nav{
   
   
   */
-  #modalDelete, #modalCancel{
-      background-color: #d3d2eb;
-      color: #101a3f;
+    #modalConfirm, #modalCancel{
+      background-color: #101a3f;
+      color: #d3d2eb;
       padding: 15px;
       cursor: pointer;
       border-radius: 5px;
@@ -208,7 +222,7 @@ nav{
       font-weight: 700;
       z-index: 11;
   }
-  #modalDelete:hover{
+  #modalConfirm:hover{
       background-color: salmon;
   }
   #modalCancel:hover{

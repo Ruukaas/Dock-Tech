@@ -12,45 +12,49 @@ add.addEventListener("click", next);
 function next(){
   window.location.href = "../tela-adm-squads-passo1/tela-adm-squads-passo1.html";
 }
+const addEl = document.getElementById("addButton");
+const modalEl = document.getElementById("myModal");
+const fadeEl = document.getElementById("fade");
+const closeModalEl = document.getElementById("close");
+const cancelModalEl =  document.getElementById("modalCancel");
+const confirmModalEl = document.getElementById("modalConfirm");
 
-// Get the modal and fade
-const modal = document.querySelector(".myModal");
-const fade = document.querySelector(".fade");
 
-// Get the button that opens the modal
-const deleteButton = document.querySelector(".delete-button");
-
-// Get the <span> element that closes the modal
-const span = document.getElementById("close");
-
-// When the user clicks on the button, open the modal
-deleteButton.onclick = function() {
-  modal.style.display = "flex";  
-  fade.style.display = "flex";
+const openModal = () => {
+  fadeEl.style.display = "flex";
+  modalEl.style.display = "flex";
 }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-  fade.style.display = "none";
-}
-
-// Fechar modal ao selecionar botao X
-document.getElementById("modalCancel").onclick = function() {
-  modal.style.display = "none";
-  fade.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-    fade.style.display = "none";
+const closeModal = () => {
+  closeModalEl.onclick = function () {
+    modalEl.style.display = "none";
+    fadeEl.style.display = "none";
   }
 }
 
-// Fechar modal ao selecionar opcao de excluir trilha
-document.getElementById("modalDelete").onclick = function() {
-  modal.style.display = "none";
-  fade.style.display = "none";
+const confirmActionModal = () => {
+    modalEl.style.display = "none";
+    fadeEl.style.display = "none";
+    //TODO deleter do banco primeiro depois apagar o modal
+  
 }
+
+const declineActionModal = () => {
+    modalEl.style.display = "none";
+    fadeEl.style.display = "none";
+  }
+
+const openModalAddEvent = (buttonHTMLCollection, functionListener) => {
+  let buttonsArray = Array.prototype.slice.call(buttonHTMLCollection)
+  buttonsArray.forEach(elemento => {
+    elemento.addEventListener("click", functionListener)
+  })
+}
+
+openModalAddEvent(document.getElementsByClassName("delete-button"),openModal)
+
+
+addEl.addEventListener("click", next);
+closeModalEl.addEventListener("click", closeModal)
+cancelModalEl.addEventListener("click", declineActionModal)
+confirmModalEl.addEventListener("click",confirmActionModal)
