@@ -53,6 +53,25 @@ export const dynamicList = (file, title, titleClasse, idContainerList, ...itemLi
     file.forEach(valor => {
         let itemListEl = createDivWithClasses(...itemListClasses)
         let titleItemListEl = createParagraph(valor.title)
+
+        let itemCollumEl = createDivWithClasses("itemColumn")
+        let subItemDiv1 = createDivWithClasses("subItem")
+        let subItemDiv2 = createDivWithClasses("subItem")
+
+        let squadItemListEl = createParagraph(valor.squad)
+
+        let instituicaoItemListP = createParagraph("Instituicao/Empresa: ")
+        let instituicaoItemListEl = createParagraph(valor.instituicao)
+
+        subItemDiv2.appendChild(instituicaoItemListP)
+        subItemDiv2.appendChild(instituicaoItemListEl)
+
+        subItemDiv1.appendChild(squadItemListEl)
+        
+        itemCollumEl.appendChild(subItemDiv1)
+        itemCollumEl.appendChild(subItemDiv2)
+
+ 
         
         let actionsButtonContainer = createDivWithClasses("action-container")
         let editButtonEl = createImage("../assets/global-images/edit.png","Ícone de lápis de escrever","action-button","edit-button")
@@ -62,6 +81,7 @@ export const dynamicList = (file, title, titleClasse, idContainerList, ...itemLi
         actionsButtonContainer.appendChild(deleteButtonEl)
 
         itemListEl.appendChild(titleItemListEl)
+        itemListEl.appendChild(itemCollumEl)
         itemListEl.appendChild(actionsButtonContainer)
 
         listContainerEl.appendChild(itemListEl)
