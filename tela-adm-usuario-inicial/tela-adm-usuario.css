@@ -165,19 +165,33 @@ nav{
       margin-left: auto;
   }
   
-  .myModal {
-      display: none; /* Hidden by default */
-      color: #d3d2eb;
-      border: 1px solid #d3d2eb;
-      margin: 70px auto;
-      max-width: 50%;
-      height: 200px;
-      border-radius: 3px;
-      flex-direction: column;
-      overflow: auto; /* Enable scroll if needed */
-      z-index: 10;
-      align-self: center;
+  #myModal {
+    display: none; /* Hidden by default */
+    color: #101a3f;
+    border: 2px solid #101a3f;
+    margin: 70px auto;
+    max-width: 50%;
+    height: 200px;
+    border-radius: 3px;
+    flex-direction: column;
+    overflow: auto; /* Enable scroll if needed */
+    z-index: 10;
+    position:fixed;
+    bottom: 40%;
+    left:35%;
+    background-color: #d3d2eb;
+}
+
+  #title-container {
+    text-align: center;
+    justify-content: center;
+    margin-left: 19px; 
   }
+
+  #title-modal {
+    padding:10px;
+  }
+
   .fade{
     position: fixed;
     left: 0;
@@ -198,20 +212,15 @@ nav{
       z-index: 11;
   }
   
-    
-  /* The Close Button */
-    
-  #close:hover, #close:focus {
-        cursor: pointer;
-  }
+
   
     /* Botoes Modal 
   
   
   */
-  #modalDelete, #modalCancel{
-      background-color: #d3d2eb;
-      color: #101a3f;
+    #modalConfirm, #modalCancel{
+      background-color: #101a3f;
+      color: #d3d2eb;
       padding: 15px;
       cursor: pointer;
       border-radius: 5px;
@@ -219,7 +228,7 @@ nav{
       font-weight: 700;
       z-index: 11;
   }
-  #modalDelete:hover{
+  #modalConfirm:hover{
       background-color: salmon;
   }
   #modalCancel:hover{
@@ -239,14 +248,11 @@ nav{
     }
   }
   @media (max-width:600px){
-    #modalDelete, #modalCancel{
+    #modalConfirm, #modalCancel{
       font-size: 12px;
     }
     h2{
       text-align: center;
-    }
-    #close{
-      display: none;
     }
   }
   @media (max-width:500px){

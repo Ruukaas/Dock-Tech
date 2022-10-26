@@ -146,7 +146,7 @@ nav{
       left: 50%;
       transform: translateX(-50%);
     }
-    
+    n
   .itemRight {
       flex: 0 1 auto;
       width: 100px;
@@ -202,11 +202,6 @@ nav{
 }
 
     
-  /* The Close Button */
-    
-  #close:hover, #close:focus {
-        cursor: pointer;
-  }
   
     /* Botoes Modal 
   
@@ -242,14 +237,11 @@ nav{
     }
   }
   @media (max-width:600px){
-    #modalDelete, #modalCancel{
+    #modalConfirm, #modalCancel{
       font-size: 12px;
     }
     h2{
       text-align: center;
-    }
-    #close{
-      display: none;
     }
   }
   @media (max-width:500px){

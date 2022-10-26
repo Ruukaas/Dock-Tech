@@ -15,7 +15,6 @@ function next(){
 const addEl = document.getElementById("addButton");
 const modalEl = document.getElementById("myModal");
 const fadeEl = document.getElementById("fade");
-const closeModalEl = document.getElementById("close");
 const cancelModalEl =  document.getElementById("modalCancel");
 const confirmModalEl = document.getElementById("modalConfirm");
 
@@ -23,13 +22,6 @@ const confirmModalEl = document.getElementById("modalConfirm");
 const openModal = () => {
   fadeEl.style.display = "flex";
   modalEl.style.display = "flex";
-}
-
-const closeModal = () => {
-  closeModalEl.onclick = function () {
-    modalEl.style.display = "none";
-    fadeEl.style.display = "none";
-  }
 }
 
 const confirmActionModal = () => {
@@ -55,6 +47,5 @@ openModalAddEvent(document.getElementsByClassName("delete-button"),openModal)
 
 
 addEl.addEventListener("click", next);
-closeModalEl.addEventListener("click", closeModal)
 cancelModalEl.addEventListener("click", declineActionModal)
 confirmModalEl.addEventListener("click",confirmActionModal)
