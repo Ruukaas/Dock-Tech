@@ -104,7 +104,7 @@ nav{
   /*Flex-Box*/
   #containerTrilha{
       color: #d3d2eb;
-      max-width: 50%;
+      max-width: 65%;
       margin: auto;
       margin-top: 30px;
   }
@@ -116,13 +116,27 @@ nav{
       border-bottom: 1px solid black;
   }
 
-  .itemTrilha p:nth-child(1){
-    width: 50px;
+  .subItem{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 350px;
   }
 
-  .itemTrilha p:nth-child(2){
-    width: 50px;
+  .itemCollumn{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
+
+
+    .itemTrilha p:nth-child(1){
+      width: 100px;
+    }
+
+    .itemTrilha p:nth-child(2){
+      width: 100px;
+    }
 
 
   
