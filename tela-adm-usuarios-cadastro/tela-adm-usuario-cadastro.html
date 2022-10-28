@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../assets/styleGLOBAL.css">
-    <link rel="stylesheet" href="../tela-adm-usuario-inicial/tela-adm-usuario.css">
+    <link rel="stylesheet" href="../tela-adm-usuarios-cadastro/tela-adm-usuario-cadastro.css">
     <script src="./code.js" defer="defer" type="module"></script>
 </head>
 <body>
@@ -20,19 +20,43 @@
         </nav>
     </header>
 
-    <div class="containerInput">
+    <div class="containerMain">
+         <h1 class="title">Usuarios</h1>
         <div class="inputDiv">
-            <p class="title">Empresa Responsavel</p>
-            <input type="text" name="" id="">
+            <p class="">Nome</p>
+            <input class="input" type="text" name="" id="">
         </div>
         <div class="inputDiv">
-            <p class="title">Numero do Squad</p>
-            <input type="text" name="" id="">
+            <p class="">Email</p>
+            <input class="input" type="email" name="" id="">
         </div>
         <div class="inputDiv">
-            <p class="title">Programa de Residencia</p>
-            <input type="text" name="" id="">
+            <p class="">Funcao</p>
+            <select class="input" id="funcoes">
+              <option value="Aluno">Aluno</option>
+              <option value="Mentor">Mentor</option>
+              <option value="Administrador">Administrador</option>
+            </select>
         </div>
+        <div class="inputDiv">
+            <p class="">Instituicao/Empresa</p>
+            <select class="input" id="funcoes">
+              <option value="Aluno">Aluno</option>
+              <option value="Mentor">Mentor</option>
+              <option value="Administrador">Administrador</option>
+            </select>
+        </div>
+        <div class="inputDiv">
+            <p class="">Github</p>
+            <input class="input" type="text" name="" id="">
+        </div>
+        <div id="container-buttons">
+            <img src="../assets/global-images/back.png" alt="" id="back">
+            <img src="../assets/global-images/icons8-ok-65.png" alt="">
+        </div>
+
+
+
     </div>
 
     <!--Footer-->
