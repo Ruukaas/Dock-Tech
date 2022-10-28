@@ -37,11 +37,11 @@ export const responsiveVideo = () => {
     window.addEventListener('resize', function () {
         var larguraDaPagina = window.innerWidth;       
         if (larguraDaPagina >= 1000) {
-            larguraDoVideo = '560px';
+            larguraDoVideo = '650px';
         } else if (larguraDaPagina >= 720) {
-            larguraDoVideo = '400px';
+            larguraDoVideo = '500px';
         } else {
-            larguraDoVideo = '300px';
+            larguraDoVideo = '350px';
         }
         switch (currentTypeVideo){
             case "external":
@@ -57,16 +57,41 @@ export const responsiveVideo = () => {
 
 //External
 export const buildExternalVideo = videoID => {
-    player = new YT.Player('video-external', {
-        //height: '720px',
-        width: '560px',
-        //Primeiro vídeo da trilha
-        videoId: videoID,
-        events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-        }
-    })
+    if(window.innerWidth>=1000){
+        player = new YT.Player('video-external', {
+            //height: '720px',
+            width: '650px',
+            //Primeiro vídeo da trilha
+            videoId: videoID,
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+        })
+    }else if(window.innerWidth>=720){
+        player = new YT.Player('video-external', {
+            //height: '720px',
+            width: '500px',
+            //Primeiro vídeo da trilha
+            videoId: videoID,
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+        })
+    }else{
+        player = new YT.Player('video-external', {
+            //height: '720px',
+            width: '350px',
+            //Primeiro vídeo da trilha
+            videoId: videoID,
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+        })
+    }
+    
 }
 
 export const onPlayerStateChange = (objectEvent) => {
@@ -95,8 +120,15 @@ export const buildInternalVideo = link => {
 
     player = document.createElement("video")
     player.setAttribute("src", link)
-    player.setAttribute("width", 560)
-    // player.setAttribute("height", 720)
+    
+    if(window.innerWidth>=1000){
+        player.setAttribute("width", 650)
+    }else if(window.innerWidth>=720){
+        player.setAttribute("width", 500)
+    }else{
+        player.setAttribute("width", 350)
+    }
+    
     player.setAttribute("controls", "true")
     player.setAttribute("autoplay", "autoplay")
 

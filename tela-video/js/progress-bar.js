@@ -25,7 +25,7 @@ const setConcludedProgressBarWidth = (part,all) => {
 const getPercentageConcluded = (part,all) => ((part/all)*100).toFixed(2)
 
 const setConcludedProgressBarPercentage = (part,all) => {
-    document.getElementById("percentual-progress").textContent = getPercentageConcluded(part,all)
+    document.getElementById("percentual-progress").textContent = `${getPercentageConcluded(part,all)}%`
     
 }
 

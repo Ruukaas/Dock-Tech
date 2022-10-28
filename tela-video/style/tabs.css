@@ -123,3 +123,6 @@
   background-color: red;
   border: solid 2px black;
 }
+.second-line-wrapper{
+  display:none;
+}

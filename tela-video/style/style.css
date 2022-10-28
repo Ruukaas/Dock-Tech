@@ -20,6 +20,7 @@ body {
   justify-content: space-between;
   margin-bottom: 15px;
   align-items: center;
+  margin-top: 20px;
 }
 
 .second-line-wrapper {
@@ -29,4 +30,17 @@ body {
 
 nav{
   background-color: #D3D2EB !important;
+}
+::-webkit-scrollbar{
+  width: 8px;
+  background-color: #101a3f70;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #283669;
+  border-radius: 6px;
+}
+@media (max-width:1170px){
+  footer{
+    position: sticky;
+  }
 }
