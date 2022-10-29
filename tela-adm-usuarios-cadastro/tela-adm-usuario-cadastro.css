@@ -109,3 +109,14 @@ footer{
     padding: 20px;
     cursor: pointer;
 }
+
+@media (max-width: 500px){
+    .input{
+        width: 90%;
+        height: 25px;
+    }
+
+    #container-buttons{
+        width: 90%;
+    }
+  }
