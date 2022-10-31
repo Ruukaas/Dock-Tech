@@ -30,3 +30,11 @@ export const createImage = (src, alt, ...classes) => {
     imgEl.classList.add(...classes)
     return imgEl
 }
+
+export const createButton = (value, ...classes) => {
+    let btnEl = document.createElement("button")
+    btnEl.setAttribute("type","button")
+    btnEl.classList.add(...classes)
+    btnEl.textContent = value
+    return btnEl
+}

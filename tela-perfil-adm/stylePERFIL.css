@@ -45,7 +45,7 @@ button {
 }
 
 .active,
-.content {
+.content-wrapper {
   border-radius: 0px !important;
 }
 
@@ -64,7 +64,7 @@ button {
   margin-left: 5px;
 }
 
-.content {
+.content-wrapper {
   padding: 0 18px;
   max-height: 0;
   width: 50vw;
@@ -287,4 +287,10 @@ footer {
   position: absolute;
   cursor: pointer;
   margin-top: 30%;
+}
+
+.content-wrapper > div:first-of-type  {
+  overflow-y: scroll;
+  height:200px;
+  border: 5px solid black;
 }

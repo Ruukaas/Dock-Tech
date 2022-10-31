@@ -18,7 +18,7 @@ function toggleClick(content) {
     }
   }
   
-  const buttons = document.getElementsByClassName('open-button');
+  const buttons = document.getElementsByClassName('hasContent');
   for (const btn of buttons) {
     btn.addEventListener('click', function() {
       //se a div estiver com active, fecha todas as outras divs

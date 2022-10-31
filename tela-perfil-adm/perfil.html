@@ -6,8 +6,9 @@
     <link rel="stylesheet" href="stylePERFIL.css">
     <link rel="icon" type="image/png" href="../assets/global-images/icone.png" />
     <link rel="stylesheet" href="../assets/styleGLOBAL.css">
+    <script src="js/dynamic-profile.js" defer type="module"></script>
     <script src="js/divs.js" defer></script>
-    <script src="js/modalContent.js" defer></script>
+    <!-- <script src="js/modalContent.js" defer></script> -->
     <link rel="icon" type="image/png" href="assets/global-images/icone.png" />
 </head>
 
@@ -25,8 +26,7 @@
         </nav>
     </header>
     <div id="main">
-        <div>
-
+        <!-- <div class="main-wrapper">
             <div class="profile-content">
                 <div class="profile-image">
                     <img id="profile-image" src="./page-images/adm.png" alt="Avatar">
@@ -49,34 +49,44 @@
             </div>
 
             <div class="buttons-wrapper">
-                <button type="button" class="open-button">Squads</button>
-                <div class="content">
-                    <div id="divSquads" style="overflow-y: scroll; height:200px;"></div>
-                    <button type="button" class="edit-squads">Criar ou editar membros do squad</button>
-                </div>
-                <button type="button" class="open-button">Usuários</button>
-                <div class="content">
-                    <div id="divUsuarios" style="overflow-y: scroll; height:200px;">
+                <div class="squads-wrapper">
+                    <button type="button" class="open-button hasContent">Squads</button>
+                    <div class="content-wrapper">
+                        <div id="divSquads" style="overflow-y: scroll; height:200px;"></div>
+                        <button type="button" class="edit-squads">Criar ou editar membros do squad</button>
                     </div>
                 </div>
-                <button type="button" class="open-button">Instituições/Empresas</button>
-                <div class="content">
-                    <div id="divEmpresas" style="overflow-y: scroll; height:200px;">
+                <div class="usuarios-wrapper">
+                    <button type="button" class="open-button">Usuários</button>
+                    <div class="content-wrapper">
+                        <div id="divUsuarios" style="overflow-y: scroll; height:200px;">
+                        </div>
                     </div>
                 </div>
-                <button type="button" class="open-button">Trilhas</button>
-                <div class="content">
-                    <div id="divTrilhas" style="overflow-y: scroll; height:200px;">
+                <div class="inst-empr-wrapper">
+                    <button type="button" class="open-button">Instituições/Empresas</button>
+                    <div class="content-wrapper">
+                        <div id="divEmpresas" style="overflow-y: scroll; height:200px;">
+                        </div>
                     </div>
                 </div>
-                <button type="button" class="open-button">Notificações</button>
-                <div class="content">
-                    <div id="divNotific" style="overflow-y: scroll; height:200px;">
+                <div class="trilhas-wrapper">
+                    <button type="button" class="open-button">Trilhas</button>
+                    <div class="content-wrapper">
+                        <div id="divTrilhas" style="overflow-y: scroll; height:200px;">
+                        </div>
+                    </div>
+                </div>
+                <div class="notific-wrapper">
+                    <button type="button" class="open-button">Notificações</button>
+                    <div class="content-wrapper">
+                        <div id="divNotific" style="overflow-y: scroll; height:200px;">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </div> -->
+    </div> 
     <footer>
         <div><span style="font-weight: 600;">SQUAD 18</span> &copy; Todos os direitos reservados - 2022</div>
     </footer>
