@@ -52,21 +52,33 @@ export const dynamicList = (file, title, titleClasse, idContainerList, ...itemLi
 
     file.forEach(valor => {
         let itemListEl = createDivWithClasses(...itemListClasses)
+
+        let itemCollumEl1 = createDivWithClasses("itemColumn")
         let titleItemListEl = createParagraph(valor.title)
+        let descItemListEl = createParagraph(valor.desc)
 
         let itemCollumEl = createDivWithClasses("itemColumn")
         let subItemDiv1 = createDivWithClasses("subItem")
         let subItemDiv2 = createDivWithClasses("subItem")
 
-        let squadItemListEl = createParagraph(valor.squad)
+        let responsavelItemListP = createParagraph("Responsavel: ")
+        let squadItemListEl = createParagraph(valor.responsavel)
 
-        let instituicaoItemListP = createParagraph("Instituicao/Empresa: ")
-        let instituicaoItemListEl = createParagraph(valor.instituicao)
+        let contatoItemListP = createParagraph("Contato: ")
+        let contatoItemListEl = createParagraph(valor.contato)
 
-        subItemDiv2.appendChild(instituicaoItemListP)
-        subItemDiv2.appendChild(instituicaoItemListEl)
+        // let instituicaoItemListP = createParagraph("Instituicao/Empresa: ")
+        // let instituicaoItemListEl = createParagraph(valor.contato)
 
+        itemCollumEl1.appendChild(titleItemListEl)
+        itemCollumEl1.appendChild(descItemListEl)
+
+        subItemDiv1.appendChild(responsavelItemListP)
         subItemDiv1.appendChild(squadItemListEl)
+
+        subItemDiv2.appendChild(contatoItemListP)
+        subItemDiv2.appendChild(contatoItemListEl)
+
         
         itemCollumEl.appendChild(subItemDiv1)
         itemCollumEl.appendChild(subItemDiv2)
@@ -80,7 +92,7 @@ export const dynamicList = (file, title, titleClasse, idContainerList, ...itemLi
         actionsButtonContainer.appendChild(editButtonEl)
         actionsButtonContainer.appendChild(deleteButtonEl)
 
-        itemListEl.appendChild(titleItemListEl)
+        itemListEl.appendChild(itemCollumEl1)
         itemListEl.appendChild(itemCollumEl)
         itemListEl.appendChild(actionsButtonContainer)
 

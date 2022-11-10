@@ -10,5 +10,5 @@
 let back = document.getElementById("back")
 back.addEventListener("click", backEvent)
 function backEvent(){
-    window.location.href="../tela-adm-usuario-inicial/tela-adm-usuario.html"
+    window.location.href="../tela-adm-instituicoes/tela-adm-instituicoes.html"
 }

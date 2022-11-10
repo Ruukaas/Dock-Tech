@@ -121,13 +121,17 @@ nav{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 350px;
+    width: 300px;
   }
 
   .itemCollumn{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+
+  p {
+    width: 250px;
   }
 
 
