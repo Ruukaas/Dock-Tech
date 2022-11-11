@@ -1,41 +1,16 @@
+import {createTitle, createDivWithID, createDivWithClasses, createParagraph, createImage} from "../assets/code/DOM/DOM.js"
+
+
 let containerEl //elemento previamente existente na página html onde irá rodar o código aonde serão inseridos os elementos dinamicamente
 
 export const setContainerEl = id => {
     containerEl = document.getElementById(id)
 }
 
-const createTitle = (name,...classes) => {
-    let h1El = document.createElement("h1")
-    h1El.classList.add(...classes)
-    h1El.textContent = name
-    return h1El 
+export const clearContainerEl = () => {
+    containerEl.innerHTML = ""
 }
 
-const createDivWithID = id => {
-    let divEl = document.createElement("div")
-    divEl.setAttribute("id",id)
-    return divEl
-}
-
-const createDivWithClasses = (...classes) => {
-    let divEl = document.createElement("div")
-    divEl.classList.add(...classes)
-    return divEl
-}
-
-const createParagraph = (name) => {
-    let pEl = document.createElement("p")
-    pEl.textContent = name
-    return pEl
-}
-
-const createImage = (src, alt, ...classes) => {
-    let imgEl = document.createElement("img")
-    imgEl.setAttribute("src", src)
-    imgEl.setAttribute("alt", alt)
-    imgEl.classList.add(...classes)
-    return imgEl
-}
 
 //Primeiro argumento : Arquivo com os elementos que estarão na lista - Array
 //Segundo argumento: Título da Lista - String
@@ -49,14 +24,13 @@ export const dynamicList = (file, title, titleClasse, idContainerList, ...itemLi
 
     let addButtonEl = createImage("../assets/global-images/add-light.png","Botão com o sinal de mais")
     addButtonEl.setAttribute("id", "addButton")
-
     file.forEach(valor => {
         let itemListEl = createDivWithClasses(...itemListClasses)
+        itemListEl.setAttribute("id",valor.id)
 
         let itemCollumEl1 = createDivWithClasses("itemColumn")
-        let titleItemListEl = createParagraph(valor.title)
-        let descItemListEl = createParagraph(valor.desc)
-
+        let titleItemListEl = createParagraph(valor.nome)
+        let descItemListEl = createParagraph(valor.instEmpr)
         let itemCollumEl = createDivWithClasses("itemColumn")
         let subItemDiv1 = createDivWithClasses("subItem")
         let subItemDiv2 = createDivWithClasses("subItem")

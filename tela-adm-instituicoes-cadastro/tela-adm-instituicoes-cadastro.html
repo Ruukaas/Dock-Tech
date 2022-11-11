@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../assets/styleGLOBAL.css">
     <link rel="stylesheet" href="./tela-adm-instituicoes-cadastro.css">
+    <script src="../assets/code/db/firebase.js" type="module"></script>
     <script src="./code.js" defer="defer" type="module"></script>
 </head>
 <body>
@@ -24,26 +25,26 @@
          <h1 class="title">Instituicoes/Empresas</h1>
         <div class="inputDiv">
             <p class="">Nome</p>
-            <input class="input" type="text" name="" id="">
+            <input class="input" type="text" name="nome" id="">
         </div>
         <div class="inputDiv">
             <p class="">Responsavel</p>
-            <input class="input" type="text" name="" id="">
+            <input class="input" type="text" name="responsavel" id="">
         </div>
         <div class="inputDiv">
             <p class="">Contato</p>
-            <input class="input" type="text" name="" id="">
+            <input class="input" type="text" name="contato" id="">
         </div>
         <div class="inputDiv">
             <p class="">Instituicao/Empresa</p>
             <select class="input" id="funcoes">
+                <option value="Empresa">Empresa</option>
               <option value="Instituicao">Instituicao de Ensino</option>
-              <option value="Empresa">Empresa</option>
             </select>
         </div>
         <div id="container-buttons">
             <img class="button" src="../assets/global-images/back.png" alt="" id="back">
-            <img class="button" src="../assets/global-images/icons8-ok-65.png" alt="">
+            <img class="button" src="../assets/global-images/icons8-ok-65.png" alt="" id="ok">
         </div>
 
 

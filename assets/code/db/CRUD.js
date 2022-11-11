@@ -4,31 +4,30 @@ import { setIDObjects } from "./setIDObjects.js"
 const db = getFirestore();
 
 
-export const add = (obj, collectionref) => {
+export async function add(obj, collectionref) {
     try {
-        const docRef = addDoc(collection(db, collectionref), Object.assign({}, obj)).then(() => {
-            console.log("Document written with ID: ", docRef.id);
-        });
-
+        await addDoc(collection(db, collectionref), Object.assign({}, obj))
+        return "sucesso";
     } catch (e) {
         console.error("Error:", e);
     }
 }
 
-export const getAll = (collectionref) => {
+export async function getAll(collectionref) {
     try {
-        let usuariosArray = []
-        let currentObject
-        getDocs(collection(db, collectionref)).then((doc) => {
-            doc.forEach(valor => {
-                currentObject = valor.data()
-                currentObject = setIDObjects(currentObject, valor.id)
-                usuariosArray.push(currentObject)
-            })
-        })
-        return usuariosArray
+        let searchArray = [];
+        let currentObject;
+        let documents = await getDocs(collection(db, collectionref))
+        documents.forEach(valor => {
+            currentObject = valor.data();
+            currentObject = setIDObjects(currentObject, valor.id);
+            searchArray.push(currentObject);
+            console.log(searchArray);
+        });
+
+        return searchArray;
     } catch (e) {
-        console.log(`Error: ${e}`)
+        console.log(`Error: ${e}`);
     }
 }
 
@@ -41,11 +40,12 @@ export const get = (id, collectionref) => {
     }
 }
 
-export const update = (obj, collectionref) => {
+export async function update(obj, collectionref) {
     try {
-        return updateDoc(doc(db, collectionref, obj.id), Object.assign({}, obj)).then(() => "Sucesso")
+        await updateDoc(doc(db, collectionref, obj.id), Object.assign({}, obj))
+        return "sucesso" 
     } catch (e) {
-        console.log(`Error: ${e}`)
+        console.log(`Error: ${e}`);
     }
 }
 
