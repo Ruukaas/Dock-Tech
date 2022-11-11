@@ -1,5 +1,5 @@
 export const createTitle = (name,...classes) => {
-    let h1El = document.createElement("h1")
+    let h1El = document.createElement("h2")
     h1El.classList.add(...classes)
     h1El.textContent = name
     return h1El 
