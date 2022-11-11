@@ -1,40 +1,14 @@
+import {createDivWithClasses, createDivWithID, createImage, createParagraph, createTitle} from "../assets/code/DOM/DOM.js"
+
 let containerEl //elemento previamente existente na página html onde irá rodar o código aonde serão inseridos os elementos dinamicamente
+
+export const clearContainerEl = () => {
+    containerEl.innerHTML = ""
+}
+
 
 export const setContainerEl = id => {
     containerEl = document.getElementById(id)
-}
-
-const createTitle = (name,...classes) => {
-    let h1El = document.createElement("h1")
-    h1El.classList.add(...classes)
-    h1El.textContent = name
-    return h1El 
-}
-
-const createDivWithID = id => {
-    let divEl = document.createElement("div")
-    divEl.setAttribute("id",id)
-    return divEl
-}
-
-const createDivWithClasses = (...classes) => {
-    let divEl = document.createElement("div")
-    divEl.classList.add(...classes)
-    return divEl
-}
-
-const createParagraph = (name) => {
-    let pEl = document.createElement("p")
-    pEl.textContent = name
-    return pEl
-}
-
-const createImage = (src, alt, ...classes) => {
-    let imgEl = document.createElement("img")
-    imgEl.setAttribute("src", src)
-    imgEl.setAttribute("alt", alt)
-    imgEl.classList.add(...classes)
-    return imgEl
 }
 
 //Primeiro argumento : Arquivo com os elementos que estarão na lista - Array
@@ -52,27 +26,37 @@ export const dynamicList = (file, title, titleClasse, idContainerList, ...itemLi
 
     file.forEach(valor => {
         let itemListEl = createDivWithClasses(...itemListClasses)
-        let titleItemListEl = createParagraph(valor.title)
+        let titleItemListEl = createParagraph(valor.nome)
+
+        itemListEl.setAttribute("id", valor.id)
 
         let itemCollumEl = createDivWithClasses("itemColumn")
         let subItemDiv1 = createDivWithClasses("subItem")
         let subItemDiv2 = createDivWithClasses("subItem")
+        let subItemDiv3 = createDivWithClasses("subItem")
 
-        let squadItemListEl = createParagraph(valor.squad)
+        let funcaoItemListP = createParagraph("Função:")
+        let funcaoItemListEl = createParagraph(valor.funcao)
 
         let instituicaoItemListP = createParagraph("Instituicao/Empresa: ")
-        let instituicaoItemListEl = createParagraph(valor.instituicao)
+        let instituicaoItemListEl = createParagraph(valor.instEmpr)
+
+        let emailItemListP = createParagraph("Email:")
+        let emailItemListEl = createParagraph(valor.email)
+
+        subItemDiv1.appendChild(funcaoItemListP)
+        subItemDiv1.appendChild(funcaoItemListEl)
 
         subItemDiv2.appendChild(instituicaoItemListP)
         subItemDiv2.appendChild(instituicaoItemListEl)
 
-        subItemDiv1.appendChild(squadItemListEl)
-        
+        subItemDiv3.appendChild(emailItemListP)
+        subItemDiv3.appendChild(emailItemListEl)
+
         itemCollumEl.appendChild(subItemDiv1)
         itemCollumEl.appendChild(subItemDiv2)
+        itemCollumEl.appendChild(subItemDiv3)
 
- 
-        
         let actionsButtonContainer = createDivWithClasses("action-container")
         let editButtonEl = createImage("../assets/global-images/edit.png","Ícone de lápis de escrever","action-button","edit-button")
         let deleteButtonEl = createImage("../assets/global-images/remove.png", "Ícone de lata de lixo","action-button","delete-button")
