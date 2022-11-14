@@ -1,12 +1,12 @@
 /*Fontes*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,500&display=swap');
-*{
+
+body{
+    font-family: 'Roboto Flex', sans-serif;
     padding: 0;
     margin: 0;
 }
-body{
-    font-family: 'Roboto Flex', sans-serif;
-}
+
 /*flex-box do nav*/
 .container-flex{
     display: flex;
@@ -16,11 +16,12 @@ body{
     align-items: center;
     padding: 5px 10px;
 }
+
 nav{
     background-color: #101a3f;
     margin-top: 0;
     color: #d3d2eb;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Roboto Flex', sans-serif;
 }
 a{
     color:#d3d2eb;
@@ -36,7 +37,7 @@ a:hover{
 }
 /*Footer*/
 footer{
-    color: #101a3f;
+    color: #ffffff;
     bottom: 0;
     left:0;
     width: 100%;
@@ -50,3 +51,4 @@ footer{
         font-size: 12px!important;
     }   
 }
+

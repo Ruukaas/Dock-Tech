@@ -1,0 +1,86 @@
+#container-notepad{
+    font-family: Verdana,Tahoma, sans-serif;
+    width: 600px;
+    height: 50px;
+    margin: 20px;
+    border-radius: 3px;
+    background-color: #101A3F;
+    display: flex;
+    justify-content: space-between;  
+    border: solid 1px black;
+ }
+
+
+ .item-notepad{
+    padding: 5px;
+    align-self: center;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+ }
+
+ .item-notepad i {
+    padding: 5px;
+    cursor: pointer;
+ }
+
+ .fa-solid, .fa-solid-circle-plus {
+      padding: 5px;
+      cursor: pointer;
+ }
+
+ #videoTimer {
+   align-self: none;
+   background-color: #101A3F;
+   color: #FFFFFF;
+   border-radius: 40px;
+   padding: 5px;
+   font-size: small;
+   margin-right: 10px;
+ }
+
+ #annotationBox{
+   width: 600px;
+   background-color: #101A3F;
+   color: #FFFFFF;
+ }
+
+ #div2{
+    margin-top: 5px;
+    width: 660px;
+    padding: 5px;
+    align-self: center;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+ }
+
+ #saveButton {
+   width: 180;
+   height: 70;
+   background-color: #101A3F;
+   color: #FFFFFF;
+   padding: 10px;
+   margin-left: 20px;
+   border-radius: 5px;
+ }
+
+ #saveButton:hover {
+   border: solid #FFFFFF 2px;
+   cursor: pointer;
+ }
+
+ #cancelButton {
+   margin-left: 15px;
+   border: none;
+   background-color: #D3D2EB;
+ }
+
+ #cancelButton:hover{
+   color: #FFFFFF;
+   background-color: red;
+   border: solid 2px black;
+ }
+
+

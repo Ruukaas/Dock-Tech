@@ -1,0 +1,15 @@
+#progress-bar {
+    max-width:30%;
+    min-width: 200px;
+    color:black;
+    border:1px solid white;
+    margin-bottom: 15px;
+    margin-top: 10px;
+  }
+
+  
+  #text-progress {
+    padding: 4px;
+    color:white;
+    display:flex;
+  }
