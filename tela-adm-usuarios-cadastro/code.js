@@ -29,6 +29,7 @@ async function getListInstEmpresas() {
 async function cadastroUsuario(nome, email, funcao, instituicaoEmpresa, senha) {
     if (!(isInputNull(nome)) && !(isInputNull(email)) && !(isInputNull(funcao)) && !(isInputNull(instituicaoEmpresa)) && !(isInputNull(senha))) { //Se nenhum dos valores passados forem nulos
         let currentUsuario = new usuario(nome, email, funcao, instituicaoEmpresa, senha) //Se der tempo, colocar referencia ao documento de instEmpr(não vai dar)
+        console.log(currentUsuario)
         let insert = await add(currentUsuario, "usuarios")
         if (insert == "sucesso") {
             alert("Cadastro realizado com sucesso") //Colocar um modal aqui depois
@@ -100,6 +101,7 @@ const onClickCadastro = () => {
     let currentFuncao = getSelectMarked("funcoes")
     let currentInstituicaoEmpresa = getSelectMarked("selectInstEmpr")
     let currentSenha = getInputValueByName("senha")
+    console.log(currentSenha)
     cadastroUsuario(currentName, currentEmail, currentFuncao, currentInstituicaoEmpresa, currentSenha)
 }
 
