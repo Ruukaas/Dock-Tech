@@ -8,40 +8,26 @@ const next = document.getElementById("ok")
 
 let idUpdateObject
 
-async function cadastroInstEmpr(nome, responsavel, contato, instituicaoEmpresa) {
+async function insertInstEmpr(nome, responsavel, contato, instituicaoEmpresa, operacao) {
+    console.log(operacao)
     if (!(isInputNull(nome)) && !(isInputNull(responsavel)) && !(isInputNull(contato)) && !(isInputNull(instituicaoEmpresa))) { //Se nenhum dos valores passados forem nulos
+        let insert = null
+        let msg
         let currentInstEmpr = new instEmpr(nome, responsavel, contato, instituicaoEmpresa)
-        let insert = await add(currentInstEmpr, "inst-empr")
-        if (insert == "sucesso") {
-            alert("Cadastro realizado com sucesso") //Colocar um modal aqui depois
-            backToMainPage()
+        switch (operacao) {
+            case "cadastro":
+                insert = await add(currentInstEmpr, "inst-empr")
+                msg = "Cadastro realizado com sucesso"
+                break
+            case "atualizacao":
+                console.log("here")
+                currentInstEmpr = setIDObjects(currentInstEmpr, idUpdateObject)
+                insert = await update(currentInstEmpr, "inst-empr")
+                msg = "Alteração realizada com sucesso"
+                break
         }
-    } else
-        alert("Um ou mais valores estão nulos") //Colocar um modal aqui depois
-}
-
-async function updateInstEmpr(nome, responsavel, contato, instituicaoEmpresa) {
-    if (!(isInputNull(nome)) && !(isInputNull(responsavel)) && !(isInputNull(contato)) && !(isInputNull(instituicaoEmpresa))) { //Se nenhum dos valores passados forem nulos
-        let currentInstEmpr = new instEmpr(nome, responsavel, contato, instituicaoEmpresa)
-        currentInstEmpr = setIDObjects(currentInstEmpr, idUpdateObject)
-        let insert = await update(currentInstEmpr, "inst-empr")
-        console.log(insert)
         if (insert == "sucesso") {
-            sessionStorage.clear()
-            alert("Alteração realizada com sucesso") //Colocar um modal aqui depois
-            backToMainPage()
-        }
-    } else
-        alert("Um ou mais valores estão nulos") //Colocar um modal aqui depois
-}
-
-async function insertInstEmpr(nome,responsavel,contato,instituicaoEmpresa,operacao) {
-    if (!(isInputNull(nome)) && !(isInputNull(responsavel)) && !(isInputNull(contato)) && !(isInputNull(instituicaoEmpresa))) { //Se nenhum dos valores passados forem nulos
-        let currentInstEmpr = new instEmpr(nome, responsavel, contato, instituicaoEmpresa)
-        swit
-        let insert = await add(currentInstEmpr, "inst-empr")
-        if (insert == "sucesso") {
-            alert("Cadastro realizado com sucesso") //Colocar um modal aqui depois
+            alert(msg) //Colocar um modal aqui depois
             backToMainPage()
         }
     } else
@@ -53,16 +39,20 @@ async function insertInstEmpr(nome,responsavel,contato,instituicaoEmpresa,operac
 const checkTheCurrentAtivity = () => {
     let currentObject
     let currentAtivity = sessionStorage.getItem("update")
-    
+
     if (currentAtivity != null && currentAtivity != undefined) {
         currentObject = JSON.parse(currentAtivity)
         fillInstEmpr(currentObject)
         idUpdateObject = currentObject.id
-        next.addEventListener("click",onClickUpdate)
+        next.addEventListener("click", () => {
+            onClickInsert("atualizacao")
+        })
     } else {
-        next.addEventListener("click", onClickCadastro)
+        next.addEventListener("click", () => {
+            onClickInsert("cadastro")
+        })
     }
-    back.addEventListener("click", backToMainPage) 
+    back.addEventListener("click", backToMainPage)
 }
 
 const fillInstEmpr = (obj) => {
@@ -83,20 +73,12 @@ const fillInstEmpr = (obj) => {
     }
 }
 
-const onClickCadastro = () => {
+const onClickInsert = (operacao) => {
     let currentName = getInputValueByName("nome")
     let currentResponsavel = getInputValueByName("responsavel")
     let currentContato = getInputValueByName("email")
     let currentInstituicaoEmpresa = getSelectMarked("funcoes")
-    cadastroInstEmpr(currentName, currentResponsavel, currentContato, currentInstituicaoEmpresa)
-}
-
-const onClickUpdate = () => {
-    let currentName = getInputValueByName("nome")
-    let currentResponsavel = getInputValueByName("responsavel")
-    let currentContato = getInputValueByName("email")
-    let currentInstituicaoEmpresa = getSelectMarked("funcoes")
-    updateInstEmpr(currentName, currentResponsavel, currentContato, currentInstituicaoEmpresa)
+    insertInstEmpr(currentName, currentResponsavel, currentContato, currentInstituicaoEmpresa,operacao)
 }
 
 const backToMainPage = () => {
