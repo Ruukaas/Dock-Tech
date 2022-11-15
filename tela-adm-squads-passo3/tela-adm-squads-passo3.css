@@ -1,9 +1,36 @@
+
 .title{
+    color: #d3d2eb;
+    text-decoration: underline;
     text-align:left;
+    display: inline;
 }
 
 input{
     width: 300px;
+}
+
+body{
+    background-color: #101a3f;
+}
+
+nav{
+    background-color: #d3d2eb;
+}
+
+
+input{
+    width: 300px;
+}
+
+#exit-button{
+    float: right;
+}
+.container-x{
+    width: 80%;
+    color:#d3d2eb;
+    display: flex;
+    flex-direction: row;
 }
 
 .containerLista{
@@ -29,6 +56,7 @@ input{
 }
 
 #buttonDiv{
+    width: 120%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -51,6 +79,7 @@ input{
 }
 
 #containerPrincipal{
+    width: 120%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
