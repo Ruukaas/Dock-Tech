@@ -73,7 +73,7 @@ const checkTheCurrentAtivity = () => {
 const fillInstEmpr = (obj) => {
     let inputNomeEl = document.getElementsByName("nome")[0]
     let inputResponsavelEl = document.getElementsByName("responsavel")[0]
-    let inputContatoEl = document.getElementsByName("contato")[0]
+    let inputContatoEl = document.getElementsByName("email")[0]
     let selectInstituicaoEmpresa = document.getElementById("funcoes")
 
     inputNomeEl.value = obj.nome
@@ -91,7 +91,7 @@ const fillInstEmpr = (obj) => {
 const onClickCadastro = () => {
     let currentName = getInputValueByName("nome")
     let currentResponsavel = getInputValueByName("responsavel")
-    let currentContato = getInputValueByName("contato")
+    let currentContato = getInputValueByName("email")
     let currentInstituicaoEmpresa = getSelectMarked("funcoes")
     cadastroInstEmpr(currentName, currentResponsavel, currentContato, currentInstituicaoEmpresa)
 }
@@ -99,7 +99,7 @@ const onClickCadastro = () => {
 const onClickUpdate = () => {
     let currentName = getInputValueByName("nome")
     let currentResponsavel = getInputValueByName("responsavel")
-    let currentContato = getInputValueByName("contato")
+    let currentContato = getInputValueByName("email")
     let currentInstituicaoEmpresa = getSelectMarked("funcoes")
     updateInstEmpr(currentName, currentResponsavel, currentContato, currentInstituicaoEmpresa)
 }
