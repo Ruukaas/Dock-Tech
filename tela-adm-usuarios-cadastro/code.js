@@ -26,9 +26,9 @@ async function getListInstEmpresas() {
     arrayInstEmpresas = await getAll("inst-empr")
 }
 
-async function cadastroUsuario(nome, email, funcao, instituicaoEmpresa, github, senha) {
-    if (!(isInputNull(nome)) && !(isInputNull(email)) && !(isInputNull(funcao)) && !(isInputNull(instituicaoEmpresa)) && !(isInputNull(github)) && !(isInputNull(senha))) { //Se nenhum dos valores passados forem nulos
-        let currentUsuario = new usuario(nome, email, funcao, instituicaoEmpresa, github, senha) //Se der tempo, colocar referencia ao documento de instEmpr(não vai dar)
+async function cadastroUsuario(nome, email, funcao, instituicaoEmpresa, senha) {
+    if (!(isInputNull(nome)) && !(isInputNull(email)) && !(isInputNull(funcao)) && !(isInputNull(instituicaoEmpresa)) && !(isInputNull(senha))) { //Se nenhum dos valores passados forem nulos
+        let currentUsuario = new usuario(nome, email, funcao, instituicaoEmpresa, senha) //Se der tempo, colocar referencia ao documento de instEmpr(não vai dar)
         let insert = await add(currentUsuario, "usuarios")
         if (insert == "sucesso") {
             alert("Cadastro realizado com sucesso") //Colocar um modal aqui depois
@@ -38,9 +38,9 @@ async function cadastroUsuario(nome, email, funcao, instituicaoEmpresa, github, 
     } else alert("Um ou mais campos estão vazios")
 }
 
-async function updateUsuario(nome, email, funcao, instituicaoEmpresa, github, senha) {
-    if (!(isInputNull(nome)) && !(isInputNull(email)) && !(isInputNull(funcao)) && !(isInputNull(instituicaoEmpresa)) && !(isInputNull(github)) && !(isInputNull(senha))) { //Se nenhum dos valores passados forem nulos {
-        let currentUsuario = new usuario(nome, email, funcao, instituicaoEmpresa, github, senha) //Se der tempo, colocar referencia ao documento de instEmpr(não vai dar)
+async function updateUsuario(nome, email, funcao, instituicaoEmpresa,senha) {
+    if (!(isInputNull(nome)) && !(isInputNull(email)) && !(isInputNull(funcao)) && !(isInputNull(instituicaoEmpresa))&& !(isInputNull(senha))) { //Se nenhum dos valores passados forem nulos {
+        let currentUsuario = new usuario(nome, email, funcao, instituicaoEmpresa,senha) //Se der tempo, colocar referencia ao documento de instEmpr(não vai dar)
         currentUsuario = setIDObjects(currentUsuario, idUpdateObject)
         let insert = await update(currentUsuario,"usuarios")
         if (insert == "sucesso") {
@@ -73,7 +73,6 @@ const fillUsuario = (obj) => {
     let inputEmail = document.getElementsByName("email")[0] 
     let inputFuncao = document.getElementById("funcoes") 
     let inputInstituicaoEmpresa = document.getElementById("selectInstEmpr") 
-    let inputGithub = document.getElementsByName("github")[0] 
     let inputSenha = document.getElementsByName("senha")[0] 
 
 
@@ -81,7 +80,6 @@ const fillUsuario = (obj) => {
     inputEmail.value = obj.email
     setDefaultValueSelect(inputFuncao,obj.funcao)
     setDefaultValueSelect(inputInstituicaoEmpresa,obj.instEmpr)
-    inputGithub.value = obj.github
     inputSenha.value = obj.senha
 }
 
@@ -101,9 +99,8 @@ const onClickCadastro = () => {
     let currentEmail = getInputValueByName("email")
     let currentFuncao = getSelectMarked("funcoes")
     let currentInstituicaoEmpresa = getSelectMarked("selectInstEmpr")
-    let currentGithub = getInputValueByName("github")
     let currentSenha = getInputValueByName("senha")
-    cadastroUsuario(currentName, currentEmail, currentFuncao, currentInstituicaoEmpresa, currentGithub, currentSenha)
+    cadastroUsuario(currentName, currentEmail, currentFuncao, currentInstituicaoEmpresa, currentSenha)
 }
 
 const onClickUpdate = () => {
@@ -111,9 +108,8 @@ const onClickUpdate = () => {
     let currentEmail = getInputValueByName("email")
     let currentFuncao = getSelectMarked("funcoes")
     let currentInstituicaoEmpresa = getSelectMarked("selectInstEmpr")
-    let currentGithub = getInputValueByName("github")
     let currentSenha = getInputValueByName("senha")
-    updateUsuario(currentName, currentEmail, currentFuncao, currentInstituicaoEmpresa, currentGithub, currentSenha)
+    updateUsuario(currentName, currentEmail, currentFuncao, currentInstituicaoEmpresa, currentSenha)
 }
 
 checkTheCurrentActivity()

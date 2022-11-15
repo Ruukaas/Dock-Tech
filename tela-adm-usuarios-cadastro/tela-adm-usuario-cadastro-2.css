@@ -1,0 +1,21 @@
+.title{
+    color: #d3d2eb;
+    text-decoration: underline;
+    text-align:left;
+}
+
+input{
+    width: 300px;
+}
+
+body{
+    background-color: #101a3f;
+}
+
+nav{
+    background-color: #d3d2eb;
+}
+
+footer{
+    color: #d3d2eb !important;
+}

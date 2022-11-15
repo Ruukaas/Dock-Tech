@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/styleGLOBAL.css">
+    <link rel="stylesheet" href="./tela-adm-usuario-cadastro-2.css">
+    <script src="../assets/code/db/firebase.js" type="module"></script>
+    <script src="./code.js" defer="defer" type="module"></script>
+</head>
+<body>
+    
+    <!-- Header -->
+    <header>
+        <nav class="container-flex">
+            <div class="item-flex">
+                <img src="../assets/global-images/Group 52.png" alt="Logo" style="width: 100px;">
+            </div>
+        </nav>
+    </header>
+
+    <form action="index.html" method="post">
+  
+        <h1>Usuarios</h1>
+        
+        <fieldset>
+    
+          <label for="name">Nome:</label>
+          <input type="text" id="name" name="nome">
+          
+          <label for="mail">Email:</label>
+          <input type="email" id="mail" name="email">
+          
+          <label for="senha">Senha:</label>
+          <input type="password" id="senha" name="senha">
+    
+          <label for="funcoes">Funcao:</label>
+    
+          <select class="input" id="funcoes">
+                <option value="Aluno">Aluno</option>
+                <option value="Mentor">Mentor</option>
+                <option value="Administrador">Administrador</option>
+          </select>
+
+          <label for="isntituicoes">Instituicao/Empresa</label>
+          <select class="input" id="selectInstEmpr">
+
+          </select>
+          
+        </fieldset>  
+    
+            <div id="container-buttons">
+                <img class="button" src="../assets/global-images/back.png" alt="" id="back">
+                <img class="button" src="../assets/global-images/icons8-ok-65.png" alt="" id="ok">
+            </div>
+      </form>
+    
+
+    <!--Footer-->
+    <footer>
+        <div>SQUAD 18 &copy; Todos os direitos reservados - 2022</div>
+    </footer>
+</body>
+</html>

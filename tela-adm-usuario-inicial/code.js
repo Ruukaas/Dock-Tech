@@ -18,7 +18,7 @@ let arrayDeleteButtons = document.getElementsByClassName("delete-button")
 let arrayEditButtons = document.getElementsByClassName("edit-button")
 
 function next(){
-  window.location.href = "../tela-adm-usuarios-cadastro/tela-adm-usuario-cadastro.html";
+  window.location.href = "../tela-adm-usuarios-cadastro/tela-adm-usuario-cadastro-2.html";
 }
 
 async function setUsuarios() {
