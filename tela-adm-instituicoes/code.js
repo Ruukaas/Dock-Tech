@@ -28,7 +28,7 @@ function onClickAddInstituição() {
 }
 
 function next() {
-  window.location.href = "../tela-adm-instituicoes-cadastro/tela-adm-instituicoes-cadastro.html";
+  window.location.href = "../tela-adm-instituicoes-cadastro/tela-adm-instituicoes-cadastro-2.html";
 }
 
 const openModal = () => {
