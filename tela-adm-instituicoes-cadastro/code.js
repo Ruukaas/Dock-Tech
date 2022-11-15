@@ -1,30 +1,12 @@
 import { instEmpr } from "../assets/code/classes/instEmpr.js"
 import { add, update } from "../assets/code/db/CRUD.js"
 import { setIDObjects } from "../assets/code/db/setIDObjects.js"
+import { getSelectMarked, getInputValueByName, isInputNull } from "../assets/code/DOM/DOM.js"
 
 const back = document.getElementById("back")
 const next = document.getElementById("ok")
 
 let idUpdateObject
-
-//Colocar essa função no DOM depois?
-const getSelectMarked = (idSelect) => {
-    let selectEl = document.getElementById(idSelect)
-    let valueSelected = selectEl.options[selectEl.selectedIndex].value
-    return valueSelected
-}
-
-//Colocar essa função no DOM depois?
-const getInputValueByName = (nameInput) => {
-    let inputEl = document.getElementsByName(nameInput)[0]
-    return inputEl.value
-}
-
-//Colocar essa função no DOM depois?
-const isInputNull = valor => {
-    if (valor === "") return true
-    else return false
-}
 
 async function cadastroInstEmpr(nome, responsavel, contato, instituicaoEmpresa) {
     if (!(isInputNull(nome)) && !(isInputNull(responsavel)) && !(isInputNull(contato)) && !(isInputNull(instituicaoEmpresa))) { //Se nenhum dos valores passados forem nulos
@@ -47,6 +29,19 @@ async function updateInstEmpr(nome, responsavel, contato, instituicaoEmpresa) {
         if (insert == "sucesso") {
             sessionStorage.clear()
             alert("Alteração realizada com sucesso") //Colocar um modal aqui depois
+            backToMainPage()
+        }
+    } else
+        alert("Um ou mais valores estão nulos") //Colocar um modal aqui depois
+}
+
+async function insertInstEmpr(nome,responsavel,contato,instituicaoEmpresa,operacao) {
+    if (!(isInputNull(nome)) && !(isInputNull(responsavel)) && !(isInputNull(contato)) && !(isInputNull(instituicaoEmpresa))) { //Se nenhum dos valores passados forem nulos
+        let currentInstEmpr = new instEmpr(nome, responsavel, contato, instituicaoEmpresa)
+        swit
+        let insert = await add(currentInstEmpr, "inst-empr")
+        if (insert == "sucesso") {
+            alert("Cadastro realizado com sucesso") //Colocar um modal aqui depois
             backToMainPage()
         }
     } else

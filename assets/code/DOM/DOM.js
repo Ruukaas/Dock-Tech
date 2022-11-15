@@ -30,3 +30,19 @@ export const createImage = (src, alt, ...classes) => {
     imgEl.classList.add(...classes)
     return imgEl
 }
+
+export const getSelectMarked = (idSelect) => {
+    let selectEl = document.getElementById(idSelect)
+    let valueSelected = selectEl.options[selectEl.selectedIndex].value
+    return valueSelected
+}
+
+export const getInputValueByName = (nameInput) => {
+    let inputEl = document.getElementsByName(nameInput)[0]
+    return inputEl.value
+}
+
+export const isInputNull = valor => {
+    if (valor === "") return true
+    else return false
+}
