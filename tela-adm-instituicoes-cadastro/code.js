@@ -1,7 +1,7 @@
 import { instEmpr } from "../assets/code/classes/instEmpr.js"
 import { add, update } from "../assets/code/db/CRUD.js"
 import { setIDObjects } from "../assets/code/db/setIDObjects.js"
-import { getSelectMarked, getInputValueByName, isInputNull, setDefaultValueSelect } from "../assets/code/DOM/DOM.js"
+import { getSelectMarked, getInputValueByName, isInputNull, setDefaultValueSelect, addEventToElementOnClick } from "../assets/code/DOM/DOM.js"
 
 const back = document.getElementById("back")
 const next = document.getElementById("ok")
@@ -50,7 +50,7 @@ const checkTheCurrentAtivity = () => {
             onClickInsert("cadastro")
         })
     }
-    back.addEventListener("click", backToMainPage)
+    addEventToElementOnClick(back, backToMainPage)
 }
 
 const fillInstEmpr = (obj) => {
@@ -75,6 +75,7 @@ const onClickInsert = (operacao) => {
 }
 
 const backToMainPage = () => {
+    sessionStorage.clear()
     window.location.href = "../tela-adm-instituicoes/tela-adm-instituicoes.html"
 }
 

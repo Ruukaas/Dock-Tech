@@ -42,6 +42,8 @@ export const getInputValueByName = (nameInput) => {
     return inputEl.value
 }
 
+export const getIDElement = element => element.getAttribute("id")
+
 export const isInputNull = valor => {
     if (valor === "") return true
     else return false
@@ -58,9 +60,15 @@ export const setDefaultValueSelect = (selectElement, selectedValue) => {
     return selectElement
 }
 
+//sem parametro no listener
+export const addEventToElementOnClick = (element, event) => {
+    element.addEventListener("click",event)
+}
 
-// export const goToPageClickEvent = (element, location) => {
-//     element.addEventListener("click", () => {
-//         window.locatiton.href = location
-//     })
-// }
+export const addEventToHTMLCollectionOnClick = (HTMLCollection, event) => {
+    let buttonsArray = Array.prototype.slice.call(HTMLCollection)
+    buttonsArray.forEach(elemento => {
+      elemento.addEventListener("click", event)
+    })
+}
+
