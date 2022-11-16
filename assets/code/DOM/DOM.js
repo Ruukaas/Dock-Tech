@@ -46,3 +46,21 @@ export const isInputNull = valor => {
     if (valor === "") return true
     else return false
 }
+
+export const setDefaultValueSelect = (selectElement, selectedValue) => {
+    let indexSelected = selectElement.selectedIndex
+    for(let i = 0;i < selectElement.options.length; i++) {
+        if(selectElement.options[i].value == selectedValue) {
+            selectElement.selectedIndex = i
+            break
+        }
+    }
+    return selectElement
+}
+
+
+// export const goToPageClickEvent = (element, location) => {
+//     element.addEventListener("click", () => {
+//         window.locatiton.href = location
+//     })
+// }

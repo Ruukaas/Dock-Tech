@@ -1,7 +1,7 @@
 import { instEmpr } from "../assets/code/classes/instEmpr.js"
 import { add, update } from "../assets/code/db/CRUD.js"
 import { setIDObjects } from "../assets/code/db/setIDObjects.js"
-import { getSelectMarked, getInputValueByName, isInputNull } from "../assets/code/DOM/DOM.js"
+import { getSelectMarked, getInputValueByName, isInputNull, setDefaultValueSelect } from "../assets/code/DOM/DOM.js"
 
 const back = document.getElementById("back")
 const next = document.getElementById("ok")
@@ -9,9 +9,8 @@ const next = document.getElementById("ok")
 let idUpdateObject
 
 async function insertInstEmpr(nome, responsavel, contato, instituicaoEmpresa, operacao) {
-    console.log(operacao)
     if (!(isInputNull(nome)) && !(isInputNull(responsavel)) && !(isInputNull(contato)) && !(isInputNull(instituicaoEmpresa))) { //Se nenhum dos valores passados forem nulos
-        let insert = null
+        let insert
         let msg
         let currentInstEmpr = new instEmpr(nome, responsavel, contato, instituicaoEmpresa)
         switch (operacao) {
@@ -20,7 +19,6 @@ async function insertInstEmpr(nome, responsavel, contato, instituicaoEmpresa, op
                 msg = "Cadastro realizado com sucesso"
                 break
             case "atualizacao":
-                console.log("here")
                 currentInstEmpr = setIDObjects(currentInstEmpr, idUpdateObject)
                 insert = await update(currentInstEmpr, "inst-empr")
                 msg = "Alteração realizada com sucesso"
@@ -59,18 +57,13 @@ const fillInstEmpr = (obj) => {
     let inputNomeEl = document.getElementsByName("nome")[0]
     let inputResponsavelEl = document.getElementsByName("responsavel")[0]
     let inputContatoEl = document.getElementsByName("email")[0]
-    let selectInstituicaoEmpresa = document.getElementById("funcoes")
+    let inputSelectInstituicaoEmpresa = document.getElementById("funcoes")
 
     inputNomeEl.value = obj.nome
     inputResponsavelEl.value = obj.responsavel
     inputContatoEl.value = obj.contato
 
-    let indexSelected = selectInstituicaoEmpresa.selectedIndex
-
-    if (selectInstituicaoEmpresa.options[selectInstituicaoEmpresa.selectedIndex].value !== obj.instEmpr) {
-        if (indexSelected == 0) selectInstituicaoEmpresa.selectedIndex = 1
-        else if (indexSelected == 1) selectInstituicaoEmpresa.selectedIndex = 0
-    }
+    setDefaultValueSelect(inputSelectInstituicaoEmpresa, obj.instEmpr)
 }
 
 const onClickInsert = (operacao) => {
