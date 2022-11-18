@@ -30,3 +30,45 @@ export const createImage = (src, alt, ...classes) => {
     imgEl.classList.add(...classes)
     return imgEl
 }
+
+export const getSelectMarked = (idSelect) => {
+    let selectEl = document.getElementById(idSelect)
+    let valueSelected = selectEl.options[selectEl.selectedIndex].value
+    return valueSelected
+}
+
+export const getInputValueByName = (nameInput) => {
+    let inputEl = document.getElementsByName(nameInput)[0]
+    return inputEl.value
+}
+
+export const getIDElement = element => element.getAttribute("id")
+
+export const isInputNull = valor => {
+    if (valor === "") return true
+    else return false
+}
+
+export const setDefaultValueSelect = (selectElement, selectedValue) => {
+    let indexSelected = selectElement.selectedIndex
+    for(let i = 0;i < selectElement.options.length; i++) {
+        if(selectElement.options[i].value == selectedValue) {
+            selectElement.selectedIndex = i
+            break
+        }
+    }
+    return selectElement
+}
+
+//sem parametro no listener
+export const addEventToElementOnClick = (element, event) => {
+    element.addEventListener("click",event)
+}
+
+export const addEventToHTMLCollectionOnClick = (HTMLCollection, event) => {
+    let buttonsArray = Array.prototype.slice.call(HTMLCollection)
+    buttonsArray.forEach(elemento => {
+      elemento.addEventListener("click", event)
+    })
+}
+

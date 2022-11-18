@@ -109,6 +109,8 @@ nav{
       background-color: #d3d2eb;
       font-size: 18px;
       color: #101a3f;
+      overflow-y: scroll;
+      max-height: 700px;
   }
   
   footer{
