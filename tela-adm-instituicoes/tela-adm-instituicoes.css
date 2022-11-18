@@ -19,6 +19,12 @@ nav{
     cursor: pointer;
   }
 
+  
+  .addButtonDiv{
+    display: flex;
+    justify-content: center;
+  }
+
   #addButton {
     max-width:42px;
     max-height:42px;
@@ -91,6 +97,12 @@ nav{
     margin-bottom: 20px;
     text-decoration: underline;
  }
+  
+ #container-lista{
+  list-style: none;
+  font-size: 18px;
+  color: #101a3f;
+}
   
   #lista-de-trilhas{
       list-style: none;
@@ -260,20 +272,56 @@ nav{
     color: #101a3f;
   }
 
+    /* NOVA LISTA */
+  
+    .lista{
+      display: flex;
+      justify-content: space-between;
+      margin: 10px auto;
+      width: 500px;
+      padding: 15px;
+      border: #101A3F solid 2px;
+      border-radius: 5px;
+      background-color: #D3D2EB;
+  }
+  
+  .user-div{
+    justify-content: center;
+    margin-left: 10px;
+  }
+  
+  .nome{
+      font-weight: bold;
+  }
+  
+  .funcao{
+    color: #F05A05;
+  }
+  
+  .instituicao{
+    color: #147E17;
+  }
+  
+  .buttons-div{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  }
+  
+  .buttons-div img:nth-child(1){
+      margin-right: 10px;
+  }
+
   /* RESPONSIVIDADE TELA ADM PASSO 1 */
 
     @media (max-width: 500px){
       #lista-de-trilhas{
         width: 100%;
       }
-      .itemCollumn{
-        display: none;
-      }
-      .subItem{
-        width: 60%;
-        flex-wrap: wrap;
-      }
       .itemTrilha{
         height: 200%;
+      }
+      .lista{
+        width: 90%;
       }
     }

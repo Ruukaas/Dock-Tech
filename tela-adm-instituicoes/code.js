@@ -6,7 +6,7 @@ let listInstEmpresas = await getAll("inst-empr")
 let clickedElementID //local onde vai ser armazenado o ID da trilha clicada para ser deletada ou alterada
 
 setContainerEl("containerTrilha")
-dynamicList(listInstEmpresas, "Instituicoes/Empresas", "title", "lista-de-trilhas", "itemTrilha")
+dynamicList(listInstEmpresas, "Instituicoes/Empresas", "title", "container-lista", "lista")
 
 const addEl = document.getElementById("addButton");
 console.log(document.getElementById("addButton"))
