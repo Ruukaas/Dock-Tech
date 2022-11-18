@@ -4,7 +4,7 @@ import {allSquads} from "./all-squads.js"
 import {createDivWithID, createDivWithClasses, createTitle, createImage} from "../assets/DOM.js"
 
 setContainerEl("containerTrilha")
-dynamicList(allSquads,"Squads","title","lista-de-trilhas","itemTrilha")
+dynamicList(allSquads,"Squads","title","container-lista","lista")
 
 //create html
 let fade = createDivWithID("fade")

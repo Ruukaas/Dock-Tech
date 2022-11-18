@@ -10,17 +10,8 @@ nav{
       max-height: 18px;
     }
 
-  .delete-button {
+  .delete-button, .edit-button{
     cursor: pointer;
-  }
-
-  .edit-button{
-    cursor: pointer;
-  }
-
-  #addButton {
-    max-width:42px;
-    max-height:42px;
   }
 
   .checkbox-style {
@@ -93,21 +84,28 @@ nav{
   
   #lista-de-trilhas{
       list-style: none;
-      background-color: #d3d2eb;
       font-size: 18px;
       color: #101a3f;
+      background-color: #d3d2eb;
   }
+
+  #container-lista{
+    list-style: none;
+    font-size: 18px;
+    color: #101a3f;
+}
   
   footer{
       color: #d3d2eb !important;
   }
-  /*Flex-Box*/
+
   #containerTrilha{
-      color: #d3d2eb;
-      max-width: 50%;
-      margin: auto;
-      margin-top: 30px;
-  }
+    color: #d3d2eb;
+    background-color: #101A3F;
+    max-width: 50%;
+    margin: auto;
+    margin-top: 30px;
+}
   .itemTrilha{
       display: flex;
       flex-direction: row;
@@ -115,11 +113,21 @@ nav{
       padding: 20px;
       border-bottom: 1px solid black;
   }
+
+
   /*Botão*/
+
+  .addButton-div{
+    display: flex;
+    justify-content: center;
+  }
+
   #addButton {
+      width: 64px;
+      height: 64px;
       margin: 10px;
       cursor: pointer;
-      float: right;
+      text-align: center;
   }
   
   #addButton:hover {
@@ -228,6 +236,47 @@ nav{
   #modalCancel:hover{
       background-color: salmon;
   }
+
+  /* NOVA LISTA */
+  
+  .lista{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px auto;
+    width: 500px;
+    padding: 20px;
+    border: #101A3F solid 2px;
+    border-radius: 5px;
+    background-color: #D3D2EB;
+}
+
+.user-div{
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.user-div-squads{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+    align-items: center;
+}
+
+.nome{
+    font-weight: bold;
+}
+
+.buttons-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.buttons-div img:nth-child(1){
+    margin-right: 10px;
+}
+
   @media (max-width:1000px){
     h2{
       font-size: 16px;
@@ -258,6 +307,21 @@ nav{
       max-width: 250px;
       width: 250px;
     }
+
+    .lista{
+      width: 100%;
+      padding: 15px;
+    }
+
+    .img{
+      width: 50px;
+      height: 50px;
+    }
+
+    #addButton{
+      display: flex;
+      justify-content: center;
+    }
   }
   
   /* Tela ADM-3 */
@@ -277,23 +341,3 @@ nav{
       }
 
     }
-
-  /* RESPONSIVIDADE TELA ADM PASSO 2 */
-    
-
-  /* RESPONSIVIDADE TELA ADM PASSO 3 */
-
-  /* @media (max-width: 500px){
-    h1 .title:nth-child(1){
-      text-align: center;
-      margin-left: 60px;
-    }
-
-    .container-x:nth-child(2){
-      width: 450px;
-      margin-right: 150px;
-    }
-    .container-x:nth-child(2) p:nth-child(1){
-      width: 300px;
-    }
-  } */
