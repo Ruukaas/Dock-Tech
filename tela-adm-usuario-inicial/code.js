@@ -6,7 +6,7 @@ let listUsuarios = await getAll("usuarios")
 let clickedElementID //local onde vai ser armazenado o ID da trilha clicada para ser deletada ou alterada
    
 setContainerEl("containerTrilha")
-dynamicList(listUsuarios,"Usuarios","title","lista-de-trilhas","itemTrilha")
+dynamicList(listUsuarios,"Usuarios","title","container-lista","lista")
 
 const addEl = document.getElementById("addButton");
 const modalEl = document.getElementById("myModal");

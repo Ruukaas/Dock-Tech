@@ -26,47 +26,31 @@ export const dynamicList = (file, title, titleClasse, idContainerList, ...itemLi
 
     file.forEach(valor => {
         let itemListEl = createDivWithClasses(...itemListClasses)
-        let titleItemListEl = createParagraph(valor.nome)
+        let userDivEl = createDivWithClasses("user-div")
+        let nomeItemListEl = createParagraph(valor.nome)
+        let funcaoItemListEl = createParagraph(valor.funcao)
+        let instituicaoItemListEl = createParagraph(valor.instEmpr)
+
+        nomeItemListEl.setAttribute("class", "nome")
 
         itemListEl.setAttribute("id", valor.id)
 
-        let itemCollumEl = createDivWithClasses("itemColumn")
-        let subItemDiv1 = createDivWithClasses("subItem")
-        let subItemDiv2 = createDivWithClasses("subItem")
-        let subItemDiv3 = createDivWithClasses("subItem")
+        userDivEl.appendChild(nomeItemListEl)
+        userDivEl.appendChild(funcaoItemListEl)
+        userDivEl.appendChild(instituicaoItemListEl)
+    
 
-        let funcaoItemListP = createParagraph("Função:")
-        let funcaoItemListEl = createParagraph(valor.funcao)
 
-        let instituicaoItemListP = createParagraph("Instituicao/Empresa: ")
-        let instituicaoItemListEl = createParagraph(valor.instEmpr)
-
-        let emailItemListP = createParagraph("Email:")
-        let emailItemListEl = createParagraph(valor.email)
-
-        subItemDiv1.appendChild(funcaoItemListP)
-        subItemDiv1.appendChild(funcaoItemListEl)
-
-        subItemDiv2.appendChild(instituicaoItemListP)
-        subItemDiv2.appendChild(instituicaoItemListEl)
-
-        subItemDiv3.appendChild(emailItemListP)
-        subItemDiv3.appendChild(emailItemListEl)
-
-        itemCollumEl.appendChild(subItemDiv1)
-        itemCollumEl.appendChild(subItemDiv2)
-        itemCollumEl.appendChild(subItemDiv3)
-
-        let actionsButtonContainer = createDivWithClasses("action-container")
+        let buttonDivEl = createDivWithClasses("buttons-div")
         let editButtonEl = createImage("../assets/global-images/edit.png","Ícone de lápis de escrever","action-button","edit-button")
         let deleteButtonEl = createImage("../assets/global-images/remove.png", "Ícone de lata de lixo","action-button","delete-button")
       
-        actionsButtonContainer.appendChild(editButtonEl)
-        actionsButtonContainer.appendChild(deleteButtonEl)
+        buttonDivEl.appendChild(editButtonEl)
+        buttonDivEl.appendChild(deleteButtonEl)
 
-        itemListEl.appendChild(titleItemListEl)
-        itemListEl.appendChild(itemCollumEl)
-        itemListEl.appendChild(actionsButtonContainer)
+        // itemListEl.appendChild(titleItemListEl)
+        itemListEl.appendChild(userDivEl)
+        itemListEl.appendChild(buttonDivEl)
 
         listContainerEl.appendChild(itemListEl)
     })

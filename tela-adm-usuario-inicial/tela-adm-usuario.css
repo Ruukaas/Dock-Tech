@@ -91,6 +91,12 @@ nav{
     margin-bottom: 20px;
     text-decoration: underline;
  }
+
+ #container-lista{
+  list-style: none;
+  font-size: 18px;
+  color: #101a3f;
+}
   
   #lista-de-trilhas{
       list-style: none;
@@ -255,6 +261,51 @@ nav{
   .title-mlw{
     color: #101a3f;
   }
+
+  /* LISTA */
+
+
+.lista{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px auto;
+    width: 500px;
+    border: #101A3F solid 2px;
+    border-radius: 5px;
+    background-color: #D3D2EB;
+}
+
+.user-div{
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.user-div-squads{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+    align-items: center;
+}
+
+.nome{
+    font-weight: bold;
+}
+
+.buttons-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.buttons-div img:nth-child(1){
+    margin-right: 10px;
+}
+
+img{
+    width: 25px;
+    height: 25px;
+}
 
   /* RESPONSIVIDADE TELA ADM PASSO 1 */
 
