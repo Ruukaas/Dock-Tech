@@ -123,8 +123,8 @@ nav{
   }
 
   #addButton {
-      width: 64px;
-      height: 64px;
+      width: 50px;
+      height: 50px;
       margin: 10px;
       cursor: pointer;
       text-align: center;
@@ -250,17 +250,13 @@ nav{
     background-color: #D3D2EB;
 }
 
-.user-div{
-    justify-content: center;
-    margin-left: 10px;
-}
-
 .user-div-squads{
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-left: 10px;
     align-items: center;
+    font-weight: bold;
 }
 
 .nome{
