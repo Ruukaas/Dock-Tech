@@ -39,7 +39,7 @@ async function confirmActionModal() {
   await setUsuarios()
   clearContainerEl()
 
-  dynamicList(listUsuarios,"Usuarios","title","lista-de-trilhas","itemTrilha")
+  dynamicList(listUsuarios,"Usuarios","title","container-lista","lista")
 
   openModalAddEvent(arrayDeleteButtons,onClickDelete)
   openModalAddEvent(arrayEditButtons,onClickEdit)
