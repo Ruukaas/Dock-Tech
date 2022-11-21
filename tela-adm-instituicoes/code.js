@@ -35,7 +35,7 @@ async function confirmActionModal() {
 
   closeModal(modalEl,fadeEl)
   clearContainerEl()
-  dynamicList(listInstEmpresas, "Instituicoes/Empresas", "title", "lista-de-trilhas", "itemTrilha")
+  dynamicList(listInstEmpresas, "Instituicoes/Empresas", "title", "container-lista", "lista")
 
   addEventToHTMLCollectionOnClick(arrayDeleteButtons, onClickDelete)
   addEventToHTMLCollectionOnClick(arrayEditButtons, onClickEdit)

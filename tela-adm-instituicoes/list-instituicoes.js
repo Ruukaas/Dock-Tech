@@ -21,12 +21,6 @@ export const clearContainerEl = () => {
 export const dynamicList = (file, title, titleClasse, idContainerList, ...itemListClasses) => {
     let titleEl = createTitle(title,titleClasse)
     let listContainerEl = createDivWithID(idContainerList)
-    let addButtonDiv = createDivWithClasses("addButtonDiv")
-
-    let addButtonEl = createImage("../assets/global-images/add-light.png","Botão com o sinal de mais")
-    addButtonEl.setAttribute("id", "addButton")
-
-    addButtonDiv.appendChild(addButtonEl)
 
     file.forEach(valor => {
         let itemListEl = createDivWithClasses(...itemListClasses)
@@ -59,5 +53,4 @@ export const dynamicList = (file, title, titleClasse, idContainerList, ...itemLi
 
     containerEl.appendChild(titleEl)
     containerEl.appendChild(listContainerEl)
-    containerEl.appendChild(addButtonDiv)
 }
