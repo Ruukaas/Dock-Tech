@@ -1,40 +1,9 @@
+import {createTitle, createDivWithID, createDivWithClasses, createParagraph, createImage} from "../assets/code/DOM/DOM.js"
+
 let containerEl //elemento previamente existente na página html onde irá rodar o código aonde serão inseridos os elementos dinamicamente
 
 export const setContainerEl = id => {
     containerEl = document.getElementById(id)
-}
-
-const createTitle = (name,...classes) => {
-    let h1El = document.createElement("h1")
-    h1El.classList.add(...classes)
-    h1El.textContent = name
-    return h1El 
-}
-
-const createDivWithID = id => {
-    let divEl = document.createElement("div")
-    divEl.setAttribute("id",id)
-    return divEl
-}
-
-const createDivWithClasses = (...classes) => {
-    let divEl = document.createElement("div")
-    divEl.classList.add(...classes)
-    return divEl
-}
-
-const createParagraph = (name) => {
-    let pEl = document.createElement("p")
-    pEl.textContent = name
-    return pEl
-}
-
-const createImage = (src, alt, ...classes) => {
-    let imgEl = document.createElement("img")
-    imgEl.setAttribute("src", src)
-    imgEl.setAttribute("alt", alt)
-    imgEl.classList.add(...classes)
-    return imgEl
 }
 
 //Primeiro argumento : Arquivo com os elementos que estarão na lista - Array
