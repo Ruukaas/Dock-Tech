@@ -1,6 +1,7 @@
 import { currentTypeVideo, changecurrentVideoPlayerTimeComplete, pushLessonConcludedArray, currentPositionOrder, saveCurrentStats, currentVideoPlayerTimeComplete, changeCurrentSecondsVideoPlayer } from "./control.js"
 import { changeProgressBar } from "./progress-bar.js"
 import { changeCheckBox } from "./trilha.js"
+import { trilha } from "./currentTrilha.js"
 
 
 export let player //Objeto do videoPlayer
@@ -144,3 +145,8 @@ export const buildInternalVideo = link => {
 
     document.getElementById("video-internal").appendChild(player)
 }
+
+export const firstVideo = () =>{
+    window.addEventListener('onload',reBuildIframe( trilha.modules[0].lessons[0].link, trilha.modules[0].lessons[0].videoType ))
+}
+
