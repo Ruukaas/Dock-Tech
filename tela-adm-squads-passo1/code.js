@@ -1,15 +1,17 @@
 //Dynamic List
 import { setContainerEl, dynamicList } from "./list-alunos.js"
 import { allAlunos } from "./all-alunos.js"
-import { filterByOneParameter } from "../assets/code/DOM/DOM.js"
+import { filterByOneKey } from "../assets/code/db/CRUD.js"
+
+let arrayAlunos = await filterByOneKey("usuarios","funcao",["Aluno"])
+console.log(arrayAlunos)
 
 setContainerEl("containerTrilha")
-dynamicList(allAlunos, "Squads", "title", "checkbox-style", "next-button-right", "lista-de-trilhas", "itemTrilha")
+dynamicList(arrayAlunos, "Squads", "title", "checkbox-style", "next-button-right", "lista-de-trilhas", "itemTrilha")
 
 const exitEl = document.querySelector(".exit-button");
 const nextEl = document.querySelector(".next-button-right");
 
-let arrayAlunos = await filterByOneParameter("usuarios","")
 
 exitEl.onclick = function () {
   window.location.href = "../tela-adm-squads-inicial/tela-adm-squads.html";

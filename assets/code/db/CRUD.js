@@ -1,4 +1,5 @@
 import { getFirestore, getDocs, collection, addDoc, doc, getDoc, updateDoc, deleteDoc, query, where } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
+import { removeKeyObject } from "./removeKeyObject.js";
 import { setIDObjects } from "./setIDObjects.js"
 
 const db = getFirestore();
@@ -57,19 +58,21 @@ export const del = (id, collectionref) => {
     }
 }
 
-export async function filterByOneParameter(collectionref,key,value) {
+export async function filterByOneKey(collectionref,key,arrayValue) {
     try {
         let searchArray = []
         let currentObject
-        const q = query(collection(db,collectionref), where(key, "in", [value]))
+        const q = query(collection(db,collectionref), where(key, "in", arrayValue))
 
         const documents = await getDocs(q)
         documents.forEach((doc) => {
             currentObject = doc.data()
             currentObject = setIDObjects(currentObject, doc.id)
-            searchArray.push[currentObject]
+            currentObject = removeKeyObject(currentObject, "senha")
+            console.log(currentObject)
+            searchArray.push(currentObject)
         })
-
+        console.log(searchArray)
         return searchArray
     }catch (e) {
         console.log(`Error: ${e}`)

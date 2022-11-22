@@ -72,3 +72,4 @@ export const addEventToHTMLCollectionOnClick = (HTMLCollection, event) => {
     })
 }
 
+
