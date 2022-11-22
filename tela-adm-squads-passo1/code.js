@@ -2,6 +2,7 @@
 import { setContainerEl, dynamicList } from "./list-alunos.js"
 import { allAlunos } from "./all-alunos.js"
 import { filterByOneKey } from "../assets/code/db/CRUD.js"
+import { selectedCheckBox } from "../assets/code/DOM/DOM.js"
 
 let arrayAlunos = await filterByOneKey("usuarios","funcao",["Aluno"])
 console.log(arrayAlunos)
@@ -20,5 +21,6 @@ exitEl.onclick = function () {
 //botton add going to telaTrilha2
 nextEl.addEventListener("click", next);
 function next() {
-  window.location.href = "../tela-adm-squads-passo2/tela-adm-squads-passo2.html";
+  console.log(selectedCheckBox("lista-de-trilhas"))
+  // window.location.href = "../tela-adm-squads-passo2/tela-adm-squads-passo2.html";
 }

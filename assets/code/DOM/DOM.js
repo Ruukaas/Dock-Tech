@@ -72,4 +72,19 @@ export const addEventToHTMLCollectionOnClick = (HTMLCollection, event) => {
     })
 }
 
+//retorna um array com a posição na lista dos selecionados
+export const selectedCheckBox = (containerList) => {
+    let containerEl = document.getElementById(containerList)
+    let nodeChild = containerEl.childNodes
+    let arrayNodeChild = Array.prototype.slice.call(nodeChild)
+    let selectedPositionCheckbox = []
+    arrayNodeChild.forEach((valor, indice) => {
+        console.log(valor.childNodes[1].childNodes[0].checked)
+        if(valor.childNodes[1].childNodes[0].checked) {
+            selectedPositionCheckbox.push(indice)
+        }
+    })
+
+    return selectedPositionCheckbox
+}
 
