@@ -54,6 +54,11 @@ nav{
       font-size: larger;
     
   }
+
+  .itemColumn{
+    display: flex;
+    flex-direction: column;
+  }
   
   
   /* finish luca */

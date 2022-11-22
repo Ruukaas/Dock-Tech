@@ -71,13 +71,16 @@ export const dynamicList = (file, title, titleClasse, checkboxClasse,nextButtonS
         let titleItemListEl = createParagraph(valor.nome)
         let instEmprItemListEl = createParagraph(valor.instEmpr)
 
+        let itemCollumnEl = createDivWithClasses("itemCollumn")
+
         let checkboxContainer = createDivWithClasses("checkbox-container")
         let checkboxEl = createCheckBox(checkboxClasse)
 
         checkboxContainer.appendChild(checkboxEl)
 
-        itemListEl.appendChild(titleItemListEl)
-        itemListEl.appendChild(instEmprItemListEl)
+        itemCollumnEl.appendChild(titleItemListEl)
+        itemCollumnEl.appendChild(instEmprItemListEl)
+        itemListEl.appendChild(itemCollumnEl)
         itemListEl.appendChild(checkboxContainer)
 
         listContainerEl.appendChild(itemListEl)
