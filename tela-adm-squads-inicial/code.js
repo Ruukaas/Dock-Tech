@@ -3,7 +3,7 @@ import {setContainerEl, dynamicList} from "./list-squads.js"
 import {allSquads} from "./all-squads.js"
 import {createDivWithID, createDivWithClasses, createTitle, createImage} from "../assets/DOM.js"
 
-//teste 3
+//teste 4
 setContainerEl("containerTrilha")
 dynamicList(allSquads,"Squads","title","container-lista","lista")
 
