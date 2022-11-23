@@ -146,7 +146,7 @@ export const buildInternalVideo = link => {
     document.getElementById("video-internal").appendChild(player)
 }
 
-export const firstVideo = () =>{
-    window.addEventListener('onload',reBuildIframe( trilha.modules[0].lessons[0].link, trilha.modules[0].lessons[0].videoType ))
-}
+
+
+
 

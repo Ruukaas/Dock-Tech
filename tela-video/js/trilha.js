@@ -70,6 +70,9 @@ export const createCheckbox = () => {
     return checkbox
 }
 
+
+
+
 export const changeCheckBox = () => {
     document.getElementsByName(currentPositionOrder)[0].setAttribute("checked","checked")
 }
