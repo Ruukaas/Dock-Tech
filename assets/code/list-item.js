@@ -46,30 +46,37 @@ const createImage = (src, alt, ...classes) => {
 export const dynamicList = (file, title, titleClasse, idContainerList, ...itemListClasses) => {
     let titleEl = createTitle(title,titleClasse)
     let listContainerEl = createDivWithID(idContainerList)
+    let addButtonDivEl = createDivWithClasses("addButton-div")
+
 
     let addButtonEl = createImage("../assets/global-images/add-light.png","Botão com o sinal de mais")
     addButtonEl.setAttribute("id", "addButton")
 
+    addButtonDivEl.appendChild(addButtonEl)
+
     file.forEach(valor => {
         let itemListEl = createDivWithClasses(...itemListClasses)
         let titleItemListEl = createParagraph(valor.title)
+        let userDivEl = createDivWithClasses("user-div-single")
+
+        userDivEl.appendChild(titleItemListEl)
         
-        let actionsButtonContainer = createDivWithClasses("action-container")
+        let buttonsDivEl = createDivWithClasses("buttons-div")
         let editButtonEl = createImage("../assets/global-images/edit.png","Ícone de lápis de escrever","action-button","edit-button")
         let deleteButtonEl = createImage("../assets/global-images/remove.png", "Ícone de lata de lixo","action-button","delete-button")
       
-        actionsButtonContainer.appendChild(editButtonEl)
-        actionsButtonContainer.appendChild(deleteButtonEl)
+        buttonsDivEl.appendChild(editButtonEl)
+        buttonsDivEl.appendChild(deleteButtonEl)
 
-        itemListEl.appendChild(titleItemListEl)
-        itemListEl.appendChild(actionsButtonContainer)
+        itemListEl.appendChild(userDivEl)
+        itemListEl.appendChild(buttonsDivEl)
 
         listContainerEl.appendChild(itemListEl)
     })
 
     containerEl.appendChild(titleEl)
     containerEl.appendChild(listContainerEl)
-    containerEl.appendChild(addButtonEl)
+    containerEl.appendChild(addButtonDivEl)
 }
 
 

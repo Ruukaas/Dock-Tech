@@ -1,0 +1,100 @@
+/*Fontes*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,500&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Roboto Flex', sans-serif;
+}
+/*flex-box do nav*/
+.container-flex{
+    display: flex;
+}
+.item-flex{
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px 10px;
+}
+nav{
+    background-color: #101a3f;
+    margin-top: 0;
+    color: #d3d2eb;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+a{
+    color:#d3d2eb;
+    text-decoration: none;
+}
+a:visited{
+    color:#d3d2eb;
+    text-decoration: none;
+}
+a:hover{
+    color:#d3d2eb;
+    text-decoration: none;
+}
+/*Footer*/
+footer{
+    color: #101a3f;
+    /* bottom: 0; */
+    /* left:0; */
+    width: 100%;
+    font-weight: 800;
+    font-size: 16px;
+    text-align: center;
+    /* position: absolute; */
+}
+@media (max-width:1000px){
+    footer{
+        font-size: 12px!important;
+    }   
+}
+
+/*Flex*/
+
+.row {
+	flex-direction: row;
+}
+.row-reverse {
+	flex-direction: row-reverse;
+}
+.column {
+	flex-direction: column;
+}
+.column-reverse {
+	flex-direction: column-reverse;
+}
+
+.flex-start {
+	justify-content: flex-start;
+}
+
+.flex-end {
+	justify-content: flex-end;
+}
+
+.center {
+	justify-content: center;
+}
+
+.space-between {
+	justify-content: space-between;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+
+/*mouse*/
+
+.mousePointer {
+    cursor: pointer;
+}
+
+/*fontes*/
+
+.fonteCinza {
+    color: #d3d2eb;
+}

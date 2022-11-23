@@ -3,7 +3,7 @@ import { setContainerEl, dynamicList } from "../assets/code/list-item.js"
 import { allTrilhas } from "./allTrilhas-adm.js"
 
 setContainerEl("containerTrilha")
-dynamicList(allTrilhas, "Trilhas", "fonteCinza", "lista-de-trilhas", "itemTrilha")
+dynamicList(allTrilhas, "Trilhas", "fonteCinza", "container-lista", "lista")
 
 //elements
 const addEl = document.getElementById("addButton");

@@ -11,11 +11,22 @@ main {
   max-height: 18px;
 }
 
-#addButton {
-  max-width:42px;
-  max-height:42px;
+.addButton-div{
+  display: flex;
+  justify-content: center;
 }
 
+#addButton {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#addButton:hover {
+    color: salmon;
+}
 /* finish luca */
 
 
@@ -30,6 +41,12 @@ main {
 /*Cosméticos*/
 body{
     background-color: #101a3f;
+}
+
+#container-lista{
+  list-style: none;
+  font-size: 18px;
+  color: #101a3f;
 }
 
 #lista-de-trilhas{
@@ -178,6 +195,51 @@ footer{
 #modalCancel:hover{
     background-color: salmon;
 }
+
+/* NOVA LISTA */
+  
+.lista{
+  display: flex;
+  justify-content: space-between;
+  margin: 10px auto;
+  width: 500px;
+  padding: 20px;
+  border: #101A3F solid 2px;
+  border-radius: 5px;
+  background-color: #D3D2EB;
+}
+
+.user-div-single{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+  align-items: center;
+  font-weight: bold;
+}
+
+.nome{
+  font-weight: bold;
+}
+
+.funcao{
+color: #F05A05;
+}
+
+.instituicao{
+color: #147E17;
+}
+
+.buttons-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.buttons-div img:nth-child(1){
+  margin-right: 10px;
+}
+
 @media (max-width:1000px){
   h2{
     font-size: 16px;
