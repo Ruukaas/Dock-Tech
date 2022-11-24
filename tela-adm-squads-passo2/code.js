@@ -1,9 +1,14 @@
 //Dynamic List
 import {setContainerEl, dynamicList} from "./list-mentores.js"
 import {allMentores} from "./all-mentores.js"
+import { filterByOneKey } from "../assets/code/db/CRUD.js"
+import { selectedCheckBox } from "../assets/code/DOM/DOM.js"
+
+let arrayMentores = await filterByOneKey("usuarios","funcao",["Mentor"])
+
 
 setContainerEl("containerTrilha")
-dynamicList(allMentores,"Squads","title","checkbox-style","next-button","next-button-right","lista-de-trilhas","itemTrilha")
+dynamicList(arrayMentores,"Squads","title","checkbox-style","next-button","next-button-right","lista-de-trilhas","itemTrilha")
 
 const exitButton = document.querySelector(".exit-button");
 
@@ -22,5 +27,16 @@ function back(){
 let nextButtonRight = document.querySelector(".next-button-right");
 nextButtonRight.addEventListener("click", next);
 function next(){
+  setMentoresOfSquad("lista-de-trilhas")
   window.location.href = "../tela-adm-squads-passo3/tela-adm-squads-passo3.html";
+}
+
+const setMentoresOfSquad = (idListMentoresEl) => {
+  let indicesListMentoresArray = selectedCheckBox(idListMentoresEl)
+    let selectedMentoresArrayID = []
+    indicesListMentoresArray.forEach(valor => {
+      selectedMentoresArrayID.push(arrayMentores[valor].id)
+    })
+
+    sessionStorage.setItem("currentSelectedMentoresArrayID",JSON.stringify(selectedMentoresArrayID))
 }

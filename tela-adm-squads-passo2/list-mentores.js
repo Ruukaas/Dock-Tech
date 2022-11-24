@@ -1,47 +1,9 @@
+import { createCheckBox, createDivWithClasses, createDivWithID, createImage, createParagraph, createTitle } from "../assets/code/DOM/DOM.js"
+
 let containerEl //elemento previamente existente na página html onde irá rodar o código aonde serão inseridos os elementos dinamicamente
 
 export const setContainerEl = id => {
     containerEl = document.getElementById(id)
-}
-
-const createTitle = (name,...classes) => {
-    let h1El = document.createElement("h1")
-    h1El.classList.add(...classes)
-    h1El.textContent = name
-    return h1El 
-}
-
-const createDivWithID = id => {
-    let divEl = document.createElement("div")
-    divEl.setAttribute("id",id)
-    return divEl
-}
-
-const createDivWithClasses = (...classes) => {
-    let divEl = document.createElement("div")
-    divEl.classList.add(...classes)
-    return divEl
-}
-
-const createParagraph = (name) => {
-    let pEl = document.createElement("p")
-    pEl.textContent = name
-    return pEl
-}
-
-const createImage = (src, alt, ...classes) => {
-    let imgEl = document.createElement("img")
-    imgEl.setAttribute("src", src)
-    imgEl.setAttribute("alt", alt)
-    imgEl.classList.add(...classes)
-    return imgEl
-}
-
-const createCheckBox = (...classes) => {
-    let checkBoxEl = document.createElement("input")
-    checkBoxEl.setAttribute("type", "checkbox");
-    checkBoxEl.classList.add(...classes)
-    return checkBoxEl
 }
 
 //Primeiro argumento : Arquivo com os elementos que estarão na lista - Array
@@ -72,14 +34,20 @@ export const dynamicList = (file, title, titleClasse, checkboxClasse,nextLeft,ne
 
     file.forEach(valor => {
         let itemListEl = createDivWithClasses(...itemListClasses)
-        let titleItemListEl = createParagraph(valor.title)
+        let titleItemListEl = createParagraph(valor.nome)
+        let instEmprItemListEl = createParagraph(valor.instEmpr)
+
+        let itemCollumnEl = createDivWithClasses("itemCollumn")
         
         let checkboxContainer = createDivWithClasses("checkbox-container")
         let checkboxEl = createCheckBox(checkboxClasse)
 
         checkboxContainer.appendChild(checkboxEl)
 
-        itemListEl.appendChild(titleItemListEl)
+        itemCollumnEl.appendChild(titleItemListEl)
+        itemCollumnEl.appendChild(instEmprItemListEl)
+
+        itemListEl.appendChild(itemCollumnEl)
         itemListEl.appendChild(checkboxContainer)
 
         listContainerEl.appendChild(itemListEl)

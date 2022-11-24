@@ -21,6 +21,16 @@ exitEl.onclick = function () {
 //botton add going to telaTrilha2
 nextEl.addEventListener("click", next);
 function next() {
-  console.log(selectedCheckBox("lista-de-trilhas"))
-  // window.location.href = "../tela-adm-squads-passo2/tela-adm-squads-passo2.html";
+  setAlunosOfSquad("lista-de-trilhas")
+  window.location.href = "../tela-adm-squads-passo2/tela-adm-squads-passo2.html";
+}
+
+const setAlunosOfSquad = (idListAlunosEl) => {
+    let indicesListAlunosArray = selectedCheckBox(idListAlunosEl)
+    let selectedAlunosArrayID = []
+    indicesListAlunosArray.forEach(valor => {
+      selectedAlunosArrayID.push(arrayAlunos[valor].id)
+    })
+
+    sessionStorage.setItem("currentSelectedAlunosArrayID",JSON.stringify(selectedAlunosArrayID))
 }

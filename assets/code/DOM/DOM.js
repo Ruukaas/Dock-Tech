@@ -31,6 +31,14 @@ export const createImage = (src, alt, ...classes) => {
     return imgEl
 }
 
+
+export const createCheckBox = (...classes) => {
+    let checkBoxEl = document.createElement("input")
+    checkBoxEl.setAttribute("type", "checkbox");
+    checkBoxEl.classList.add(...classes)
+    return checkBoxEl
+}
+
 export const getSelectMarked = (idSelect) => {
     let selectEl = document.getElementById(idSelect)
     let valueSelected = selectEl.options[selectEl.selectedIndex].value
