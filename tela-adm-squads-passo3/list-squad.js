@@ -1,72 +1,117 @@
-import { createCheckBox, createDivWithClasses, createDivWithID, createImage, createParagraph, createTitle } from "../assets/code/DOM/DOM.js"
+import { createCheckBox, createDivWithClasses, createDivWithID, createImage, createInputTypeNumber, createParagraph, createSelect, createTitle } from "../assets/code/DOM/DOM.js"
 
 
 let containerEl //elemento previamente existente na página html onde irá rodar o código aonde serão inseridos os elementos dinamicamente
 
 export const setContainerEl = id => {
+    console.log("setou")
     containerEl = document.getElementById(id)
 }
 
-//Primeiro argumento : Arquivo com os elementos que estarão na lista - Array
-//Segundo argumento: Título da Lista - String
-//Terceiro argumento - Classe(Apenas uma) que será adicionada no elemento do título da lista - String
-//Quarto argumento - Classe que sera adicionada ao checkbox das listagem de alunos
-//Quinto argumento - Classe para o botao next da esquerda
-//Sexto argumento = Classe para o botao next da direita
-//Setimo argumento - ID do elemento que será criado dinamicamente para que os itens da lista sejam acrescentados nele - String
-//Oitavo argumento em diante - Classe ou classes que serão adicionadas em CADA item da lista
-//Olhar exemplo de uso no code.js da tela-adm-trilha
-export const dynamicList = (file, title, titleClasse, checkboxClasse,nextLeft,nextRight,idContainerList, ...itemListClasses) => {
-    let titleEl = createTitle(title,titleClasse)
-    let listContainerEl = createDivWithID(idContainerList)
+export const dynamicList = (file1,file2) => {
 
-    let containerTitle = createDivWithClasses("container-x")
-    let containerP = createDivWithClasses("container-x")
-    let containerNext = createDivWithClasses("container-x")
+    let containerTitleEl = createDivWithClasses("containerTitle")
+    let titleEl = createTitle("Squads","title")
 
-    let exitButton = createImage("../assets/global-images/icons8-xbox-x-50.png","Botao para sair","exit-button")
+    let containerInfoEl = createDivWithClasses("container-x")
+    let p1InfoEl = createParagraph("Confirme as informações")
+    let p2InfoEl = createParagraph("Passo 3 de 3")
 
-    let pElement1 = createParagraph("Selecione os mentores responsaveis pelo Squad")
-    let pElement2 = createParagraph("Passo 2 de 3")
+    let containerLista1 = createDivWithClasses("containerLista")
+    let pTitleContainerListaEl1 = createParagraph("Mentores")
 
-    let nextButtonEl1 = createImage("../assets/global-images/next-left-2.png","Botao com o simbolo de seta apontada para esquerda",nextLeft)
-    let nextButtonEl2 = createImage("../assets/global-images/next.png","Botao com o simbolo de seta apontada para direita",nextRight)
-    
-    console.log("arquivo")
-    console.log(file)
-    file.forEach(valor => {
-        console.log(valor)
-        let itemListEl = createDivWithClasses(...itemListClasses)
-        let titleItemListEl = createParagraph(valor.nome)
-        let instEmprItemListEl = createParagraph(valor.instEmpr)
+    containerLista1.appendChild(pTitleContainerListaEl1)
 
-        let itemCollumnEl = createDivWithClasses("itemCollumn")
+    let lista1El = createDivWithClasses("lista") 
+    file1.forEach(valor => {
+        let divItemListaEl = createDivWithClasses("itemLista")
+
+        let pNameItemEl = createParagraph(valor.nome)
+        let pInstEmprItemEl = createParagraph(valor.instEmpr)
+
+        let itemColumnEl = createDivWithClasses("itemCollumn")
+
+        itemColumnEl.appendChild(pNameItemEl)
+        itemColumnEl.appendChild(pInstEmprItemEl)
+
+        divItemListaEl.appendChild(itemColumnEl)
+
+        lista1El.appendChild(divItemListaEl)
         
-        let checkboxContainer = createDivWithClasses("checkbox-container")
-        let checkboxEl = createCheckBox(checkboxClasse)
-
-        checkboxContainer.appendChild(checkboxEl)
-
-        itemCollumnEl.appendChild(titleItemListEl)
-        itemCollumnEl.appendChild(instEmprItemListEl)
-
-        itemListEl.appendChild(itemCollumnEl)
-        itemListEl.appendChild(checkboxContainer)
-
-        listContainerEl.appendChild(itemListEl)
     })
 
-    containerTitle.appendChild(titleEl)
-    containerTitle.appendChild(exitButton)
+    let containerLista2 = createDivWithClasses("containerLista")
+    let pTitleContainerListaEl2 = createParagraph("Alunos")
 
-    containerP.appendChild(pElement1)
-    containerP.appendChild(pElement2)
+    containerLista2.appendChild(pTitleContainerListaEl2)
 
-    containerNext.appendChild(nextButtonEl1)
-    containerNext.appendChild(nextButtonEl2)
+    let lista2El = createDivWithClasses("lista")
 
-    containerEl.appendChild(containerTitle)
-    containerEl.appendChild(containerP)
-    containerEl.appendChild(listContainerEl)
-    containerEl.appendChild(containerNext)
+    file2.forEach(valor => {
+        let divItemListaEl = createDivWithClasses("itemLista")
+        let pNameItemEl = createParagraph(valor.nome)
+        let pInstEmprItemEl = createParagraph(valor.instEmpr)
+
+        let itemColumnEl = createDivWithClasses("itemCollumn")
+
+        itemColumnEl.appendChild(pNameItemEl)
+        itemColumnEl.appendChild(pInstEmprItemEl)
+
+        divItemListaEl.appendChild(itemColumnEl)
+
+        lista2El.appendChild(divItemListaEl)
+    })
+
+    let containerInputEl = createDivWithClasses("containerInput")
+
+    let divSelectInstEmprEl = createDivWithClasses("inputDiv")
+    let pSelectInstEmprEl = createParagraph("Empresa Responsável")
+    let selectInstEmprEl = createSelect("input")
+    selectInstEmprEl.setAttribute("id","empresaResponsavel")
+    
+    let divInputNumeroSquad = createDivWithClasses("inputDiv")
+    let pInputNumeroSquad = createParagraph("Número do Squad")
+    let inputNumero = createInputTypeNumber("numeroSquad","numeroSquad")
+    inputNumero.setAttribute("min","0")
+
+    let divSelectProgramaResidenciaEl = createDivWithClasses("inputDiv")
+    let pSelectProgramaResidenciaEl = createParagraph("Programa de Residência")
+    let selectProgramaResidenciaEl = createSelect("input")
+    selectProgramaResidenciaEl.setAttribute("id","programaResidencia")
+
+    let divButtonsEl = createDivWithID("buttonDiv")
+    let imgBackEl = createImage("../assets/global-images/next-left-2.png","Botyão com símbolo de seta apontada para a esquerda","next-button")
+    let imgNextEl = createImage("../assets/global-images/icons8-ok-50.png","Botão com símbolo de OK","next-button")
+    imgNextEl.setAttribute("id","ok-button")
+    
+    containerTitleEl.appendChild(titleEl)
+    
+    containerInfoEl.appendChild(p1InfoEl)
+    containerInfoEl.appendChild(p2InfoEl)
+    
+    containerLista1.appendChild(lista1El)
+    containerLista2.appendChild(lista2El)
+
+    divSelectInstEmprEl.appendChild(pSelectInstEmprEl)
+    divSelectInstEmprEl.appendChild(selectInstEmprEl)
+
+    divInputNumeroSquad.appendChild(pInputNumeroSquad)
+    divInputNumeroSquad.appendChild(inputNumero)
+
+    divSelectProgramaResidenciaEl.appendChild(pSelectProgramaResidenciaEl)
+    divSelectProgramaResidenciaEl.appendChild(selectProgramaResidenciaEl)
+
+    containerInputEl.appendChild(divSelectInstEmprEl)
+    containerInputEl.appendChild(divInputNumeroSquad)
+    containerInputEl.appendChild(divSelectProgramaResidenciaEl)
+
+    divButtonsEl.appendChild(imgBackEl)
+    divButtonsEl.appendChild(imgNextEl)
+
+    containerEl.appendChild(containerTitleEl)
+    containerEl.appendChild(containerInfoEl)
+    containerEl.appendChild(containerLista1)
+    containerEl.appendChild(containerLista2)
+    containerEl.appendChild(containerInputEl)
+    containerEl.appendChild(divButtonsEl)
 }

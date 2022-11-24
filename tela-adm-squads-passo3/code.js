@@ -1,33 +1,47 @@
-// let nextButtonLeft = document.querySelector(".next-button");
-// nextButtonLeft.addEventListener("click", back);
-// function back(){
-//   window.location.href = "../tela-adm-squads-passo2/tela-adm-squads-passo2.html";
-// }
-
-import { get } from "../assets/code/db/CRUD.js";
+import { filterByOneKey, get, getAll } from "../assets/code/db/CRUD.js";
+import { getInputValueByName, setOptionsInASelect } from "../assets/code/DOM/DOM.js";
 import { dynamicList, setContainerEl } from "./list-squad.js"
 
 let arrayAlunosID = JSON.parse(sessionStorage.getItem("currentSelectedAlunosArrayID"))
 
-let arrayAlunos = []
+let arrayMentoresID = JSON.parse(sessionStorage.getItem("currentSelectedMentoresArrayID"))
 
-async function setCurrentAlunos() {
-  arrayAlunosID.forEach(async valor => {
-    console.log(valor)
-    let currentAluno = await get(valor,"usuarios")
-    arrayAlunos.push(currentAluno)
-    console.log(arrayAlunos)
-  });
+let arrayInstEmpr = await getAll("inst-empr")
+let arrayProgramasResidencia = [{nome:"Kick Off"},{nome:"Rise Up"},{nome:"Grow Up"}]
+
+let alunosArray = []
+let mentoresArray = []
+
+async function getObjectFromID(valor, variavel) {
+  let currentAluno = await get(valor,"usuarios")
+  variavel.push(currentAluno)
 }
 
-await setCurrentAlunos().then((valor) => console.log("a" + arrayAlunos))
+async function setCurrentAlunos() {
+  for(const valor of arrayAlunosID) {
+    await getObjectFromID(valor,alunosArray)
+  }
+}
+
+async function setCurrentMentores() {
+  for(const valor of arrayMentoresID) {
+    await getObjectFromID(valor,mentoresArray)
+  }
+}
+
+await setCurrentAlunos()
+await setCurrentMentores()
 
 setContainerEl("containerTrilha")
-dynamicList(arrayAlunos,"Squads","title","checkbox-style","next-button","next-button-right","lista-de-trilhas","itemTrilha")
+dynamicList(mentoresArray,alunosArray)
 
-// //Botao next voltando para o passo 1 da criacao
-// const exitButton = document.querySelector(".exit-button");
+setOptionsInASelect(arrayInstEmpr,"empresaResponsavel","nome","nome")
+setOptionsInASelect(arrayProgramasResidencia,"programaResidencia","nome","nome")
 
-// exitButton.onclick = function(){
-//   window.location.href = "../tela-adm-squads-inicial/tela-adm-squads.html";
-// }
+// document.getElementById("ok-button").addEventListener("click", async () => {
+//   let inputValueNumeroSquad = getInputValueByName("numeroSquad")
+//   let hasSquadsWithThisNumber = await filterByOneKey("squads","numeroSquad",[inputValueNumeroSquad])
+//   if(hasSquadsWithThisNumber.length > 0) {
+//     alert("Número de Squad já cadastrado")
+//   }
+// })

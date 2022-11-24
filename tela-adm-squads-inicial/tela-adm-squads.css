@@ -244,7 +244,7 @@ nav{
 
   /* NOVA LISTA */
   
-  .lista{
+/* .lista{
     display: flex;
     justify-content: space-between;
     margin: 10px auto;
@@ -253,7 +253,7 @@ nav{
     border: #101A3F solid 2px;
     border-radius: 5px;
     background-color: #D3D2EB;
-}
+} */
 
 .user-div-squads{
     display: flex;
