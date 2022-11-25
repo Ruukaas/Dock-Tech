@@ -1,21 +1,9 @@
 export class squad {
-    constructor(arrayIDAlunos) {
+    constructor(arrayIDAlunos,arrayIDMentores,empresaResponsavel,numeroSquad,programaResidencia) {
         this.arrayIDAlunos = arrayIDAlunos
-    }
-
-    arrayIDMentores
-    empresaResponsavel
-    numeroSquad
-
-    setArrayIDMentores(arrayIDMentores) {
         this.arrayIDMentores = arrayIDMentores
-    }
-
-    setEmpresaResponsavel(empresaResponsavel) {
         this.empresaResponsavel = empresaResponsavel
-    }
-
-    setNumeroSquad(numeroSquad) {
         this.numeroSquad = numeroSquad
+        this.programaResidencia = programaResidencia
     }
 }

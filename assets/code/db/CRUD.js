@@ -60,6 +60,7 @@ export const del = (id, collectionref) => {
 
 export async function filterByOneKey(collectionref,key,arrayValue) {
     try {
+        console.log(collectionref)
         let searchArray = []
         let currentObject
         const q = query(collection(db,collectionref), where(key, "in", arrayValue))
@@ -68,11 +69,39 @@ export async function filterByOneKey(collectionref,key,arrayValue) {
         documents.forEach((doc) => {
             currentObject = doc.data()
             currentObject = setIDObjects(currentObject, doc.id)
-            currentObject = removeKeyObject(currentObject, "senha")
+            if(collectionref = "usuarios") {
+                currentObject = removeKeyObject(currentObject, "senha")
+            }
+            console.log(currentObject)
+            searchArray.push(currentObject)
+        })
+        return searchArray
+    }catch (e) {
+        console.log(`Error: ${e}`)
+    }
+}
+
+//TODO - Transformar essa função em uma função(ou criar outra) que recebe um array de arrays com par key - arrayValue para criar um filtro de NKeys
+export async function filterByTwoKeys(collectionref, keyOne, valueOne, keyTwo, valueTwo) {
+    try {
+        let searchArray = []
+        let currentObject
+        console.log(keyOne)
+        console.log(keyTwo)
+        const q = query(collection(db, collectionref),where(keyOne, "==",valueOne), where(keyTwo,"==",valueTwo))
+
+        const documents = await getDocs(q)
+        documents.forEach((doc) => {
+            currentObject = doc.data()
+            currentObject = setIDObjects(currentObject, doc.id)
+            if(collectionref = "usuarios") {
+                currentObject = removeKeyObject(currentObject, "senha")
+            }
             console.log(currentObject)
             searchArray.push(currentObject)
         })
         console.log(searchArray)
+
         return searchArray
     }catch (e) {
         console.log(`Error: ${e}`)

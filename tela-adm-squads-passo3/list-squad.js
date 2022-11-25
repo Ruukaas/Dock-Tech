@@ -81,6 +81,7 @@ export const dynamicList = (file1,file2) => {
 
     let divButtonsEl = createDivWithID("buttonDiv")
     let imgBackEl = createImage("../assets/global-images/next-left-2.png","Botyão com símbolo de seta apontada para a esquerda","next-button")
+    imgBackEl.setAttribute("id","back-button")
     let imgNextEl = createImage("../assets/global-images/icons8-ok-50.png","Botão com símbolo de OK","next-button")
     imgNextEl.setAttribute("id","ok-button")
     
