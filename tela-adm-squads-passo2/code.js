@@ -2,7 +2,7 @@
 import {setContainerEl, dynamicList} from "./list-mentores.js"
 import {allMentores} from "./all-mentores.js"
 import { filterByOneKey } from "../assets/code/db/CRUD.js"
-import { selectedCheckBox } from "../assets/code/DOM/DOM.js"
+import { addEventToElementOnClick, checkCheckboxes, selectedCheckBox } from "../assets/code/DOM/DOM.js"
 
 let arrayMentores = await filterByOneKey("usuarios","funcao",["Mentor"])
 
@@ -10,22 +10,40 @@ let arrayMentores = await filterByOneKey("usuarios","funcao",["Mentor"])
 setContainerEl("containerTrilha")
 dynamicList(arrayMentores,"Squads","title","checkbox-style","next-button","next-button-right","lista-de-trilhas","itemTrilha")
 
-const exitButton = document.querySelector(".exit-button");
-
-exitButton.onclick = function(){
-  window.location.href = "../tela-adm-squads-inicial/tela-adm-squads.html";
-}
-
-//Botao next voltando para o passo 1 da criacao
-let nextButton = document.querySelector(".next-button");
-nextButton.addEventListener("click", back);
-function back(){
-  window.location.href = "../tela-adm-squads-passo1/tela-adm-squads-passo1.html";
-}
+const exitButtonEl = document.querySelector(".exit-button");
 
 //Botao next indo para o passo 3 da criacao
 let nextButtonRight = document.querySelector(".next-button-right");
-nextButtonRight.addEventListener("click", next);
+
+//Botao next voltando para o passo 1 da criacao
+let nextButton = document.querySelector(".next-button");
+
+function backToMainPage() {
+  window.location.href = "../tela-adm-squads-inicial/tela-adm-squads.html";
+}
+
+async function checkTheCurrentAtivity() {
+  let currentObject;
+  let currentAtivity = sessionStorage.getItem("update");
+
+  if (currentAtivity != null && currentAtivity != undefined) {
+    currentObject = JSON.parse(currentAtivity);
+    console.log(currentObject)
+    await fillMentores(currentObject.arrayIDMentores);
+  }
+  addEventToElementOnClick(exitButtonEl, backToMainPage);
+  nextButtonRight.addEventListener("click", next);
+  nextButton.addEventListener("click", back);
+}
+
+async function fillMentores(obj) {
+  checkCheckboxes(obj)
+}
+
+
+function back(){
+  window.location.href = "../tela-adm-squads-passo1/tela-adm-squads-passo1.html";
+}
 function next(){
   setMentoresOfSquad("lista-de-trilhas")
   window.location.href = "../tela-adm-squads-passo3/tela-adm-squads-passo3.html";
@@ -40,3 +58,5 @@ const setMentoresOfSquad = (idListMentoresEl) => {
 
     sessionStorage.setItem("currentSelectedMentoresArrayID",JSON.stringify(selectedMentoresArrayID))
 }
+
+checkTheCurrentAtivity()

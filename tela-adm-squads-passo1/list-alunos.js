@@ -32,6 +32,7 @@ export const dynamicList = (file, title, titleClasse, checkboxClasse,nextButtonS
     file.forEach(valor => {
         
         let itemListEl = createDivWithClasses(...itemListClasses)
+        itemListEl.setAttribute("id",valor.id)
         let titleItemListEl = createParagraph(valor.nome)
         let instEmprItemListEl = createParagraph(valor.instEmpr)
 

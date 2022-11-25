@@ -1,7 +1,7 @@
 import { squad } from "../assets/code/classes/squad.js";
 import { add, filterByOneKey, filterByTwoKeys, get, getAll, update } from "../assets/code/db/CRUD.js";
 import { setIDObjects } from "../assets/code/db/setIDObjects.js";
-import { addEventToElementOnClick, getInputValueByName, getSelectMarked, isInputNull, setOptionsInASelect } from "../assets/code/DOM/DOM.js";
+import { addEventToElementOnClick, getInputValueByName, getSelectMarked, isInputNull, setOptionsInASelect, setDefaultValueSelect } from "../assets/code/DOM/DOM.js";
 import { dynamicList, setContainerEl } from "./list-squad.js"
 
 let arrayAlunosID = JSON.parse(sessionStorage.getItem("currentSelectedAlunosArrayID"))
@@ -16,35 +16,35 @@ let mentoresArray = []
 
 let idUpdateObject
 
-await setCurrentAlunos()
-await setCurrentMentores()
 
-setContainerEl("containerTrilha")
-dynamicList(mentoresArray, alunosArray)
 
-const nextEl = document.getElementById("ok-button")
-const backEl = document.getElementById("back-button")
+await setCurrentArray(arrayAlunosID, alunosArray)
+await setCurrentArray(arrayMentoresID, mentoresArray)
 
+
+
+setContainerEl("containerTrilha");
+dynamicList(mentoresArray, alunosArray);
+setOptionsInASelect(arrayInstEmpr, "empresaResponsavel", "nome", "nome");
+setOptionsInASelect(arrayProgramasResidencia, "programaResidencia", "nome", "nome");
+
+
+let nextEl = document.getElementById("ok-button")
+let backEl = document.getElementById("back-button")
+
+checkTheCurrentAtivity()
+
+//assets depois
 async function getObjectFromID(valor, variavel) {
   let currentAluno = await get(valor, "usuarios")
   variavel.push(currentAluno)
 }
 
-async function setCurrentAlunos() {
-  for (const valor of arrayAlunosID) {
-    await getObjectFromID(valor, alunosArray)
+async function setCurrentArray(arrayID, variavel) {
+  for (const valor of arrayID) {
+    await getObjectFromID(valor, variavel)
   }
 }
-
-async function setCurrentMentores() {
-  for (const valor of arrayMentoresID) {
-    await getObjectFromID(valor, mentoresArray)
-  }
-}
-
-
-setOptionsInASelect(arrayInstEmpr, "empresaResponsavel", "nome", "nome")
-setOptionsInASelect(arrayProgramasResidencia, "programaResidencia", "nome", "nome")
 
 async function checkIfProgramaResidenciaAndNumeroSquadAlreadyExists() {
   let currentProgramaResidencia = getSelectMarked("programaResidencia")
@@ -86,44 +86,61 @@ async function insertSquad(arrayIDAlunos, arrayIDMentores, empresaResponsavel, n
   }
 }
 
-const backToMainPage = () => {
-  sessionStorage.clear()
-  window.location.href = "../tela-adm-squads-inicial/tela-adm-squads.html"
+function backToMainPage() {
+  sessionStorage.clear();
+  window.location.href = "../tela-adm-squads-inicial/tela-adm-squads.html";
 }
 
 const onClickInsert = async (operacao) => {
-  if (!(await checkIfProgramaResidenciaAndNumeroSquadAlreadyExists())) {
-    let currentArrayIDAlunos = arrayAlunosID
-    let currentArrayIDMentores = arrayMentoresID
-    let currentEmpresaResponsavel = getSelectMarked("empresaResponsavel")
-    let currentNumeroSquad = getInputValueByName("numeroSquad")
-    let currentProgramaResidencia = getSelectMarked("programaResidencia")
-    insertSquad(currentArrayIDAlunos,currentArrayIDMentores,currentEmpresaResponsavel,currentNumeroSquad,currentProgramaResidencia,operacao)
-  } else {
-    alert("Esse número de Squad já está cadastrado nesse programa da residência")
+   if(operacao == "cadastro"){
+      if (await checkIfProgramaResidenciaAndNumeroSquadAlreadyExists()) {
+        alert("Esse número de Squad já está cadastrado nesse programa da residência")
+      }
   }
+  let currentArrayIDAlunos = arrayAlunosID
+  let currentArrayIDMentores = arrayMentoresID
+  let currentEmpresaResponsavel = getSelectMarked("empresaResponsavel")
+  let currentNumeroSquad = getInputValueByName("numeroSquad")
+  let currentProgramaResidencia = getSelectMarked("programaResidencia")
+  insertSquad(currentArrayIDAlunos, currentArrayIDMentores, currentEmpresaResponsavel, currentNumeroSquad, currentProgramaResidencia, operacao)
+
 }
 
-const checkTheCurrentAtivity = () => {
-  let currentObject
-  let currentAtivity = sessionStorage.getItem("update")
+function checkTheCurrentAtivity() {
+  let currentObject;
+  let currentAtivity = sessionStorage.getItem("update");
 
   if (currentAtivity != null && currentAtivity != undefined) {
-      currentObject = JSON.parse(currentAtivity)
-      fillInstEmpr(currentObject)
-      idUpdateObject = currentObject.id
-      nextEl.addEventListener("click", async () => {
-          await onClickInsert("atualizacao")
-      })
+    currentObject = JSON.parse(currentAtivity);
+    fillSquad(currentObject);
+    idUpdateObject = currentObject.id;
+    nextEl.addEventListener("click", async () => {
+      await onClickInsert("atualizacao");
+    });
   } else {
-      nextEl.addEventListener("click", async () => {
-          await onClickInsert("cadastro")
-      })
+
+    nextEl.addEventListener("click", async () => {
+      await onClickInsert("cadastro");
+    });
   }
-  addEventToElementOnClick(backEl, backToMainPage)
+  addEventToElementOnClick(backEl, backToMainPage);
 }
 
-checkTheCurrentAtivity()
+async function fillSquad(obj) {
+  let inputSelectEmpresaResponsavel = document.getElementById("empresaResponsavel")
+  let inputNumeroSquad = document.getElementsByName("numeroSquad")[0]
+  let inputSelectProgramaResidencia = document.getElementById("programaResidencia")
+
+  setDefaultValueSelect(inputSelectEmpresaResponsavel, obj.empresaResponsavel)
+  inputNumeroSquad.value = obj.numeroSquad
+  setDefaultValueSelect(inputSelectProgramaResidencia, obj.programaResidencia)
+
+
+}
+
+
+
+
 
 
 

@@ -22,6 +22,7 @@ export const dynamicList = (file1,file2) => {
 
     containerLista1.appendChild(pTitleContainerListaEl1)
 
+    let divContainerLista1 = createDivWithClasses("containerLista")
     let lista1El = createDivWithClasses("lista") 
     file1.forEach(valor => {
         let divItemListaEl = createDivWithClasses("itemLista")
@@ -37,8 +38,8 @@ export const dynamicList = (file1,file2) => {
         divItemListaEl.appendChild(itemColumnEl)
 
         lista1El.appendChild(divItemListaEl)
-        
     })
+    divContainerLista1.appendChild(lista1El)
 
     let containerLista2 = createDivWithClasses("containerLista")
     let pTitleContainerListaEl2 = createParagraph("Alunos")

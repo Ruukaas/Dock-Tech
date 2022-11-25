@@ -1,9 +1,13 @@
-import {createTitle, createDivWithID, createDivWithClasses, createParagraph, createImage} from "../assets/code/DOM/DOM.js"
+import { createTitle, createDivWithID, createDivWithClasses, createParagraph, createImage } from "../assets/code/DOM/DOM.js"
 
 let containerEl //elemento previamente existente na página html onde irá rodar o código aonde serão inseridos os elementos dinamicamente
 
 export const setContainerEl = id => {
     containerEl = document.getElementById(id)
+}
+
+export const clearContainerEl = () => {
+    containerEl.innerHTML = ""
 }
 
 //Primeiro argumento : Arquivo com os elementos que estarão na lista - Array
@@ -12,33 +16,46 @@ export const setContainerEl = id => {
 //Quarto argumento - ID do elemento que será criado dinamicamente para que os itens da lista sejam acrescentados nele - String
 //Quinto argumento em diante - Classe ou classes que serão adicionadas em CADA item da lista
 //Olhar exemplo de uso no code.js da tela-adm-trilha
-export const dynamicList = (file, title, titleClasse, idContainerList, ...itemListClasses) => {
-    let titleEl = createTitle(title,titleClasse)
-    let listContainerEl = createDivWithID(idContainerList)
+export const dynamicList = (file) => {
+    let divTitleContainerEl = createDivWithID("title-container")
+    let titleEl = createTitle("Squads", "title")
 
+    // let divListContainer = createDivWithID("containerTrilha")
+
+    let divListItem = createDivWithClasses("container-lista")
 
     file.forEach(valor => {
+        let divItemListaEl = createDivWithClasses("lista")
+        divItemListaEl.setAttribute("id",valor.id)
 
-        let itemListEl = createDivWithClasses(...itemListClasses)
-        let userDivEl = createDivWithClasses("user-div-squads")
-        let buttonsDivEl = createDivWithClasses("buttons-div")
+        let divContainerInfoEl = createDivWithClasses("user-div-squads")
 
-        let titleItemListEl = createParagraph(valor.title)
-        userDivEl.appendChild(titleItemListEl)
-        
+        let pNameItemEl = createParagraph("Squad " + valor.numeroSquad)
+        let pProgramaResidenciaEl = createParagraph(valor.programaResidencia)
 
-        let editButtonEl = createImage("../assets/global-images/edit.png","Ícone de lápis de escrever","action-button","edit-button")
-        let deleteButtonEl = createImage("../assets/global-images/remove.png", "Ícone de lata de lixo","action-button","delete-button")
-      
-        buttonsDivEl.appendChild(editButtonEl)
-        buttonsDivEl.appendChild(deleteButtonEl)
+        let divButtonsEl = createDivWithClasses("buttons-div")
 
-        itemListEl.appendChild(userDivEl)
-        itemListEl.appendChild(buttonsDivEl)
+        let editButtonEl = createImage("../assets/global-images/edit.png", "Ícone de lápis de escrever", "action-button", "edit-button")
+        let deleteButtonEl = createImage("../assets/global-images/remove.png", "Ícone de lata de lixo", "action-button", "delete-button")
 
-        listContainerEl.appendChild(itemListEl)
+
+        divContainerInfoEl.appendChild(pNameItemEl)
+        divContainerInfoEl.appendChild(pProgramaResidenciaEl)
+
+        divButtonsEl.appendChild(editButtonEl)
+        divButtonsEl.appendChild(deleteButtonEl)
+
+        divItemListaEl.appendChild(divContainerInfoEl)
+        divItemListaEl.appendChild(divButtonsEl)
+
+        divListItem.appendChild(divItemListaEl)
     })
 
-    containerEl.appendChild(titleEl)
-    containerEl.appendChild(listContainerEl)
+
+    divTitleContainerEl.appendChild(titleEl)
+
+    // divListContainer.appendChild(divListItem)
+
+    containerEl.appendChild(divTitleContainerEl)
+    containerEl.appendChild(divListItem)
 }

@@ -125,3 +125,10 @@ export const selectedCheckBox = (containerList) => {
     return selectedPositionCheckbox
 }
 
+export const checkCheckboxes = (arrayIDs) => {
+    arrayIDs.forEach((valor) => {
+        let currentItem = document.getElementById(valor)
+        currentItem.childNodes[1].childNodes[0].checked = true
+    })
+}
+

@@ -1,11 +1,18 @@
 //Dynamic List
-import {setContainerEl, dynamicList} from "./list-squads.js"
-import {allSquads} from "./all-squads.js"
-import {createDivWithID, createDivWithClasses, createTitle, createImage} from "../assets/code/DOM/DOM.js"
+import { setContainerEl, dynamicList, clearContainerEl } from "./list-squads.js"
+import { allSquads } from "./all-squads.js"
+import { createDivWithID, createDivWithClasses, createTitle, createImage, addEventToHTMLCollectionOnClick, getIDElement } from "../assets/code/DOM/DOM.js"
+import { del, get, getAll } from "../assets/code/db/CRUD.js"
+import { closeModal, declineActionModal, openModal } from "../assets/code/DOM/modal.js"
 
-//teste 4
+let clickedElementID
+let listSquads = await getAll("squads")
+
 setContainerEl("containerSquad")
-dynamicList(allSquads,"Squads","title","container-lista","lista")
+dynamicList(listSquads)
+
+let arrayDeleteButtons = document.getElementsByClassName("delete-button")
+let arrayEditButtons = document.getElementsByClassName("edit-button")
 
 //create html
 let fade = createDivWithID("fade")
@@ -41,54 +48,60 @@ modalCancel.innerHTML = "Não";
 const addEl = document.getElementById("addButton");
 const modalEl = document.getElementById("myModal");
 const fadeEl = document.getElementById("fade");
-const closeModalEl = document.getElementById("close");
-const cancelModalEl =  document.getElementById("modalCancel");
+const cancelModalEl = document.getElementById("modalCancel");
 const confirmModalEl = document.getElementById("modalConfirm");
 
-
-//botton add going to telaTrilha2
-let add = document.getElementById("addButton");
-add.addEventListener("click", next);
-function next(){
+function goToSquadCadastro1Page() {
   window.location.href = "../tela-adm-squads-passo1/tela-adm-squads-passo1.html";
 }
 
-
-const openModal = () => {
-  fadeEl.style.display = "flex";
-  modalEl.style.display = "flex";
+async function setSquads() {
+  listSquads = await getAll("squads")
 }
 
-const closeModal = () => {
-  closeModalEl.onclick = function () {
-    modalEl.style.display = "none";
-    fadeEl.style.display = "none";
-  }
+const confirmActionModal = async () => {
+  del(clickedElementID, "squads")
+  await setSquads()
+
+  closeModal(modalEl, fadeEl)
+
+  clearContainerEl()
+  dynamicList(listSquads)
+
+  addEventToHTMLCollectionOnClick(arrayDeleteButtons, onClickDelete)
+  addEventToHTMLCollectionOnClick(arrayEditButtons, onClickEdit)
+
+  //TODO deleter do banco primeiro depois apagar o modal
 }
 
-const confirmActionModal = () => {
-    modalEl.style.display = "none";
-    fadeEl.style.display = "none";
-    //TODO deleter do banco primeiro depois apagar o modal
-  
+const onClickDelete = (event) => {
+  let currentID = getIDElement(event.target.parentNode.parentNode)
+  setIDClickedElement(currentID)
+  openModal(modalEl, fadeEl)
 }
 
-const declineActionModal = () => {
-    modalEl.style.display = "none";
-    fadeEl.style.display = "none";
-  }
-
-const openModalAddEvent = (buttonHTMLCollection, functionListener) => {
-  let buttonsArray = Array.prototype.slice.call(buttonHTMLCollection)
-  buttonsArray.forEach(elemento => {
-    elemento.addEventListener("click", functionListener)
-  })
+async function onClickEdit(event) {
+  let currentID = getIDElement(event.target.parentNode.parentNode)
+  let currentSquad = await get(currentID, "squads")
+  console.log(currentSquad)
+  sessionStorage.setItem("update", JSON.stringify(currentSquad))
+  goToSquadCadastro1Page()
 }
 
-openModalAddEvent(document.getElementsByClassName("delete-button"),openModal)
+const setIDClickedElement = id => {
+  clickedElementID = id
+}
 
+const cleanIDClickedElement = () => {
+  clickedElementID = ""
+}
 
-addEl.addEventListener("click", next);
-closeModalEl.addEventListener("click", closeModal)
-cancelModalEl.addEventListener("click", declineActionModal)
-confirmModalEl.addEventListener("click",confirmActionModal)
+addEventToHTMLCollectionOnClick(arrayDeleteButtons, onClickDelete)
+addEventToHTMLCollectionOnClick(arrayEditButtons, onClickEdit)
+
+addEl.addEventListener("click", goToSquadCadastro1Page);
+
+cancelModalEl.addEventListener("click", () => {
+  declineActionModal(modalEl, fadeEl)
+})
+confirmModalEl.addEventListener("click", confirmActionModal)
