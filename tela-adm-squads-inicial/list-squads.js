@@ -25,7 +25,7 @@ export const dynamicList = (file) => {
     let divListItem = createDivWithClasses("container-lista")
 
     file.forEach(valor => {
-        let divItemListaEl = createDivWithClasses("lista")
+        let divItemListaEl = createDivWithClasses("listaItens")
         divItemListaEl.setAttribute("id",valor.id)
 
         let divContainerInfoEl = createDivWithClasses("user-div-squads")

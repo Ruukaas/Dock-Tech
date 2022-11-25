@@ -89,12 +89,12 @@ nav {
   text-decoration: underline;
 }
 
-#lista-de-trilhas {
+/* #lista-de-trilhas {
   list-style: none;
   font-size: 18px;
   color: #101a3f;
   background-color: #d3d2eb;
-}
+} */
 
 #container-lista {
   list-style: none;
@@ -114,13 +114,13 @@ footer {
   margin-top: 30px;
 }
 
-.itemTrilha {
+/* .itemTrilha {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 20px;
   border-bottom: 1px solid black;
-}
+} */
 
 
 /*Botão*/
@@ -185,7 +185,7 @@ footer {
   z-index: 10;
   position: fixed;
   bottom: 40%;
-  left: 35%;
+  /* left: 35%; */
   background-color: #d3d2eb;
 }
 
@@ -193,6 +193,7 @@ footer {
   text-align: center;
   justify-content: center;
   margin-left: 19px;
+  margin-top: 30px;
 }
 
 #title-modal {
@@ -253,7 +254,7 @@ footer {
 
 /* NOVA LISTA */
 
-.lista{
+/* .lista{
     display: flex;
     justify-content: space-between;
     margin: 10px auto;
@@ -262,7 +263,7 @@ footer {
     border: #101A3F solid 2px;
     border-radius: 5px;
     background-color: #D3D2EB;
-}
+} */
 
 .user-div-squads {
   display: flex;

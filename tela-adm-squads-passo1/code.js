@@ -7,7 +7,7 @@ let arrayAlunos = await filterByOneKey("usuarios","funcao",["Aluno"])
 console.log(arrayAlunos)
 
 setContainerEl("containerTrilha")
-dynamicList(arrayAlunos, "Squads", "title", "checkbox-style", "next-button-right", "lista-de-trilhas", "itemTrilha")
+dynamicList(arrayAlunos, "Squads", "title", "checkbox-style", "next-button-right", "listaTrilhas", "listaItens")
 
 const exitEl = document.querySelector(".exit-button");
 const nextEl = document.querySelector(".next-button-right");
