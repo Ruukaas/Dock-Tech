@@ -19,6 +19,7 @@ let nextButtonRight = document.querySelector(".next-button-right");
 let nextButton = document.querySelector(".next-button");
 
 function backToMainPage() {
+  sessionStorage.clear()
   window.location.href = "../tela-adm-squads-inicial/tela-adm-squads.html";
 }
 

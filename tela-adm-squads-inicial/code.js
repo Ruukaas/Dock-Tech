@@ -84,6 +84,7 @@ async function onClickEdit(event) {
   let currentID = getIDElement(event.target.parentNode.parentNode)
   let currentSquad = await get(currentID, "squads")
   console.log(currentSquad)
+  sessionStorage.clear()
   sessionStorage.setItem("update", JSON.stringify(currentSquad))
   goToSquadCadastro1Page()
 }
@@ -99,7 +100,11 @@ const cleanIDClickedElement = () => {
 addEventToHTMLCollectionOnClick(arrayDeleteButtons, onClickDelete)
 addEventToHTMLCollectionOnClick(arrayEditButtons, onClickEdit)
 
-addEl.addEventListener("click", goToSquadCadastro1Page);
+//TODO - limpar o sessionStorage nos outros CRUDS ao clicar no addEl
+addEl.addEventListener("click", () => {
+  sessionStorage.clear()
+  goToSquadCadastro1Page()
+});
 
 cancelModalEl.addEventListener("click", () => {
   declineActionModal(modalEl, fadeEl)

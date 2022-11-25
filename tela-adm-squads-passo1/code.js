@@ -33,6 +33,7 @@ async function fillAlunos(obj) {
 }
 
 function backToMainPage() {
+  sessionStorage.clear()
   window.location.href = "../tela-adm-squads-inicial/tela-adm-squads.html";
 }
 
