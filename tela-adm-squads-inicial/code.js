@@ -1,6 +1,5 @@
 //Dynamic List
 import { setContainerEl, dynamicList, clearContainerEl } from "./list-squads.js"
-import { allSquads } from "./all-squads.js"
 import { createDivWithID, createDivWithClasses, createTitle, createImage, addEventToHTMLCollectionOnClick, getIDElement } from "../assets/code/DOM/DOM.js"
 import { del, get, getAll } from "../assets/code/db/CRUD.js"
 import { closeModal, declineActionModal, openModal } from "../assets/code/DOM/modal.js"
