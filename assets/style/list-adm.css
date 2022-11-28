@@ -1,0 +1,19 @@
+/* Arquivo onde será colocado a estilização das listas que se repetem no ADM */
+.listaItens{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px auto;
+    width: 500px;
+    padding: 20px;
+    border: #101A3F solid 2px;
+    border-radius: 5px;
+    color: #101A3F;
+    background-color: #D3D2EB;
+    font-weight: bold;
+}
+#listaTrilhas {
+    list-style: none;
+    font-size: 18px;
+    color: #101a3f;
+    background-color: #101A3F;
+}
