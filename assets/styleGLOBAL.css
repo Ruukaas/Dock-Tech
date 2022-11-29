@@ -4,7 +4,6 @@
     padding: 0;
     margin: 0;
 }
-
 body{
     font-family: 'Roboto Flex', sans-serif;
 }
@@ -38,8 +37,8 @@ a:hover{
 /*Footer*/
 footer{
     color: #101a3f;
-    bottom: 0;
-    left:0;
+    /* bottom: 0; */
+    /* left:0; */
     width: 100%;
     font-weight: 800;
     font-size: 16px;
@@ -100,11 +99,23 @@ footer{
     color: #d3d2eb;
 }
 
+/* formulario */
 
-/* Formulario */
+.button{
+    cursor: pointer;
+    width: 64px;
+    height: 64px;
+}
 
-
-form {
+#container-buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 450px;
+}
+  
+  form {
     max-width: 300px;
     margin: 10px auto;
     padding: 10px 20px;
@@ -174,17 +185,4 @@ form {
     font-weight: 300;
     display: inline;
   }
-
-  .button{
-    cursor: pointer;
-    width: 64px;
-    height: 64px;
-}
-
-#container-buttons{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 20px;
-  max-width: 450px;
-}
+  
