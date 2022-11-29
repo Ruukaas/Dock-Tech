@@ -24,7 +24,7 @@ export const dynamicList = (file, title, titleClasse, checkboxClasse,nextButtonS
 
     let exitButton = createImage("../assets/global-images/icons8-xbox-x-50.png","Botao para sair","exit-button")
 
-    let pElement1 = createParagraph("Selecione os alunos que farao parte da residencia")
+    let pElement1 = createParagraph("Selecione os alunos que farão parte da residência")
     let pElement2 = createParagraph("Passo 1 de 3")
 
     let nextButtonEl = createImage("../assets/global-images/next.png","Botao com o simbolo de seta apontada para direita",nextButtonStyle)
