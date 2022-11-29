@@ -34,17 +34,17 @@ const openModal = () => {
 }
 
 async function delAuthAndStore() {
-  await del(clickedElementID, "usuarios");
   let currentUsuario = await get(clickedElementID, "usuarios");
   const auth = await getAuth(app);
   await signInWithEmailAndPassword(auth, currentUsuario.email, currentUsuario.senha).then(async () => {
-    deleteUser()
+    deleteUser(auth.currentUser)
   })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      alert(errorCode + "|" + errorMessage)
-    });
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorCode + "|" + errorMessage)
+  });
+  await del(clickedElementID, "usuarios");
 }
 
 async function confirmActionModal() {

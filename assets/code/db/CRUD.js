@@ -36,14 +36,9 @@ export async function getAll(collectionref) {
 }
 
 //Retorna uma promisse daqui em diante
-export const get = async (id, collectionref) => {
+export const get = (id, collectionref) => {
     try {
-        console.log(id)
-        console.log(collectionref)
-        let currentDoc = await getDoc(doc(db, collectionref, id))
-        console.log(currentDoc.data())
-        currentDoc = setIDObjects(currentDoc.data(), id)
-        return currentDoc
+        return getDoc(doc(db, collectionref, id)).then(doc => setIDObjects(doc.data(), id))
     } catch (e) {
         console.log(`Error: ${e}`)
     }
