@@ -40,7 +40,7 @@ function backToMainPage() {
 
 //botton add going to telaTrilha2
 function next() {
-  setAlunosOfSquad("lista-de-trilhas")
+  setAlunosOfSquad("listaTrilhas")
   window.location.href = "../tela-adm-squads-passo2/tela-adm-squads-passo2.html";
 }
 

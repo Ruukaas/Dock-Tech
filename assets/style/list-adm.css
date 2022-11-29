@@ -3,8 +3,9 @@
     display: flex;
     justify-content: space-between;
     margin: 10px auto;
-    width: 500px;
+    width: 100%;
     padding: 20px;
+    box-sizing: border-box;
     border: #101A3F solid 2px;
     border-radius: 5px;
     color: #101A3F;
@@ -16,4 +17,5 @@
     font-size: 18px;
     color: #101a3f;
     background-color: #101A3F;
+    width: 100%;
 }

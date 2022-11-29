@@ -19,15 +19,15 @@ nav{
 }
 
 
-input{
+/* input{
     width: 300px;
-}
+} */
 
 #exit-button{
     float: right;
 }
 .container-x{
-    width: 80%;
+    width:100%;
     color:#d3d2eb;
     display: flex;
     flex-direction: row;
@@ -39,20 +39,20 @@ input{
     padding: 20px;
     font-weight: bolder;
     font-size: larger;
-    width: 400px;
+    width:100%;
 }
 
 .containerInput{
     display: flex;
     flex-direction: column;
-    padding: 20px;
     font-weight: bolder;
     font-size: larger;
-    width: 500px;
+    width: 100%;
 }
 
 .inputDiv{
-    margin: 20px;
+    margin-top: 20px;
+    width: 100%;
 }
 
 #buttonDiv{
@@ -68,7 +68,7 @@ input{
     background-color: #d3d2eb;
     font-size: 18px;
     color: #101a3f;
-    width: 350px;   
+    width: 100%;
 }
 
 .itemLista{

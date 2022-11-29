@@ -8,7 +8,7 @@ let arrayMentores = await filterByOneKey("usuarios","funcao",["Mentor"])
 
 
 setContainerEl("containerTrilha")
-dynamicList(arrayMentores,"Squads","title","checkbox-style","next-button","next-button-right","lista-de-trilhas","itemTrilha")
+dynamicList(arrayMentores,"Squads","title","checkbox-style","next-button","next-button-right","listaTrilhas","listaItens")
 
 const exitButtonEl = document.querySelector(".exit-button");
 
@@ -46,7 +46,7 @@ function back(){
   window.location.href = "../tela-adm-squads-passo1/tela-adm-squads-passo1.html";
 }
 function next(){
-  setMentoresOfSquad("lista-de-trilhas")
+  setMentoresOfSquad("listaTrilhas")
   window.location.href = "../tela-adm-squads-passo3/tela-adm-squads-passo3.html";
 }
 

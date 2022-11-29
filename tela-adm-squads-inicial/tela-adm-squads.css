@@ -48,12 +48,16 @@ nav {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 20px;
   font-weight: bolder;
   font-size: larger;
-
+  width: 100%;
+}
+#containerSquad{
+  max-width: 60%;
+  margin: 0 auto;
 }
 
 .itemColumn {
@@ -110,9 +114,13 @@ footer {
 #containerTrilha {
   color: #d3d2eb;
   background-color: #101A3F;
-  max-width: 50%;
+  width: 50%;
   margin: auto;
   margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* .itemTrilha {

@@ -30,7 +30,7 @@ export const dynamicList = (file, title, titleClasse, checkboxClasse,nextLeft,ne
 
     let nextButtonEl1 = createImage("../assets/global-images/next-left-2.png","Botao com o simbolo de seta apontada para esquerda",nextLeft)
     let nextButtonEl2 = createImage("../assets/global-images/next.png","Botao com o simbolo de seta apontada para direita",nextRight)
-    
+
 
     file.forEach(valor => {
         let itemListEl = createDivWithClasses(...itemListClasses)
@@ -39,7 +39,7 @@ export const dynamicList = (file, title, titleClasse, checkboxClasse,nextLeft,ne
         let instEmprItemListEl = createParagraph(valor.instEmpr)
 
         let itemCollumnEl = createDivWithClasses("itemCollumn")
-        
+
         let checkboxContainer = createDivWithClasses("checkbox-container")
         let checkboxEl = createCheckBox(checkboxClasse)
 

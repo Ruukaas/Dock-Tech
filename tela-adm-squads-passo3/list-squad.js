@@ -23,9 +23,9 @@ export const dynamicList = (file1,file2) => {
     containerLista1.appendChild(pTitleContainerListaEl1)
 
     let divContainerLista1 = createDivWithClasses("containerLista")
-    let lista1El = createDivWithClasses("lista") 
+    let lista1El = createDivWithClasses("listaTrilhas")
     file1.forEach(valor => {
-        let divItemListaEl = createDivWithClasses("itemLista")
+        let divItemListaEl = createDivWithClasses("listaItens")
 
         let pNameItemEl = createParagraph(valor.nome)
         let pInstEmprItemEl = createParagraph(valor.instEmpr)
@@ -46,10 +46,10 @@ export const dynamicList = (file1,file2) => {
 
     containerLista2.appendChild(pTitleContainerListaEl2)
 
-    let lista2El = createDivWithClasses("lista")
+    let lista2El = createDivWithClasses("listaTrilhas")
 
     file2.forEach(valor => {
-        let divItemListaEl = createDivWithClasses("itemLista")
+        let divItemListaEl = createDivWithClasses("listaItens")
         let pNameItemEl = createParagraph(valor.nome)
         let pInstEmprItemEl = createParagraph(valor.instEmpr)
 
@@ -69,7 +69,7 @@ export const dynamicList = (file1,file2) => {
     let pSelectInstEmprEl = createParagraph("Empresa Responsável")
     let selectInstEmprEl = createSelect("input")
     selectInstEmprEl.setAttribute("id","empresaResponsavel")
-    
+
     let divInputNumeroSquad = createDivWithClasses("inputDiv")
     let pInputNumeroSquad = createParagraph("Número do Squad")
     let inputNumero = createInputTypeNumber("numeroSquad","numeroSquad")
@@ -85,12 +85,12 @@ export const dynamicList = (file1,file2) => {
     imgBackEl.setAttribute("id","back-button")
     let imgNextEl = createImage("../assets/global-images/icons8-ok-50.png","Botão com símbolo de OK","next-button")
     imgNextEl.setAttribute("id","ok-button")
-    
+
     containerTitleEl.appendChild(titleEl)
-    
+
     containerInfoEl.appendChild(p1InfoEl)
     containerInfoEl.appendChild(p2InfoEl)
-    
+
     containerLista1.appendChild(lista1El)
     containerLista2.appendChild(lista2El)
 
