@@ -86,7 +86,8 @@ nav {
 .title {
   color: #d3d2eb;
   margin-bottom: 20px;
-  text-decoration: underline;
+  margin-top: 30px;
+  /* text-decoration: underline; */
 }
 
 /* #lista-de-trilhas {
@@ -176,39 +177,41 @@ footer {
   color: #101a3f;
   border: 2px solid #101a3f;
   margin: 70px auto;
-  max-width: 50%;
+
+  width: 60%;
   height: 200px;
   border-radius: 3px;
   flex-direction: column;
+  padding: 1rem;
   overflow: auto;
   /* Enable scroll if needed */
   z-index: 10;
-  position: fixed;
-  bottom: 40%;
-  /* left: 35%; */
+  position: relative;
   background-color: #d3d2eb;
 }
 
 #title-container {
   text-align: center;
   justify-content: center;
-  margin-left: 19px;
-  margin-top: 30px;
+  /* margin-left: 19px;
+  margin-top: 30px; */
+  font-size: 0.8rem;
 }
 
 #title-modal {
   padding: 10px;
 }
 
-.fade {
+#fade {
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
-  z-index: 5;
+  z-index: 10;
   display: none;
+  background-size: cover;
 }
 
 .itemFlex {
@@ -228,9 +231,9 @@ footer {
   cursor: pointer;
 }
 
-/* Botoes Modal 
-  
-  
+/* Botoes Modal
+
+
   */
 #modalConfirm,
 #modalCancel {
@@ -242,6 +245,11 @@ footer {
   margin-top: 15px;
   font-weight: 700;
   z-index: 11;
+  width: 190px;
+  text-align: center;
+}
+#modalConfirm{
+  background-color: darkred;
 }
 
 #modalConfirm:hover {

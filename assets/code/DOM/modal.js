@@ -12,4 +12,3 @@ export const declineActionModal = (modalEl,fadeEl) => {
     modalEl.style.display = "none";
     fadeEl.style.display = "none";
 }
-  

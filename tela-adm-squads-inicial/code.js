@@ -22,21 +22,22 @@ let titleContainer = createDivWithID("title-container");
 let titleModal = createTitle("title-modal");
 let modalConfirm = createDivWithID("modalConfirm");
 let modalCancel = createDivWithID("modalCancel");
-let closeBtn = createImage("../assets/global-images/icons8-excluir-480.png", "image");
-closeBtn.id = "close"
+// let closeBtn = createImage("../assets/global-images/icons8-excluir-480.png", "image");
+// closeBtn.id = "close"
 
 let divRandom = document.createElement("div");
 
 //appends
 document.body.appendChild(fade);
-document.body.appendChild(myModal);
+// document.body.appendChild(myModal);
+fade.appendChild(myModal);
 myModal.appendChild(itemFlex1);
 myModal.appendChild(itemFlex2);
 itemFlex1.appendChild(titleContainer);
 itemFlex2.appendChild(modalConfirm);
 itemFlex2.appendChild(modalCancel);
 myModal.appendChild(divRandom);
-divRandom.appendChild(closeBtn);
+// divRandom.appendChild(closeBtn);
 titleContainer.appendChild(titleModal);
 
 titleModal.innerText = "Tem certeza que deseja excluir essa trilha?"
