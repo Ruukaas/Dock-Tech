@@ -5,5 +5,11 @@ export class usuario {
         this.funcao = funcao
         this.instEmpr = instEmpr
         this.senha = senha
+        this.authID = ""
+    }
+
+    authID
+    setAuthID(authID) {
+        this.authID = authID
     }
 }

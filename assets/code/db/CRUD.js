@@ -6,6 +6,9 @@ const db = getFirestore();
 
 
 export async function add(obj, collectionref) {
+    console.log("add")
+    console.log(obj)
+    console.log(collectionref)
     try {
         await addDoc(collection(db, collectionref), Object.assign({}, obj))
         return "sucesso";
