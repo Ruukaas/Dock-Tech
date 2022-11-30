@@ -2,6 +2,7 @@ import { getAuth, createUserWithEmailAndPassword, signOut, updateEmail, updatePa
 import { setContainerEl, dynamicList, clearContainerEl } from "./list-usuarios.js"
 import { getAll, del, get } from "../assets/code/db/CRUD.js";
 import { app } from "../assets/code/db/firebase.js";
+import { closeModal } from "../assets/code/DOM/modal.js";
 
 let listUsuarios = await getAll("usuarios")
 let clickedElementID //local onde vai ser armazenado o ID da trilha clicada para ser deletada ou alterada
@@ -37,7 +38,7 @@ async function delAuthAndStore() {
   let currentUsuario = await get(clickedElementID, "usuarios");
   const auth = await getAuth(app);
   await signInWithEmailAndPassword(auth, currentUsuario.email, currentUsuario.senha).then(async () => {
-    deleteUser(auth.currentUser)
+    await deleteUser(auth.currentUser)
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -49,18 +50,17 @@ async function delAuthAndStore() {
 
 async function confirmActionModal() {
   await delAuthAndStore()
-
-  modalEl.style.display = "none";
-  fadeEl.style.display = "none";
+  
+  
   await setUsuarios()
   clearContainerEl()
-
+  
   dynamicList(listUsuarios, "Usuarios", "title", "container-lista", "lista")
-
+  
   openModalAddEvent(arrayDeleteButtons, onClickDelete)
   openModalAddEvent(arrayEditButtons, onClickEdit)
-
   cleanIDClickedElement()
+  declineActionModal()
 }
 
 const declineActionModal = () => {
@@ -102,5 +102,5 @@ openModalAddEvent(arrayDeleteButtons, onClickDelete)
 openModalAddEvent(arrayEditButtons, onClickEdit)
 
 cancelModalEl.addEventListener("click", declineActionModal)
-confirmModalEl.addEventListener("click", confirmActionModal)
+confirmModalEl.addEventListener("click", () => confirmActionModal())
 addEl.addEventListener("click", next);
