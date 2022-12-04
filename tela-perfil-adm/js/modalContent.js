@@ -23,19 +23,19 @@ export const contentSquad = id => {
 
             //if chain dos squads para inseri-los na div
             if (value == 'KICK OFF') {
-                para.innerHTML = `<span class="squads">${key}</span> - 
+                para.innerHTML = `<span class="squads">${key}</span> -
                 <span class="kickoff">${value}</span>`;
                 divSquads.appendChild(para);
             } else if (value == 'RISE UP') {
-                para.innerHTML = `<span class="squads">${key}</span> - 
+                para.innerHTML = `<span class="squads">${key}</span> -
                 <span class="riseup">${value}</span>`;
                 divSquads.appendChild(para);
             } else if (value == 'GROW UP') {
-                para.innerHTML = `<span class="squads">${key}</span> - 
+                para.innerHTML = `<span class="squads">${key}</span> -
                 <span class="growup">${value}</span>`;
                 divSquads.appendChild(para);
             } else {
-                datePara.innerHTML = `<span class="date">${key} - ${value}</span><br><hr>`;
+                datePara.innerHTML = `<span class="date">${key} - ${value}</span><br>`;
                 divSquads.appendChild(datePara);
             }
         }

@@ -15,11 +15,11 @@ let administradorActions = {
     },
     usuarios: {
         name:"Usuarios",
-        hasContent: false
+        hasContent:true
     },
     instituiçõesEmpresas: {
         name: "Instituições/Empresas",
-        hasContent: false
+        hasContent: true
     },
     trilhas: {
         name: "Trilhas",
@@ -81,7 +81,7 @@ const createProfile = (imageProfile,name, occupation) => {
 const createActions = actions => {
     let divActionsWrapperEl = createDivWithClasses("buttons-wrapper")
     let arrayActions = Object.values(actions)
-    
+
     arrayActions.forEach(value => {
         let divActionEl = createDivWithClasses(`${value.name}-wrapper`)
         let btnActionEl
@@ -93,12 +93,12 @@ const createActions = actions => {
 
 
             divContentWrapperEl.appendChild(divContentEl)
-            
+
             if(value.hasButton) {
                 btnActionContentEl = createButton(value.button.valor,value.button.classe)
                 divContentWrapperEl.appendChild(btnActionContentEl)
             }
-            
+
             divActionEl.appendChild(btnActionEl)
             divActionEl.appendChild(divContentWrapperEl)
         } else {
@@ -119,13 +119,13 @@ export const dynamicProfile = (usuario) => {
 
     //Colocar para low-case?
     switch(usuario.funcao) {
-        case "aluno":
+        case "Aluno":
             actionsEl = createActions(alunoActions)
             break
-        case "mentor":
+        case "Mentor":
             actionsEl = createActions(mentorActions)
             break
-        case "administrador":
+        case "Administrador":
             actionsEl = createActions(administradorActions)
             break
     }
@@ -136,9 +136,9 @@ export const dynamicProfile = (usuario) => {
 
 //TODO - CSS para nomes grandes
 let teste = {
-    nome: "Lucas Henrique Henrique Lucas 123",
-    email: "@gov.br",
-    funcao: "administrador",
+    nome: "Maria Eduarda",
+    email: "maria.eduarda@portodigital.org.br",
+    funcao: "Administrador",
     instEmpr: "PT",
     imgPerfil: "./page-images/adm.png"
 }
