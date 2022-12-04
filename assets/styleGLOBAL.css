@@ -1,5 +1,6 @@
 /*Fontes*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,500&display=swap');
+
 *{
     padding: 0;
     margin: 0;
@@ -37,8 +38,8 @@ a:hover{
 /*Footer*/
 footer{
     color: #101a3f;
-    bottom: 0;
-    left:0;
+    /* bottom: 0; */
+    /* left:0; */
     width: 100%;
     font-weight: 800;
     font-size: 16px;
@@ -48,5 +49,143 @@ footer{
 @media (max-width:1000px){
     footer{
         font-size: 12px!important;
-    }   
+    }
 }
+
+/*Flex*/
+
+.row {
+	flex-direction: row;
+}
+.row-reverse {
+	flex-direction: row-reverse;
+}
+.column {
+	flex-direction: column;
+}
+.column-reverse {
+	flex-direction: column-reverse;
+}
+
+.flex-start {
+	justify-content: flex-start;
+}
+
+.flex-end {
+	justify-content: flex-end;
+}
+
+.center {
+	justify-content: center;
+}
+
+.space-between {
+	justify-content: space-between;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+
+/*mouse*/
+
+.mousePointer {
+    cursor: pointer;
+}
+
+/*fontes*/
+
+.fonteCinza {
+    color: #d3d2eb;
+}
+
+/* formulario */
+
+.button{
+    cursor: pointer;
+    width: 64px;
+    height: 64px;
+}
+
+#container-buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 450px;
+}
+
+  form {
+    max-width: 300px;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background: #101a3f;
+    color:#d3d2eb;
+    border-radius: 8px;
+  }
+
+  h1 {
+    margin: 0 0 30px 0;
+    text-align: center;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="email"],
+  input[type="number"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="time"],
+  input[type="url"],
+  textarea,
+  select {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    font-size: 16px;
+    height: auto;
+    margin: 0;
+    outline: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #e8eeef;
+    color: #787a7c;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 30px;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin: 0 4px 8px 0;
+  }
+
+  select {
+    padding: 6px;
+    height: 32px;
+    border-radius: 2px;
+  }
+
+  fieldset {
+    margin-bottom: 30px;
+    border: none;
+  }
+
+  legend {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  label.light {
+    font-weight: 300;
+    display: inline;
+  }
