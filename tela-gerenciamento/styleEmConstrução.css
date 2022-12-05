@@ -1,0 +1,33 @@
+.construção{
+    max-width: 40%;
+    margin: 30px auto;
+    font-size: large !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.construção>img{
+    width: 250px;
+    height: 250px;
+    margin-bottom: 20px;
+}
+h1, h3, p{
+    color: #101A3F !important;
+}
+p{
+    font-size: 0.9rem !important;
+    text-align: center;
+    margin-top: 10px;
+}
+footer{
+    position: absolute !important;
+    bottom: 0 !important;
+    text-align: center;
+}
+#erro{
+    font-family: monospace;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 2rem !important;
+}

@@ -1,0 +1,199 @@
+/*Fontes*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,500&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Roboto Flex', sans-serif;
+    background-color: #D3D2EB;
+}
+
+.opcoes{
+    max-width: 80%;    
+    margin: 0 auto 20px auto;
+    display:flex;
+    flex-direction: column;
+}
+
+.opcao-superior{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+.itemSup{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+}
+.opcao-inferior{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    height: 200px;
+    
+}
+.opcao-item{
+    background: tomato;
+    margin-top: 10px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 7px;
+    max-width: 100%;
+}
+.opcao-superior>.opcao-item:first-child{
+    background-color: #147E17;
+}
+.itemSup{
+    height: 300px;
+}
+.opcao-item>img{
+    width: 80px;
+    height: 80px;
+    margin: 10px auto;
+}
+.opcao-superior>.opcao-item:first-child>img{
+    width: 95%;
+    height: 95%;
+    border-radius: 7px;
+    margin: auto;
+}
+.itemSup:last-child>img{
+    margin: 40px auto;
+    width: 130px;
+    height: 130px;
+}
+.itemSup:last-child>p{
+    max-width: 60%;
+    margin: auto;
+}
+.opcao-inferior>.opcao-item:nth-child(3)>img{
+    
+    width: 80%;
+    height: 70%;
+    margin: 10px auto;
+}
+.opcao-inferior>.opcao-item:nth-child(3){
+    flex-grow: 3;
+    width: 100%;   
+}
+
+.opcao-inferior>.opcao-item{
+    flex-grow: 1;
+    width: 70%;
+}
+.opcao-superior>.opcao-item:first-child{
+    flex-grow: 2;
+}
+.opcao-superior>.opcao-item{
+    flex-grow: 1;
+}
+.itemSup:first-child{
+    width: 100%;
+}
+
+a{
+    color:#d3d2eb;
+    text-decoration: none;
+}
+a:visited{
+    color:#d3d2eb;
+    text-decoration: none;
+}
+a:hover{
+    color:#d3d2eb;
+    text-decoration: none;
+}
+/*Footer*/
+
+@media (max-width:1000px){
+    footer{
+        font-size: 12px!important;
+    }   
+    .opcoes .opcao-inferior .opcao-superior{
+        flex-wrap: wrap;
+    }
+}
+@media (min-width:1280px){
+    .opcoes{
+        max-width: 60%;
+        margin-top: 80px;
+    }
+}
+/*Flex*/
+
+.row {
+	flex-direction: row;
+}
+.row-reverse {
+	flex-direction: row-reverse;
+}
+.column {
+	flex-direction: column;
+}
+.column-reverse {
+	flex-direction: column-reverse;
+}
+
+.flex-start {
+	justify-content: flex-start;
+}
+
+.flex-end {
+	justify-content: flex-end;
+}
+
+.center {
+	justify-content: center;
+}
+
+.space-between {
+	justify-content: space-between;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+
+/*mouse*/
+
+.mousePointer {
+    cursor: pointer;
+}
+.opcao-item{
+    cursor: pointer;
+}
+
+/*fontes*/
+
+.fonteCinza {
+    color: #d3d2eb;
+}
+
+
+/*Cosméticos da parte de gerenciamento*/
+.fundoAzul{
+    background-color: #101a3f;
+}
+.fundoRosa{
+    background-color: #DC235A;
+}
+h3, p{
+    color: #D3D2EB;
+}
+p{
+    font-size: 0.7rem;
+}
+h3{
+    font-size: 1.1rem;
+}
+.opcao-inferior>.opcao-item:nth-child(4)>h3{
+    font-size: 0.85rem;
+}
+
+
+/*Em Construção*/
+
