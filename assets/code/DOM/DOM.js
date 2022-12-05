@@ -4,6 +4,12 @@ export const createTitle = (name, ...classes) => {
     h1El.textContent = name
     return h1El
 }
+export const createSubTitle = (name, ...classes) => {
+    let h2El = document.createElement("h2")
+    h2El.classList.add(...classes)
+    h2El.textContent = name
+    return h2El
+}
 
 export const createDivWithID = id => {
     let divEl = document.createElement("div")
