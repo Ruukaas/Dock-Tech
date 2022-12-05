@@ -6,6 +6,7 @@ import { getInputValueByName } from "../../assets/code/DOM/DOM.js";
 window.onload = (e) => {
     e.preventDefault();
 }
+
 const button = document.getElementById('enter');
 const loadingImg = document.getElementById('loading-image');
 

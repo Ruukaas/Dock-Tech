@@ -11,7 +11,6 @@ window.onclick = (e) => {
     }
 }
 
-
 //definindo o display pra none novamente
 modal.style.display = "none"
 
