@@ -4,11 +4,12 @@
     background-color: #D3D2EB;
     color: #101A3F;
     border-radius: 7px;
+    padding: 10px;
 }
 #trilha{
     max-width: 30%;
     min-width: 300px;
-    height: 320px;
+    height: 280px;
     overflow: scroll;
     overflow-x: hidden;
     margin-left: 10px;
@@ -23,7 +24,7 @@
 .lesson {
     display: flex;
     justify-content: space-between;
-    margin-right: 10px;
+    margin-left: 15px;
     font-size: 1.2rem;
 
 }
@@ -70,7 +71,7 @@ input[type=checkbox] {
 @media (max-width:1170px){
     .first-line-wrapper{
         flex-direction: column;
-    }    
+    }
     #trilha{
         max-width: 100%;
         margin-top: 25px;

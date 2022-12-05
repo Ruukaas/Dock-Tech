@@ -32,7 +32,7 @@ export const dynamicTrilha = (trilhaJSON) => {
 export const createModule = (text) => {
     let li = document.createElement("li")
     li.classList.add("module")
-    li.textContent = text
+    li.textContent =  "- " + text
     return li
 }
 
@@ -48,7 +48,7 @@ export const createLesson = (lesson) => {
     div.classList.add("lesson")
     let li = document.createElement("li")
     li.textContent = lesson.lessonTitle
-    li.setAttribute("id", countPositionOrder) 
+    li.setAttribute("id", countPositionOrder)
     li.addEventListener("click", (eventTarget) => {
         changeCurrentPositionOrder(Number(eventTarget.target.id))
         saveCurrentStats()
@@ -66,7 +66,7 @@ export const createCheckbox = () => {
     checkbox.setAttribute("type", "checkbox")
     checkbox.setAttribute("name", countPositionOrder)
     checkbox.setAttribute("disabled","disabled")
-    
+
     return checkbox
 }
 
