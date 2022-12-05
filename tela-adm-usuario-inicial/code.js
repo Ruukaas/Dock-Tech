@@ -2,13 +2,15 @@ import { getAuth, createUserWithEmailAndPassword, signOut, updateEmail, updatePa
 import { setContainerEl, dynamicList, clearContainerEl } from "./list-usuarios.js"
 import { getAll, del, get } from "../assets/code/db/CRUD.js";
 import { app } from "../assets/code/db/firebase.js";
-import { closeModal } from "../assets/code/DOM/modal.js";
+import { closeModal, createModalConfirmDelete } from "../assets/code/DOM/modal.js";
 
 let listUsuarios = await getAll("usuarios")
 let clickedElementID //local onde vai ser armazenado o ID da trilha clicada para ser deletada ou alterada
 
 setContainerEl("containerTrilha")
 dynamicList(listUsuarios, "Usuarios", "title", "container-lista", "lista")
+
+createModalConfirmDelete("Tem certeza que deseja excluir esse usuário?","Sim, desejo excluir o usuário","Não")
 
 const addEl = document.getElementById("addButton");
 const modalEl = document.getElementById("myModal");
