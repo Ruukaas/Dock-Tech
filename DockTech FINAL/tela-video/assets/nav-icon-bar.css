@@ -1,0 +1,8 @@
+.icon-bar {
+  max-width: 100%;
+  background-color: #D3D2EB;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px;
+}
+

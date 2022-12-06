@@ -1,0 +1,352 @@
+nav {
+  background-color: #d3d2eb;
+}
+
+
+/******NAV******/
+/* luca */
+
+.action-button {
+  max-width: 18px;
+  max-height: 18px;
+}
+
+.delete-button {
+  cursor: pointer;
+}
+
+.edit-button {
+  cursor: pointer;
+}
+
+.addButtonDiv {
+  display: flex;
+  justify-content: center;
+}
+
+#addButton {
+  max-width: 42px;
+  max-height: 42px;
+}
+
+.checkbox-style {
+  width: 25px;
+  height: 25px;
+}
+
+.exit-button {
+  width: 50x;
+  height: 50px;
+  float: right;
+  color: #d3d2eb;
+  background-color: #101a3f;
+  cursor: pointer;
+}
+
+.next-button {
+  width: 64x;
+  height: 64px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.next-button-right {
+  width: 64x;
+  height: 64px;
+  padding: 20px;
+  cursor: pointer;
+  float: right;
+}
+
+.container-x {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  font-weight: bolder;
+  font-size: larger;
+
+}
+
+
+/* finish luca */
+
+
+.container-flex {
+  background-color: #d3d2eb;
+}
+
+#destaque {
+  color: #FFFFFF;
+  font-size: large;
+}
+
+/*Cosméticos*/
+body {
+  background-color: #101a3f;
+}
+
+nav {
+  background-color: #d3d2eb;
+}
+
+.title {
+  color: #d3d2eb;
+  margin-bottom: 20px;
+  text-decoration: underline;
+}
+
+#container-lista {
+  list-style: none;
+  font-size: 18px;
+  color: #101a3f;
+}
+
+#lista-de-trilhas {
+  list-style: none;
+  background-color: #d3d2eb;
+  font-size: 18px;
+  color: #101a3f;
+}
+
+footer {
+  color: #d3d2eb !important;
+}
+
+/*Flex-Box*/
+#containerTrilha {
+  color: #d3d2eb;
+  max-width: 50%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.itemTrilha {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid black;
+}
+
+.subItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 350px;
+}
+
+.itemCollumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.itemTrilha p:nth-child(1) {
+  width: 100px;
+}
+
+.itemTrilha p:nth-child(2) {
+  width: 100px;
+}
+
+
+
+/*Botão*/
+#addButton {
+  margin: 10px;
+  cursor: pointer;
+  float: right;
+}
+
+#addButton:hover {
+  color: salmon;
+}
+
+
+/* Modal */
+
+/* The Modal (background) */
+
+.containerModal {
+  display: flex;
+  margin: 0 auto;
+}
+
+.itemCenter {
+  font-size: larger;
+  font-weight: 700;
+  flex: 0 1 auto;
+  width: 400px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.itemRight {
+  flex: 0 1 auto;
+  width: 100px;
+  height: 100px;
+  margin-left: auto;
+}
+
+#myModal {
+  display: none;
+  /* Hidden by default */
+  color: #101a3f;
+  border: 2px solid #101a3f;
+  margin: 200px auto;
+
+  width: 60%;
+  height: 200px;
+  border-radius: 3px;
+  flex-direction: column;
+  padding: 1rem;
+  /* Enable scroll if needed */
+  overflow: auto;
+
+  z-index: 10;
+  position: relative;
+  background-color: #d3d2eb;
+}
+
+#modalConfirm,
+#modalCancel {
+  background-color: #101a3f;
+  color: #d3d2eb;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 15px;
+  font-weight: 700;
+  z-index: 11;
+  width: 190px !important;
+  text-align: center;
+}
+
+#modalConfirm {
+  background-color: darkred !important;
+}
+
+#title-container {
+  text-align: center;
+  justify-content: center;
+  margin-left: 19px;
+}
+
+#title-modal {
+  padding: 10px;
+}
+
+#fade {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  display: none;
+  background-size: cover;
+}
+
+.itemFlex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+  z-index: 11;
+}
+
+
+
+/* Botoes Modal 
+
+
+*/
+#modalConfirm,
+#modalCancel {
+  background-color: #101a3f;
+  color: #d3d2eb;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 15px;
+  font-weight: 700;
+  z-index: 11;
+}
+
+#modalConfirm:hover {
+  background-color: salmon;
+}
+
+#modalCancel:hover {
+  background-color: salmon;
+}
+
+/* Tela ADM-3 */
+
+.title-mlw {
+  color: #101a3f;
+}
+
+/* NOVA LISTA */
+
+.lista {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px auto;
+  width: 100%;
+  padding: 20px;
+  border: #101A3F solid 2px;
+  border-radius: 5px;
+  background-color: #D3D2EB;
+}
+
+.user-div {
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.nome {
+  font-weight: bold;
+}
+
+.funcao {
+  color: #F05A05;
+}
+
+.instituicao {
+  color: #147E17;
+}
+
+.buttons-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.buttons-div img:nth-child(1) {
+  margin-right: 10px;
+}
+
+/* RESPONSIVIDADE TELA ADM PASSO 1 */
+
+@media (max-width: 500px) {
+  #lista-de-trilhas {
+    width: 100%;
+  }
+
+  .itemTrilha {
+    height: 200%;
+  }
+
+  .lista {
+    width: 100%;
+  }
+}

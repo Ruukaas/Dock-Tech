@@ -1,0 +1,278 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#main {
+  display: flex;
+  max-width: 80%;
+  background-color: #101A3F;
+  margin: 10px auto;
+}
+.main-wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  margin:  0 auto;
+  background-color: #101A3F;
+  border-radius: 0 0 7px 7px;
+  padding: 25px;
+}
+
+body{
+  background-color: #101A3F;
+  width: 100%;
+}
+header {
+  background: #D3D2EB;
+  padding: 5px 10px 0 10px;
+}
+
+button {
+  margin: 0 auto;
+  height: 5vh;
+  width: 100%;
+  border-radius: 7px;
+  background: #101A3F;
+  color: white;
+  cursor: pointer;
+  text-align: left;
+  padding-left: 15px ;
+}
+
+.buttons-wrapper {
+  max-width: 60%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 3;
+
+}
+.buttons-wrapper>div{
+  margin-bottom: 8%;
+  background-color: #101A3F;
+  border-radius: 7px;
+  border: 2px solid #D3D2EB
+}
+.Squads-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #101A3F;
+  border-radius: 7px;
+}
+.open-button {
+  background-color: #D3D2EB;
+  color: #101A3F;
+  font-size: 20px;
+  font-weight: 600;
+  height: 40px;
+}
+
+.active{
+  border-radius: 7px !important;
+}
+
+.active,
+.open-button:hover {
+  background-color: #101A3F;
+  text-decoration: underline;
+  color: #fff;
+}
+
+.open-button:after {
+  color: #555;
+  width: 100px;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.content-wrapper {
+  border-radius: 0px 0px 7px 7px !important;
+  padding: 0px 15px;
+  max-height: 0;
+  width: 100%;
+  border-radius: 7px;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #101A3F;
+  font-size: 0.7rem;
+}
+
+.content-wrapper>p{
+  font-size: 0.7rem;
+}
+
+#divSquads,#divUsuarios,#divEmpresas,#divTrilhas,#divNotific{
+  background-color: #D3D2EB;
+  margin-bottom: 10px;
+  border-radius: 7px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+
+div::-webkit-scrollbar {
+  width: 10px;
+}
+
+div::-webkit-scrollbar-track {
+  background: #D3D2EB;
+  border-radius: 7px;
+}
+
+div::-webkit-scrollbar-thumb {
+  background: #101A3F;
+  border-radius: 7px;
+}
+
+div::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.squads {
+  padding-left: 15px;
+  color: #101A3F;
+  font-weight: 600;
+}
+
+.kickoff {
+  color: #70D66A;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.riseup {
+  color: #EC6B26;
+  font-weight: 600;
+}
+
+.growup {
+  color: #328B38;
+  font-weight: 600;
+}
+
+.date {
+  padding-left: 30px;
+  font-weight: 0;
+  color: #101A3F;
+}
+.paragraphs{
+  padding: 10px;
+
+}
+.edit-squads {
+  background-color: #D3D2EB;
+  color: #101A3F;
+  font-weight: 600;
+  height: 20px;
+  border-radius: 3px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 auto 5px auto;
+}
+
+/* nav */
+nav{
+
+  background-color: #D3D2EB;
+}
+
+.logo {
+  height: 30px;
+}
+
+.blue-logo {
+  color: #101A3F;
+}
+
+.green-logo {
+  color: #147e17
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #D3D2EB;
+  width: 170px;
+  height: 280px;
+  border-radius: 7px;
+  padding: 10px;
+}
+
+#profile-image {
+  width: 100px;
+  border-radius: 50%;
+  margin-top: 20px;
+  border: 2px solid #101A3F;
+}
+
+.profile-name {
+  display: flex;
+  color: #101A3F;
+  font-weight: 700;
+}
+
+.profile-status {
+  display: flex;
+  color:#101A3F;
+  font-size: small;
+  top: 50%;
+  font-weight: 500;
+}
+
+.profile-options {
+  display: flex;
+  flex-direction: column;
+  background-color: #D3D2EB;
+  color: #101A3F;
+  height: 80px;
+  width: 150px;
+  border-radius: 7px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.options-config, .options-exit{
+  display: flex;
+  cursor: pointer;
+}
+
+.content-wrapper > div:first-of-type  {
+  overflow-y: scroll;
+  height:200px;
+}
+
+@media (max-width: 650px){
+
+  .main-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .main-wrapper>div{
+    padding: 10px;
+  }
+
+  .buttons-wrapper{
+      max-width:100%;
+  }
+
+}

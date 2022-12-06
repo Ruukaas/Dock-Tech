@@ -1,0 +1,88 @@
+#trilha {
+    display: flex;
+    flex-direction: column;
+    background-color: #D3D2EB;
+    color: #101A3F;
+    border-radius: 7px;
+    padding: 10px;
+}
+#trilha{
+    max-width: 30%;
+    min-width: 300px;
+    height: 280px;
+    overflow: scroll;
+    overflow-x: hidden;
+    margin-left: 10px;
+}
+#title-trilha {
+    text-align: center;
+    border-bottom: 1px solid black;
+    display: inline-block;
+    font-size: 1.5rem;
+}
+
+.lesson {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 15px;
+    font-size: 1.2rem;
+
+}
+
+
+.lesson:hover {
+    cursor: pointer;
+}
+
+
+/* Display sumário com sub sumário */
+ol {
+    counter-reset: item;
+}
+
+li {
+    display: block;
+
+}
+
+li:before {
+    content: counters(item, ".") " ";
+    counter-increment: item;
+}
+
+.module {
+    font-size: 1.2rem;
+}
+
+.lesson li {
+    font-size: 1rem;
+    max-width: 312px;
+}
+
+input[type=checkbox] {
+    max-height:18px;
+}
+.blocoTrilha{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width:1170px){
+    .first-line-wrapper{
+        flex-direction: column;
+    }
+    #trilha{
+        max-width: 100%;
+        margin-top: 25px;
+    }
+    body{
+        font-size: 12px;
+    }
+    .second-line-wrapper{
+        flex-direction: column-reverse;
+        margin-top: 15px;
+        justify-content: center;
+        align-items: center;
+    }
+}

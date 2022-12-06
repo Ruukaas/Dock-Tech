@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DockTech - Aula</title>
+    <link rel="stylesheet" href="../assets/styleGLOBAL.css">
+    <link rel="stylesheet" href="../assets/nav-icon-bar.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/trilha.css">
+    <link rel="stylesheet" href="./style/video-player.css">
+    <link rel="stylesheet" href="./style/tabs.css">
+    <link rel="stylesheet" href="./style/progress-bar.css">
+    <script type="module"  src="./js/code.js" defer="defer"></script>
+    <script type="module"  src="./js/tabs.js" defer="defer"></script>
+    <link rel="icon" href="../assets/global-images/icone.png" type="image/png">
+</head>
+<body>
+
+    <header>
+        <nav class="container-flex">
+            <a href="../../login-gerenciamento/tela-gerenciamento/tela-gerenciamento.html"><img src="../assets/global-images/icons/icon-nav-dockTech.png" alt="Ícone do DockTech com o nome" class="item-flex"></a>
+        </nav>
+    </header>
+
+    <div class="principal-wrapper">
+        <h2 id="video-player-title"></h2>
+        <div class="first-line-wrapper">
+            <div class="videoPlayer">
+
+                <div id="video-external">
+                    <iframe width="560" height="315" src="" id="first-video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <!-- <div id="video-external"></video> -->
+                <div id="video-internal"></div>
+                <!-- <video id="video-internal"></video> -->
+            </div>
+            <div class="blocoTrilha">
+                <div id="trilha">
+                    <!-- Trilha em inglês? -->
+                    <h3 id="title-trilha">Trilha de aulas</h3>
+                </div>
+                <div id="progress-bar">
+                    <div id="concluded-progress">
+                        <div id="text-progress">
+                            <span>Progresso</span>&#160;&#160;
+                            <span id="percentual-progress"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="second-line-wrapper">
+            <div id="container-tabs">
+                <div class="item" id="comments">
+                    <p>Fórum do Vídeo</p>
+                </div>
+                <div class="item" id="exercises">
+                    <p>Exercícios</p>
+                </div>
+                <div class="item" id="notes">
+                    <p>Anotações</p>
+
+                </div>
+                <div class="item" id="shell">
+                    <p>Shell</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="third-line-wrapper">
+            <div id="append"></div>
+        </div>
+        <footer>
+            <div>SQUAD 18 &copy; Todos os direitos reservados - 2022</div>
+        </footer>
+    </div>
+
+</body>
+
+</html>

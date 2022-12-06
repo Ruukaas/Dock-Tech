@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DockTech - Trilha de Conhecimento</title>
+    <!--Css local-->
+    <link rel="stylesheet" href="./styleTelaAdmTrilha3.css">
+    <!--Css Global-->
+    <link rel="stylesheet" href="../assets/styleGLOBAL.css"/>
+    <link rel="stylesheet" href="./modal.css" />
+    <!--Ícone de página-->
+    <link rel="icon" type="image/png" href="../assets/global-images/icone.png">
+    <!--Description and KeyWords-->
+    <meta name="description"
+        content="Adicione conteúdo a trilha de conhecimento das etapas da Residência Porto Digital">
+    <meta name="keywords" content="trilha, html, css, bootstrap, aulas, vídeos, comentários, RiseUp, GrowUp, KickOff">
+    <!-- firebase -->
+    <script src="../assets/code/db/firebase.js" type="module"></script>
+    <!-- script -->
+    <script src="./code.js" type="module" defer="defer"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="container-flex">
+            <div class="item-flex">
+                <img src="../assets/global-images/Group 52.png" alt="Logo" style="width: 100px;">
+            </div>
+        </nav>
+    </header>
+    <div id="principal-wrapper">
+
+        <div class="itemTrilha fonteCinza">
+            <h1>Trilhas</h1>
+        </div>
+
+        <div class="containerTrilha row fonteCinza">
+            <h2 class="itemTrilha">Insira os módulos e vídeos da trilha</h2>
+            <p class="itemTrilha">Passo 3</p>
+        </div>
+        <div id="center-wrapper">
+            <div id="module-and-lesson-wrapper">
+                <div id="modules-wrapper">
+                    <div id="module-list-wrapper">
+                        <h3 class="title-mlw">Módulos</h3>
+                        <ol id="ol-module-list-wrapper">
+
+                        </ol>
+                    </div>
+                    <div id="add-module-wrapper">
+                        <img src="../assets/global-images/add.png" alt="botão com o simbolo de mais" id="add-module"
+                            class="add-button">
+                    </div>
+
+                </div>
+                <div id="lessons-wrapper">
+                    <div id="lesson-list-wrapper">
+                        <h3 class="title-mlw">Conteúdo</h3>
+                        <ol id="ol-lessons-list-wrapper">
+
+                        </ol>
+                    </div>
+                    <div id="add-lesson-wrapper">
+                        <img src="../assets/global-images/add.png" alt="botão com o simbolo de mais" id="add-lesson"
+                            class="add-button disabled">
+                    </div>
+                </div>
+            </div>
+            <div id="buttons-actions">
+                <img src="../assets/global-images/back.png" alt="Botão com uma seta para a esquerda"
+                    class="button-actions" id="backButton">
+                <img src="../assets/global-images/next.png" alt="Botão com uma seta para a direita"
+                    class="button-actions" id="nextButton">
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div>SQUAD 18 &copy; Todos os direitos reservados - 2022</div>
+    </footer>
+
+</body>
+
+</html>

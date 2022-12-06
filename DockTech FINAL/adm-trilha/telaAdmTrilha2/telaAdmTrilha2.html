@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DockTech - Trilha de Conhecimento</title>
+    <!--Css local-->
+    <link rel="stylesheet" href="../tela-adm-trilha/styleTelaAdmTrilha.css">
+    <link rel="stylesheet" href="./styleTelaAdmTrilha2.css">
+    <!--Css Global-->
+    <link rel="stylesheet" href="../assets/styleGLOBAL.css" />
+    <!--Ícone de página-->
+    <link rel="icon" type="image/png" href="../assets/global-images/icone.png">
+    <!--Description and KeyWords-->
+    <meta name="description"
+        content="Adicione conteúdo a trilha de conhecimento das etapas da Residência Porto Digital">
+    <meta name="keywords" content="trilha, html, css, bootstrap, aulas, vídeos, comentários, RiseUp, GrowUp, KickOff">
+    <script src="./code.js" type="module" defer="defer"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="container-flex">
+            <div class="item-flex">
+                <img src="../assets/global-images/Group 52.png" alt="Logo" style="width: 100px;">
+            </div>
+        </nav>
+    </header>
+    <div id="principal-wrapper">
+        <div class="containerTrilha">
+            <h1>Trilhas</h1>
+        </div>
+
+        <div id="secao1" class="containerTrilha">
+            <h2 class="itemTrilha">Selecione a(s) fase(s) da residência</h2>
+            <p class="itemTrilha"> Passo 1</p>
+        </div>
+
+        <ul id="listaFases" class="containerTrilha">
+            <li>
+                <div class="itemLista">
+                    <input class="mousePointer" type="checkbox" name="KickOff">
+                    <label for="KickOff">Kick Off</label>
+                </div>
+            </li>
+            <li>
+                <div class="itemLista">
+                    <input class="mousePointer" type="checkbox" name="RiseUp">
+                    <label for="RiseUp">Rise Up</label>
+                </div>
+            </li>
+            <li>
+                <div class="itemLista">
+                    <input class="mousePointer" type="checkbox" name="GrowUp">
+                    <label for="GrowUp">Grow Up</label>
+                </div>
+            </li>
+        </ul>
+        <div id="secao2" class="containerTrilha">
+            <h2 class="itemTrilha">Dê um nome para a sua trilha</h2>
+            <p class="itemTrilha">Passo 2</p>
+        </div>
+        <div class="containerTrilha">
+
+            <input class="mousePointer" id="textInput" type="text" name="textInput"
+                placeholder="ex: Aprendendo a programar com JavaScript">
+
+        </div>
+        <div class="containerTrilha row fonteCinza iconDiv mousePointer flex-end">
+            <i id="nextButton" class="fa-solid fa-circle-arrow-right fa-3x"></i>
+        </div>
+    </div>
+
+    <footer>
+        <div>SQUAD 18 &copy; Todos os direitos reservados - 2022</div>
+    </footer>
+    <!--Icones externos-->
+    <script src="https://kit.fontawesome.com/b167182bc2.js" crossorigin="anonymous"></script>
+    <!--Botão de Editar e Excluir-->
+</body>
+
+</html>

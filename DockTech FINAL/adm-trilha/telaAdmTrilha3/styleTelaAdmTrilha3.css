@@ -1,0 +1,276 @@
+*{
+    padding: 0;
+    margin: 0;    
+}
+body{
+    background-color: #101a3f;
+    color:#d3d2eb;
+}
+/*flex-box*/
+#principal-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    margin: 25px auto;
+}
+
+.containerTrilha {
+	display: flex;    
+    justify-content: space-between;
+    max-width: 100%;
+}
+/**/
+ul{
+    list-style: none;
+    padding-left: 0;
+    color: #101a3f;
+}
+
+#listaFases{
+    max-width: 100%;
+    height: 200px;    
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.itemLista {
+    color: #101a3f;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color:  #d3d2eb;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+
+h1{
+    font-size:2rem;
+}
+h2, label{
+    font-size: 1.5rem;
+}
+p{
+    font-size: 1.25rem;
+}
+input[type=checkbox]{
+    width:1.5rem; 
+    color: #101a3f;
+}
+input:checked+label{
+    font-weight: 800; 
+}
+
+input[type=text]{
+    padding-left: 10px;
+    background-color: #d3d2eb;
+}
+input[type=text]::placeholder{
+    color: #101a3f8e;
+    
+}
+
+
+#textInput{
+    margin-top: 20px;
+    width: 500px;
+    color: #101a3f;
+}
+
+.iconDiv{
+    float: right;
+    width: 1250px;
+}
+
+#nextButton{
+    cursor: pointer;
+    justify-content: flex-end;
+}
+
+#module-and-lesson-wrapper {
+    width: 1230px;
+    height: 520px;
+    background-color: #d3d2eb;
+    display: flex;
+    border-radius: 5px;
+    background-color: #101a3f;
+    margin-bottom: 1rem;
+}
+
+#center-wrapper {
+    margin-top: 80px;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#modules-wrapper, #lessons-wrapper {
+    width: 615px;
+    display:flex;
+    flex-direction: column;
+    padding:1rem 2rem;
+    overflow:auto;
+    border-radius: 15px;
+    background-color: #d3d2eb;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#modules-wrapper {
+    border-right: 2px solid black;
+    margin-right: 1rem;
+    border-radius: 15px;
+}
+
+#buttons-actions {
+    width:1230px;
+    display:flex;
+    justify-content: space-between;
+}
+
+#buttons-actions img,.add-button {
+    width:48px;
+    height:48px;
+
+}
+
+.disabled {
+    filter:opacity(0.20);
+}
+
+.title-mlw {
+    color: #101a3f;
+    font-size:2.5rem;
+    margin: 20px;
+}
+
+.selected {
+    font-weight: 800; 
+}
+
+
+#add-module-wrapper {
+    display:flex;
+    justify-content: flex-end;
+}
+
+/* Posicionar no canto inferior direito do quadrado */
+/* ID dos botões */
+#add-module{
+    /* position:relative; */
+    bottom:100px;
+}
+
+
+#add-lesson, #add-module {
+
+}
+
+#add-lesson {
+  
+}
+
+.buttons-div > img{
+    max-height:2rem;
+    max-width:2rem;
+}
+
+.action-button img {
+    
+}
+
+/* Olhar porque os modulos estão de fora da DIV do modules wrapper(pq o 1 fica fora - para testar, trocar a cor da classe module */
+.module, .lesson {
+    color:#101a3f;
+    margin-bottom: 1.5rem;
+    display:flex;
+    justify-content: space-between;
+}
+#ol-module-list-wrapper, #ol-lessons-list-wrapper {
+    list-style-position: inside;
+}
+
+.title-module, .title-lesson {
+    font-size: 1.5rem;
+}
+
+#inputModule {
+    width:80%;
+    border-radius: 10px;
+    margin-right: 15px;
+}
+
+.input-module-wrapper {
+    display:flex;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+}
+
+.input-module-buttons {
+    width:30px;
+    height:30px;
+    display:flex;
+    flex-direction: column;
+}
+
+#textInput {
+    height: 30px;
+}
+
+
+@media (max-width:750px){
+    i#nextButton{
+        margin-top: 20px;
+    }
+}
+@media(max-width:600px) {
+    #listaFases{
+        height: 100%;
+        max-width: 100%;
+    }
+    .itemTrilha{
+        margin-right: 10px;
+    }
+    #secao1 p{
+        display: none;
+    }
+
+    #secao2 p{
+        display: none;
+    }
+    h2, label{
+        font-size: 1rem;
+    }
+    
+
+    input[type=checkbox]{
+        margin-left: 150px;
+    }
+}
+
+
+@media(max-width:500px) {
+    #listaFases{
+        max-width: 100%;
+        height: 150px;
+    }
+    .itemTrilha{
+        margin-right: 10px;
+    }
+    #secao1 p{
+        display: none;
+    }
+
+    #secao2 p{
+        display: none;
+    }
+
+    #secao2 {
+        margin-top: 60px;
+    }
+
+}

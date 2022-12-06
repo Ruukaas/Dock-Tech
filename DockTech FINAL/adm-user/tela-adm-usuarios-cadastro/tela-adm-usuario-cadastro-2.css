@@ -1,0 +1,31 @@
+.title{
+    color: #d3d2eb;
+    text-decoration: underline;
+    text-align:left;
+}
+
+input{
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+body{
+    background-color: #101a3f;
+}
+
+nav{
+    background-color: #d3d2eb;
+}
+
+footer{
+    color: #d3d2eb !important;
+}
+form{
+    width: 50%;
+}
+#container-buttons{
+    display: flex  !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+}

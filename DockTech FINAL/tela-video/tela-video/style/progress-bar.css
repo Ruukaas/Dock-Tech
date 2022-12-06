@@ -1,0 +1,14 @@
+#progress-bar {
+    width: 90%;
+    color:black;
+    border:1px solid white;
+    margin-bottom: 15px;
+    margin-top: 10px;
+  }
+
+
+  #text-progress {
+    padding: 4px;
+    color:white;
+    display:flex;
+  }

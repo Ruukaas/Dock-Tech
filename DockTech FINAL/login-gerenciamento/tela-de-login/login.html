@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!--CSS da página-->
+        <link rel="stylesheet" href="styleLOGIN.css"/>
+        <!--CSS Global-->
+        <link rel="stylesheet" href="../assets/styleGLOBAL.css"/>
+        <!--Ícone-->
+        <link rel="icon" type="image/png" href="../assets/global-images/icone.png"/>
+        <!--Ícone loading-->
+        <script src="../assets/code/db/firebase.js" type="module"></script>
+        <script src="./js/buttonHandler.js" defer="defer" type="module"></script>
+        <title>DockTech - Login</title>
+        <!--Description and KeyWords-->
+        <meta name="description" content="Adicione conteúdo a trilha de conhecimento das etapas da Residência Porto Digital">
+        <meta name="keywords" content="trilha, html, css, bootstrap, aulas, vídeos, comentários, RiseUp, GrowUp, KickOff">
+
+    </head>
+    <body>
+        <header>
+            <nav class="container-flex">
+                <div class="item-flex">
+                    <a href="#">Fale Conosco</a>
+                </div>
+                <div class="item-flex">
+                    <a href="#">O que é o <span class="orange-logo">Dock</span><span class="green-logo">Tech</span>?</a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="flex-pai">
+                <div class="flex-form">
+                    <div class="item-form">
+                        <img src="../assets/global-images/logo.png" alt="Logo DockTech" width="250" id="logo-img"/>
+                    </div>
+                    <div class="item-form">
+                        <input type="email" name="login-mail" id="login-mail" placeholder=' input("email")'/>
+                    </div>
+                    <div class="item-form">
+                        <input type="password" name="login-password" id="login-password" placeholder=' input("senha")'/>
+                    </div>
+                    <div class="item-form esqueci-senha">
+                        <a href="password_recover.html"><spam class="green-senha">esqueciSenha</spam><spam class="azul-senha">( )</spam></a>
+                    </div>
+                    <div class="item-form">
+                        <input type="submit" value="Enter" id="enter"/>
+                        <img style="display: none;"  id='loading-image' src="./page-images/loading-gif.gif">
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div>SQUAD 18 &copy; Todos os direitos reservados - 2022</div>
+        </footer>
+    </body>
+</html>
