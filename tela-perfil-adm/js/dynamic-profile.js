@@ -5,7 +5,9 @@ let containerEl
 let administradorActions = {
     squads: {
         name: "Squads",
-        hasContent: false
+        hasContent: false,
+        hasRedirect:true,
+        redirect: "../../tela-adm-squads-inicial/tela-adm-squads.html"
         // hasButton: true,
         // button: {
         //     classe: "edit-squads",
@@ -84,6 +86,11 @@ const createActions = actions => {
     arrayActions.forEach(value => {
         let divActionEl = createDivWithClasses(`${value.name}-wrapper`)
         let btnActionEl
+        if(value.hasRedirect) {
+            divActionEl.addEventListener("click", () => {
+                window.location.href = value.redirect
+            })
+        }
         if(value.hasContent) {
             btnActionEl = createButton(value.name, "open-button", "hasContent")
             let divContentWrapperEl = createDivWithClasses("content-wrapper")
