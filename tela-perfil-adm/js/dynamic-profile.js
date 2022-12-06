@@ -1,34 +1,33 @@
 import {createButton, createDivWithClasses, createDivWithID, createTitle, createParagraph, createImage} from "../../assets/code/DOM.js"
-import {contentSquad} from "./modalContent.js"
 
 let containerEl
 
 let administradorActions = {
     squads: {
         name: "Squads",
-        hasContent: true,
-        hasButton: true,
-        button: {
-            classe: "edit-squads",
-            valor: "Ciar ou editar membros do squad"
-        }
+        hasContent: false
+        // hasButton: true,
+        // button: {
+        //     classe: "edit-squads",
+        //     valor: "Ciar ou editar membros do squad"
+        // }
     },
     usuarios: {
         name:"Usuarios",
-        hasContent:true
+        hasContent:false
     },
     instituiçõesEmpresas: {
         name: "Instituições/Empresas",
-        hasContent: true
+        hasContent: false
     },
     trilhas: {
         name: "Trilhas",
         hasContent:false
-    },
-    notificacoes: {
-        name: "Notificações",
-        hasContent: "false"
     }
+    // notificacoes: {
+    //     name: "Notificações",
+    //     hasContent: false
+    // }
 }
 
 let alunoActions = {
@@ -145,4 +144,4 @@ let teste = {
 
 
 dynamicProfile(teste)
-contentSquad("divSquads")
+// contentSquad("divSquads")
