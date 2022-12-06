@@ -184,17 +184,17 @@ input[type=text]::placeholder{
 }
 
 /* Olhar porque os modulos estão de fora da DIV do modules wrapper(pq o 1 fica fora - para testar, trocar a cor da classe module */
-.module {
+.module, .lesson {
     color:#101a3f;
     margin-bottom: 1.5rem;
     display:flex;
     justify-content: space-between;
 }
-#ol-module-list-wrapper {
+#ol-module-list-wrapper, #ol-lessons-list-wrapper {
     list-style-position: inside;
 }
 
-.title-module {
+.title-module, .title-lesson {
     font-size: 1.5rem;
 }
 

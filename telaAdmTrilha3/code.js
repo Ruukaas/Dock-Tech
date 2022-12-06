@@ -1,21 +1,30 @@
-import { modulo } from "../assets/code/classes/trilha.js"
+import { lesson, modulo, trilha } from "../assets/code/classes/trilha.js"
+import { add } from "../assets/code/db/CRUD.js"
 import { createDivWithClasses, createImage, createInputWithID, createLIWithClasses, getInputValueByName } from "../assets/code/DOM/DOM.js"
-import { createModalConfirmDelete, createModalLesson } from "../assets/code/DOM/modal.js"
+import { closeModal, createModalConfirmDelete, createModalLesson, openModal } from "../assets/code/DOM/modal.js"
 
 
 let currentModulesArray = []
 let currentModuleTitleSelected
 let isModuleSelected = false
-
-//Div que abriga os itens no HTML
-const addModuleEl = document.getElementById("add-module")
-const addLessonEl = document.getElementById("add-lesson")
 let isInputModuleCurrentOnScreen = false
 
+
+createModalLesson()
+
+const addModuleEl = document.getElementById("add-module")
+const addLessonEl = document.getElementById("add-lesson")
+const modalEl = document.getElementById("myModal");
+const fadeEl = document.getElementById("fade");
+const closeModalEl = document.getElementById("closeModal")
+const confirmModalEl = document.getElementById("confirmModal")
+const nextEl = document.getElementById("nextButton")
+const backEl = document.getElementById("backButton")
 
 const divModuleEl = document.getElementById("modules-wrapper")
 const moduleListWrapperEl = document.getElementById("module-list-wrapper")
 const olModuleListWrapperEl = document.getElementById("ol-module-list-wrapper")
+const olLessonListWrapperEl = document.getElementById("ol-lessons-list-wrapper")
 
 
 const insertInputModuleDiv = (element, event) => {
@@ -48,8 +57,9 @@ const insertInputModuleDiv = (element, event) => {
 }
 
 const insertLesson = () => {
+    console.log("teste")
     if(isModuleSelected) {
-        createModalConfirmDelete("blz", "hi","oioi")
+       openModal(modalEl,fadeEl)
     }
 }
 
@@ -75,9 +85,9 @@ const removeCurrentSelectedModule = () => {
 }
 
 const changeCurrentSelectedModule = (event) => {
-    isModuleSelected = true
     let titleEl = event.target
     removeCurrentSelectedModule()
+    isModuleSelected = true
     titleEl.classList.add("selected")
     currentModuleTitleSelected = titleEl
     checkIfExistsModules()
@@ -87,22 +97,18 @@ const changeCurrentSelectedModule = (event) => {
 const showModules = () => {
     olModuleListWrapperEl.innerHTML = ""
     console.log(currentModulesArray)
-    currentModulesArray.forEach(valor => {
+    currentModulesArray.forEach((valor,indice) => {
         let currentModule = createDivWithClasses("module")
+        currentModule.setAttribute("id",indice)
         let currentTitle = createLIWithClasses(valor.title, "title-module")
 
-        let buttonDivEl = createDivWithClasses("buttons-div")
-        let editButtonEl = createImage("../assets/global-images/edit.png", "Ícone de lápis de escrever", "action-button", "edit-button")
-        let deleteButtonEl = createImage("../assets/global-images/remove.png", "Ícone de lata de lixo", "action-button", "delete-button")
+        currentTitle.addEventListener("click", (event) => {
+            changeCurrentSelectedModule(event)
+            showLessons(currentModulesArray[indice])
+        })
 
-
-        currentTitle.addEventListener("click", changeCurrentSelectedModule)
-
-        buttonDivEl.appendChild(editButtonEl)
-        buttonDivEl.appendChild(deleteButtonEl)
 
         currentModule.appendChild(currentTitle)
-        currentModule.appendChild(buttonDivEl)
 
         olModuleListWrapperEl.appendChild(currentModule)
     })
@@ -122,19 +128,89 @@ const checkIfExistsModules = () => {
 
 addModuleEl.addEventListener("click", () => {
     if (!isInputModuleCurrentOnScreen) {
+        olLessonListWrapperEl.innerHTML = ""
         insertInputModuleDiv()
         isInputModuleCurrentOnScreen = true
     }
 })
 
+const showLessons = (moduloObj) => {
+    console.log(moduloObj)
+    olLessonListWrapperEl.innerHTML = ""
+    moduloObj.lessons.forEach(valor => {
+        console.log(valor.lessonTitle)
+        let currentLesson = createDivWithClasses("lesson")
+
+        let currentTitle = createLIWithClasses(valor.lessonTitle, "title-lesson")
+
+        currentLesson.appendChild(currentTitle)
+
+        olLessonListWrapperEl.appendChild(currentLesson)
+    })
+}
+
+const confirmActionModal = () => {
+    let currentTitleVideo = getInputValueByName("titleVideo")
+    let currentLinkVideo = getInputValueByName("linkVideo")
+
+    let currentLesson = new lesson(currentTitleVideo,"external",currentLinkVideo)
+    console.log(currentLesson)
+
+    let currentModulePositionInArray = currentModuleTitleSelected.parentNode.getAttribute("id")
+    console.log(currentModulePositionInArray)
+
+    currentModulesArray[currentModulePositionInArray].setLessons(currentLesson)
+    console.log(currentModulesArray[currentModulePositionInArray])
+    showLessons(currentModulesArray[currentModulePositionInArray])
+
+    closeModal(modalEl,fadeEl)
+
+    console.log(currentModulesArray)
+    clearInputsModal()
+}
+
+const backToMainPage = () => {
+    window.location.href = "../tela-adm-trilha/telaAdmTrilha.html"
+}
+
+const insertTrilha = async () => {
+    let currentResidenceStageArrayAndTitleArray = JSON.parse(sessionStorage.getItem("currentResidenceStageArrayAndTitleArray"))
+    console.log(currentResidenceStageArrayAndTitleArray)
+
+    let currentTrilha = new trilha(currentResidenceStageArrayAndTitleArray[1],currentResidenceStageArrayAndTitleArray[0])
+
+    currentModulesArray.forEach(valor => {
+        currentTrilha.setModules(valor)
+    })
+
+    let insert = await add(currentTrilha,"trilhas")
+
+    if(insert == "sucesso") {
+        alert("Cadastro realizado com sucesso")
+        backToMainPage()
+    }
+}
+
+const goToTelaAdmTrilha2 = () => {
+    window.location.href = "../telaAdmTrilha2/telaAdmTrilha2.html"
+}
+
+const clearInputsModal = () => {
+    document.getElementById("linkVideo").value = ""
+    document.getElementById("titleVideo").value = ""
+}
+
+confirmModalEl.addEventListener("click", confirmActionModal)
 addLessonEl.addEventListener("click", insertLesson)
 
-//TO-DO : Colocar identificador na posição do array de modulos do modulo atual
-const createModule = title => {
-    let module = new modulo(title)
-    // currentTrilha.setModules(module)
-    return module.title
-}
+backEl.addEventListener("click",goToTelaAdmTrilha2)
+nextEl.addEventListener("click", async() => {
+    if(currentModulesArray.length > 0) {
+        await insertTrilha()
+    }
+})
+
+
 
 
 

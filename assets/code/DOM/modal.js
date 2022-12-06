@@ -1,4 +1,4 @@
-import { createDivWithClasses, createDivWithID, createInputWithID, createParagraph, createSubTitle } from "./DOM.js";
+import { createDivWithClasses, createDivWithID, createImage, createInputWithID, createParagraph, createSubTitle } from "./DOM.js";
 
 export const openModal = (modalEl,fadeEl) => {
     fadeEl.style.display = "flex";
@@ -57,6 +57,8 @@ export const createModalLesson = () => {
     myModalDiv.classList.add("modal")
 
     let itemFlex1DivEl = createDivWithClasses("itemFlex")
+    let imgCloseModal = createImage("../assets/global-images/x.png","ícone de X","closeModal")
+    imgCloseModal.setAttribute("id","closeModal")
     let titleContainerDivEl = createDivWithID("title-container")
     let titleModalh2El = createSubTitle("Conteúdo")
 
@@ -69,6 +71,10 @@ export const createModalLesson = () => {
     let divLinkVideo = createDivWithClasses("itemClasses")
     let pLinkVideoEl = createParagraph("Link do vídeo")
     let inputLinkVideo = createInputWithID("linkVideo","text","linkVideo")
+
+    let itemFlex4DivEl = createDivWithClasses("itemFlex")
+    let imgConfirmModal = createImage("../assets/global-images/ok.png","ícone de ok","confirmModal")
+    imgConfirmModal.setAttribute("id","confirmModal")
 
 
 
@@ -83,14 +89,18 @@ export const createModalLesson = () => {
 
 
     itemFlex1DivEl.appendChild(titleContainerDivEl)
+    itemFlex1DivEl.appendChild(imgCloseModal)
 
     itemFlex2DivEl.appendChild(divTituloVideoEl)
 
     itemFlex3DivEl.appendChild(divLinkVideo)
 
+    itemFlex4DivEl.appendChild(imgConfirmModal)
+
     myModalDiv.appendChild(itemFlex1DivEl)
     myModalDiv.appendChild(itemFlex2DivEl)
     myModalDiv.appendChild(itemFlex3DivEl)
+    myModalDiv.appendChild(itemFlex4DivEl)
 
     fadeDivEl.appendChild(myModalDiv)
 

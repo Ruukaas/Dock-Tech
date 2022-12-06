@@ -7,7 +7,7 @@ export class trilha {
     modules = []
 
     setModules(modulo) {
-        this.modules.push(modulo)
+        this.modules.push(Object.assign({},modulo))
     }
 }
 
@@ -18,7 +18,7 @@ export class modulo {
 
     lessons = []
     setLessons(lesson) {
-        this.lessons.push(lesson)
+        this.lessons.push(Object.assign({},lesson))
     }
 }
 
