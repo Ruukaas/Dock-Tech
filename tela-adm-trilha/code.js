@@ -1,6 +1,9 @@
 //Dynamic List
-import { setContainerEl, dynamicList } from "../assets/code/list-item.js"
+import { setContainerEl, dynamicList } from "./dynamicTrilha.js" 
 import { allTrilhas } from "./allTrilhas-adm.js"
+import { createModalConfirmDelete } from "../assets/code/DOM/modal.js"
+
+createModalConfirmDelete("Tem certeza que deseja excluir essa trilha","Sim, desejo excluir a trilha", "Não")
 
 setContainerEl("containerTrilha")
 dynamicList(allTrilhas, "Trilhas", "fonteCinza", "container-lista", "lista")
@@ -9,7 +12,6 @@ dynamicList(allTrilhas, "Trilhas", "fonteCinza", "container-lista", "lista")
 const addEl = document.getElementById("addButton");
 const modalEl = document.getElementById("myModal");
 const fadeEl = document.getElementById("fade");
-const closeModalEl = document.getElementById("close");
 const cancelModalEl =  document.getElementById("modalCancel");
 const confirmModalEl = document.getElementById("modalConfirm");
 
@@ -22,12 +24,7 @@ const openModal = () => {
   modalEl.style.display = "flex";
 }
 
-const closeModal = () => {
-  closeModalEl.onclick = function () {
-    modalEl.style.display = "none";
-    fadeEl.style.display = "none";
-  }
-}
+
 
 const confirmActionModal = () => {
     modalEl.style.display = "none";
@@ -52,7 +49,6 @@ openModalAddEvent(document.getElementsByClassName("delete-button"),openModal)
 
 
 addEl.addEventListener("click", next);
-closeModalEl.addEventListener("click", closeModal)
 cancelModalEl.addEventListener("click", declineActionModal)
 confirmModalEl.addEventListener("click",confirmActionModal)
 

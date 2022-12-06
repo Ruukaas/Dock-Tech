@@ -1,72 +1,95 @@
 //Arquivo simulando a lista de trilhas cadastradas no sistema
 export let allTrilhas = [
     {
-        title: "Banco de Dados"
+        title: "Banco de Dados",
+        residenceStageArray: ["Rise Up", "Grow Up"]
     },
     {
-        title: "Spring Boot"
+        title: "Spring Boot",
+        residenceStageArray: ["Rise Up", "Grow Up"]
     },
     {
-        title: "Javascript DOM"
+        title: "Javascript DOM",
+        residenceStageArray: ["Rise Up", "Grow Up"]
     }, 
     {
-        title:"CSS"
+        title:"CSS",
+        residenceStageArray: ["Rise Up", "Grow Up"]
     }, 
     {
-        title:"Responsividade CSS"
+        title:"Responsividade CSS",
+        residenceStageArray: ["Rise Up", "Grow Up"]
     }, 
     {
-        title: "Java"
+        title: "Java",
+        residenceStageArray: ["Rise Up", "Grow Up"]
     }, 
     {
-        title: "PrimeFaces"
+        title: "PrimeFaces",
+        residenceStageArray: ["Rise Up", "Grow Up"]
     }, 
     {
-        title: "JSF"
+        title: "JSF",
+        residenceStageArray: ["Rise Up", "Grow Up"]
     }, 
     {
-        title: "Servlet"
+        title: "Servlet",
+        residenceStageArray: ["Rise Up", "Grow Up"]
     }, 
     {
-        title: "MongoDB"
+        title: "MongoDB",
+        residenceStageArray: ["Rise Up", "Grow Up"]
     }, 
     {
-        title: "Figma"
+        title: "Figma",
+        residenceStageArray: ["Rise Up", "Grow Up"]
     }, 
     {
-        title: "Análise de Personas"
+        title: "Análise de Personas",
+        residenceStageArray: ["Rise Up", "Grow Up"]
     }, 
     {
-        title: "Análise de Concorrência"
+        title: "Análise de Concorrência",
+        residenceStageArray: ["Rise Up", "Grow Up"]
     }, 
     {
-        title: "Como montar seu LinkedIn(to precisando é sério)"
+        title: "Como montar seu LinkedIn(to precisando é sério)",
+        residenceStageArray: ["Rise Up", "Grow Up"]
     }, 
     {
-        title: "Backlog do Produto"
+        title: "Backlog do Produto",
+        residenceStageArray: ["Rise Up", "Grow Up"]
     }, 
     {
-        title: "Requisitos do sistema"
+        title: "Requisitos do sistema",
+        residenceStageArray: ["Rise Up", "Grow Up"]
     }, 
     {
-        title: "Histórias de usuário"
+        title: "Histórias de usuário",
+        residenceStageArray: ["Rise Up", "Grow Up"]
     }, 
     {
-        title: "Python"
+        title: "Python",
+        residenceStageArray: ["Rise Up", "Grow Up"]
     }, 
     {
-        title: "DJango"
+        title: "DJango",
+        residenceStageArray: ["Rise Up", "Grow Up"]
     }, 
     {
-        title: "Testes de Software"
+        title: "Testes de Software",
+        residenceStageArray: ["Rise Up", "Grow Up"]
     }, 
     {
-        title: "Redes de Computadores"
+        title: "Redes de Computadores",
+        residenceStageArray: ["Rise Up", "Grow Up"]
     }, 
     {
-        title: "Algoritmos e Estruturas de Dados"
+        title: "Algoritmos e Estruturas de Dados",
+        residenceStageArray: ["Rise Up", "Grow Up"]
     }, 
     {
-        title: "C++"
+        title: "C++",
+        residenceStageArray: ["Rise Up", "Grow Up"]
     }
 ]
