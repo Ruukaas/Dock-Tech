@@ -1,4 +1,4 @@
-import {createButton, createDivWithClasses, createDivWithID, createTitle, createParagraph, createImage} from "../../assets/code/DOM.js"
+import {createButton, createDivWithClasses, createDivWithID, createTitle, createParagraph, createImage} from "../../assets/code/DOM/DOM.js"
 import {contentSquad} from "./modalContent.js"
 
 let containerEl

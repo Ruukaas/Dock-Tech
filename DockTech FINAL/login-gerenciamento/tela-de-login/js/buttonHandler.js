@@ -12,7 +12,15 @@ const button = document.getElementById('enter');
 const loadingImg = document.getElementById('loading-image');
 
 const goToTelaInicialUsuario = () => {
-    window.location.href = "../../tela-gerenciamento/tela-gerenciamento.html"
+    window.location.href = "../tela-gerenciamento/tela-gerenciamento.html"
+}
+
+const goToTelaInicialAdministrador = () => {
+    window.location.href = "../../adm-perfil/tela-perfil-adm/perfil.html"
+}
+
+const goToTelaInicialMentor = () => {
+    window.location.href = "../../mentor/tela-perfil-adm/perfil.html"
 }
 
 button.addEventListener('click', (e) => {
@@ -38,11 +46,11 @@ button.addEventListener('click', (e) => {
                             break
                         case "Mentor":
                             console.log("mentor")
-                            //colocar a função que redireciona para a página inicial do mentor
+                            goToTelaInicialMentor()
                             break
                         case "Administrador":
                             console.log("adm")
-                            //colocar a função que redireciona para a página inicial do mentor
+                            goToTelaInicialAdministrador()
                             break
                     }
                 })

@@ -4,6 +4,12 @@ export const createTitle = (name, ...classes) => {
     h1El.textContent = name
     return h1El
 }
+export const createSubTitle = (name, ...classes) => {
+    let h2El = document.createElement("h2")
+    h2El.classList.add(...classes)
+    h2El.textContent = name
+    return h2El
+}
 
 export const createDivWithID = id => {
     let divEl = document.createElement("div")
@@ -57,6 +63,21 @@ export const createInputTypeNumber = (id, nome) => {
     inputEl.setAttribute("id", id)
     inputEl.setAttribute("name", nome)
     return inputEl
+}
+
+export const createInputWithID = (id, type, name) => {
+    let inputEl = document.createElement("input")
+    inputEl.setAttribute("type", type)
+    inputEl.setAttribute("id", id)
+    inputEl.setAttribute("name", name)
+    return inputEl
+}
+
+export const createLIWithClasses = (value, ...classes) => {
+    let liEl = document.createElement("li")
+    liEl.innerText = value
+    liEl.classList.add(...classes)
+    return liEl
 }
 
 export const getSelectMarked = (idSelect) => {
@@ -132,3 +153,10 @@ export const checkCheckboxes = (arrayIDs) => {
     })
 }
 
+export const createButton = (value, ...classes) => {
+    let btnEl = document.createElement("button")
+    btnEl.setAttribute("type","button")
+    btnEl.classList.add(...classes)
+    btnEl.textContent = value
+    return btnEl
+}

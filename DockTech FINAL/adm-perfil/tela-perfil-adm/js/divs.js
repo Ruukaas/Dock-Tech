@@ -1,3 +1,7 @@
+import { getAuth,  signOut } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js"
+import { app } from "../../assets/code/db/firebase.js";
+
+
 //abre o conteúdo
 function toggleClick(content) {
     if (content.style.maxHeight) {
@@ -29,3 +33,17 @@ function toggleClick(content) {
     toggleClick(this.nextElementSibling);
     });
   }
+
+  const item = document.getElementsByClassName("erro")
+
+const logoutEl = document.getElementsByClassName("options-exit")[0]
+
+async function logout() {
+    const auth = await getAuth(app);
+    await signOut(auth);
+    window.location.href = "../../login-gerenciamento/tela-de-login/login.html"
+}
+
+logoutEl.addEventListener("click",  async () => {
+    await logout()
+})

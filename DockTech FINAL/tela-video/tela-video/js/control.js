@@ -34,7 +34,7 @@ export const changeCurrentTypeVideo = (videoType) => {
     currentTypeVideo = videoType
 }
 
-export const changeCurrentSecondsVideoPlayer = sec => {
+export const changeCurrentSecondsVideoPlayer = async sec => {
     currentSecondsVideoPlayer = sec
 }
 
